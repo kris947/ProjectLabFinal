@@ -1,0 +1,3 @@
+OMove:2:Up
+OMove:1:Right
+OShootB

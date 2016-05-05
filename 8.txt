@@ -1,0 +1,11 @@
+OMove:2:Down
+OMove:2:Left
+OUse
+OMove:1:Left
+OMove:2:Down
+OUse
+OMove:2:Up
+OMove:1:Down
+OUse
+OMove:1:Down
+OUse
