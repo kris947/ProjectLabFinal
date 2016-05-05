@@ -1,6 +1,0 @@
-OMove:2:Down
-OMove:1:Left
-OUse
-OMove:1:Left
-OMove:1:Right
-OUse

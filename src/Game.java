@@ -7,55 +7,36 @@ import java.lang.Object;
 
 public class Game {
 	public static void main(String[] args) throws IOException  {
+
+		//Az eddigi Game osztály van ebben , és ha ez arra jó ,ha tesztelni akarjuk stdinputtba tudunk beírni parancsokat
+		manualtest();
+	
+			}
+	
+	
+	public static void manualtest() throws IOException{
 		String n;	
 		Map map = new Map();
 		ONeil o = null;
 		Jaffa j=null;
 		WormHole wh=new WormHole();
-		
 		o = new ONeil(map,3);
 		j= new Jaffa(map,3);
 		map.initmap(o,j);
 		String[] params;
-		
-		BufferedReader br = 
-                new BufferedReader(new InputStreamReader(System.in));
-		
-	String input;
-		
-	while((input=br.readLine())!=null){
-	//	System.out.println(input);
 		o = new ONeil(map,3);
 		j= new Jaffa(map,3);
 		wh= new WormHole();
 		map.initmap(o,j);
-		//System.out.println("Utasítások:");
-		
-		boolean isnumeric=true;
-		try{
-			Integer.parseInt(input);
-		}catch(Exception e){isnumeric=false;}
-		
-		if( isnumeric && Integer.parseInt(input) >0 && Integer.parseInt(input) <14 ){
-			BufferedReader br2 = new BufferedReader(new FileReader(input+".txt"));
+	
+		 BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));
 			try {
-			   // StringBuilder sb = new StringBuilder();
+			  
 			    String line ;
 	
-			    while ((line = br2.readLine())!= null) {
-			        /*sb.append(line);
-			        sb.append(System.lineSeparator());
-			       */
-			    	
-					
-					
-			        
-			    
-			//--------		------------
-			        //System.out.println(line);
-			        
+			    while ((line = br2.readLine())!= null) {			        
 			        n=line;
-			//BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			
 					params = n.split(":");
 								
 					if(params[0].equals("ListMap"))
@@ -202,12 +183,12 @@ public class Game {
 				} finally {
 				    br2.close();
 				}
-	
-			}
+		
+	}
 		}
 
-	}
-}
+
+
 
 
 

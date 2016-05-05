@@ -1,4 +1,0 @@
-OShootB
-OMove:2:Down
-OMove:1:Right
-OShootY
