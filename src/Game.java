@@ -19,6 +19,7 @@ public class Game {
 		Map map = new Map();
 		ONeil o = null;
 		Jaffa j=null;
+		Replicator r=null;
 		WormHole wh=new WormHole();
 		o = new ONeil(map,3);
 		j= new Jaffa(map,3);
@@ -26,7 +27,9 @@ public class Game {
 		String[] params;
 		o = new ONeil(map,3);
 		j= new Jaffa(map,3);
+		r=new Replicator(map,3);
 		wh= new WormHole();
+		ReplicatorThread rThread=new ReplicatorThread(map);
 		map.initmap(o,j);
 	
 		 BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));
@@ -89,6 +92,13 @@ public class Game {
 							System.out.println(params[0]+":"+o.loc.getX()+":"+o.loc.getY()+":"+o.direction+":"+"stepped on portal");
 						if (map.map[map.oneil.loc.getY()][map.oneil.loc.getX()] instanceof Wall || map.map[map.oneil.loc.getY()][map.oneil.loc.getX()] instanceof SpecialWall)
 							System.out.println(params[0]+":"+o.loc.getX()+":"+o.loc.getY()+":"+o.direction+":"+"denied");*/
+						
+						
+					}
+					else if (params[0].equals("RMove"))
+					{
+						rThread.start();
+						
 						
 						
 					}

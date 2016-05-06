@@ -1,11 +1,7 @@
 import java.awt.Image;
-
-
-
-
 public class Caracter {
-
-	private Image image;
+	
+	 private Image image;
 	 int lives; //életeinek a száma
 	 Map map;   
 	 public Coord loc;  //koordinátái
@@ -14,16 +10,16 @@ public class Caracter {
 		  Up, 
 		  Down, 
 		  Left, 
-		  Right
-		  
+		  Right  
 		}
 	 Directions direction = Directions.Right;
+	 
+	 
 	 public Caracter(Map map,int lives){
 			this.map=map;
 			this.lives=lives;
-	 };
+	 }
 	 public void move() {
-			//System.out.println("ONeil: move metódus hívás");
 			switch (direction) {
 				case Up:  //Felfele mozgás
 					loc = map.map[loc.getY()-1][loc.getX()].stepOn(loc); //Koordináták beállítása
@@ -42,10 +38,12 @@ public class Caracter {
 					direction = Directions.Right;
 				break;		
 			}
-			
 		}
 	 public Coord getLoc() {
-			//System.out.println("ONeil: getloc metódus hívás");
 			return loc;
 		}
+
+public void DecrementLife(){
+	lives--;
+}
 }

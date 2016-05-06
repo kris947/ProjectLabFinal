@@ -5,12 +5,10 @@ public class Jaffa extends Caracter {
 	 //Konstruktor
 	public Jaffa(Map map,int lives) {
 		super(map,lives);
-		//System.out.println("Jaffa: konstruktor metódus hívás");
 		loc = new Coord(0,0); //(oszlop,sor)
 	}
 	
 
-	
 	//Felvesz egy tárgyat
 	public void pickUp() {
 		System.out.println("ONeil: pickUp metódus hívás");
@@ -32,25 +30,19 @@ public class Jaffa extends Caracter {
 	
 	//Lövés kezelése
 	public void shoot(char c,WormHole w) {
-		
 		System.out.println("ONeil: shoot metódus hívás");
 		if(c=='r')
 		{
-			System.out.println("Red bullet");
 			RedBullet r = new RedBullet(direction, loc , map,w);
 			r.move();
 		}
-		
-		if(c=='g')
+		else 
 		{
-			//System.out.println("Green bullet");
 			GreenBullet g = new GreenBullet(direction, loc , map,w);
 			g.move();
 		}
 		
 	}
-	
-
 	
 	//Item lerakása
 	public void dropDown() {
