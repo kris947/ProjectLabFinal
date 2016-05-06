@@ -7,7 +7,7 @@ public class ONeil extends Caracter{
 	 //Konstruktor
 	public ONeil(Map map,int lives) {
 		super(map,lives);
-		loc = new Coord(2,1); //(oszlop,sor)
+		loc = new Coord(9,10); //(oszlop,sor)
 	}	
 	//Felvesz egy tárgyat
 	public void pickUp() {
