@@ -15,6 +15,11 @@ public class WormHole {
 	private Coord RedPortal;
 	private Coord GreenPortal;
 	
+	private Caracter.Directions BlueDirection;
+	private Caracter.Directions YellowDirection;
+	private Caracter.Directions RedDirection;
+	private Caracter.Directions GreenDirection;
+	
 	//ha bevan allitva kek es sarga portal akkor igazat ad vissza
 	//BluePortal es YellowPortal beállitasa kivulrol - Bullet osztalybol
 	//vigyazni kell a null beíllitasara ha megszunik a portal
@@ -74,5 +79,29 @@ public class WormHole {
 		//System.out.println("WormHole: setRed metódus hívás");
 		//System.out.println(c.getX()+"  "+c.getY());
 		RedPortal = c;
+	}
+	public void setBlueDir(Caracter.Directions dir) {
+		BlueDirection = dir;
+	}
+	public void setYellowDir(Caracter.Directions dir) {
+		YellowDirection = dir;
+	}
+	public void setRedDir(Caracter.Directions dir) {
+		RedDirection = dir;
+	}
+	public void setGreenDir(Caracter.Directions dir) {
+		GreenDirection = dir;
+	}
+	public Caracter.Directions getBlueDir(){
+		return BlueDirection;
+	}
+	public Caracter.Directions getYellowDir(){
+		return YellowDirection;
+	}
+	public Caracter.Directions getRedDir(){
+		return RedDirection;
+	}
+	public Caracter.Directions getGreenDir(){
+		return GreenDirection;
 	}
 }

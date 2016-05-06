@@ -83,7 +83,7 @@ public class Game {
 						{
 							o.move();	
 						}
-						System.out.println(params[0]+":"+o.loc.getX()+":"+o.loc.getY()+":");
+					//	System.out.println(params[0]+":"+o.loc.getX()+":"+o.loc.getY()+":");
 						/*if (map.map[o.loc.getX()][o.loc.getY()] instanceof Pit)
 							System.out.println(params[0]+":"+o.loc.getX()+":"+o.loc.getY()+":"+o.direction+":"+"fell into pit");
 						if (map.map[o.loc.getX()][o.loc.getY()] instanceof Door)

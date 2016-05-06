@@ -20,21 +20,76 @@ Image image;
 	//A portálra lépést kezeli
 	@Override 
 	public Coord stepOn(Coord c) {
-		System.out.println("kuyta");
+		//System.out.println("kuyta");
 		if (wormhole.isOpen()==true){  //Ha nyitva van
 			
 			if(wormhole.getBlue().getX()==c.getX()+1 && wormhole.getBlue().getY()==c.getY()){	 //és ez kék portál
-				return wormhole.getYellow(); //adja vissza a sárga koordinátáit
+			System.out.println("From Blue to Yellow");
+			if(wormhole.getYellowDir()==ONeil.Directions.Up){
+				Coord cord= new Coord(0,0);
+				cord.setX(wormhole.getYellow().getX());
+				cord.setY(wormhole.getYellow().getY()+1);
+				return cord;
 				}
-			else
-			{
+			else if(wormhole.getYellowDir()==ONeil.Directions.Down){
+				Coord cord= new Coord(0,0);
+				cord.setX(wormhole.getYellow().getX());
+				cord.setY(wormhole.getYellow().getY()-1);
+				return cord;
+				}
+			else if(wormhole.getYellowDir()==ONeil.Directions.Right){
+				System.out.println("From Right");
+				Coord cord= new Coord(0,0);
+				cord.setX(wormhole.getYellow().getX()-1);
+				cord.setY(wormhole.getYellow().getY());
+				return cord;
+				}
+			else	if(wormhole.getYellowDir()==ONeil.Directions.Left){
+				Coord cord= new Coord(0,0);
+				cord.setX(wormhole.getYellow().getX()+1);
+				cord.setY(wormhole.getYellow().getY());
+				return cord;
+				}
+			else return location;
+				}
+			else if (wormhole.getYellow().getX()==c.getX()+1 && wormhole.getYellow().getY()==c.getY()){
+				System.out.println("From Yellow to Blue side");
+			
+			if(wormhole.getBlueDir()==ONeil.Directions.Up){
+				Coord cord= new Coord(0,0);
+				cord.setX(wormhole.getBlue().getX());
+				cord.setY(wormhole.getBlue().getY()+1);
+				return cord;
+				
+				}
+			else if(wormhole.getBlueDir()==ONeil.Directions.Down){
+				Coord cord= new Coord(0,0);
+				cord.setX(wormhole.getBlue().getX());
+				cord.setY(wormhole.getBlue().getY()-1);
+				return cord;
+				
+				}
+			else if(wormhole.getBlueDir()==ONeil.Directions.Right){
+				System.out.println("From Right");
 				Coord cord= new Coord(0,0);
 				cord.setX(wormhole.getBlue().getX()-1);
 				cord.setY(wormhole.getBlue().getY());
 				return cord;
 				
-			}//egyébként a kékét
+				}
+			else if(wormhole.getBlueDir()==ONeil.Directions.Left){
+				Coord cord= new Coord(0,0);
+				cord.setX(wormhole.getBlue().getX()+1);
+				cord.setY(wormhole.getBlue().getY());
+				return cord;
+				}
+			else return location;
+			}
+			
+			else return location;
 		}
+		
+			
 		else return location;	 //egyébként a helyzetét
 		}
 	

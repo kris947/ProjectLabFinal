@@ -10,7 +10,7 @@ public class Map {
 	private int sizeX;
 	private int sizeY;
 	private int ZPMcount;
-	public Tile[][] map = new Tile[20][20]; // Sorokszáma/Oszlopok száma
+	public Tile[][] map = new Tile[5][5]; // Sorokszáma/Oszlopok száma
 	public int getSizeX() {
 		return sizeX;		
 	}
@@ -25,7 +25,7 @@ public class Map {
 		oneil=o;
 		int Y=0;
 		
-		BufferedReader br = new BufferedReader(new FileReader("FinalMap.csv")); // Amikor ezt lecseréljük írjuk át a map nagyságát is 
+		BufferedReader br = new BufferedReader(new FileReader("ProtoMap.csv")); // Amikor ezt lecseréljük írjuk át a map nagyságát is 
 			try {
 				String line; ;
 				while ((line= br.readLine())!= null) {
@@ -79,7 +79,7 @@ public class Map {
 		System.out.println(getSizeY());
 		System.out.println(getSizeX());
 		System.out.println();
-		for (int i=0;i<getSizeY()-1;i++){
+		for (int i=0;i<getSizeY();i++){
 			for (int j=0;j<getSizeX()-1;j++){
 				if (j==oneil.loc.getX()&& i==oneil.loc.getY())
 					System.out.print("O"+i+j+"  ");

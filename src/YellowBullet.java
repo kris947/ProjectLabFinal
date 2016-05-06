@@ -18,6 +18,7 @@ public class YellowBullet extends Bullet {
 	{
 		map.map[loc.getY()][loc.getX()]=new Portal(loc);
 		wormhole.setYellow(new Coord( loc.getY(),loc.getX()));
+		wormhole.setYellowDir(dir);
 		map.map[loc.getY()][loc.getX()].setWH(wormhole);
 		//System.out.println("BlueBullet: Sárga portál nyílt");
 	}
