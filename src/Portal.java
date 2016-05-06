@@ -23,7 +23,7 @@ Image image;
 		//System.out.println("kuyta");
 		if (wormhole.isOpen()==true){  //Ha nyitva van
 			
-			if(wormhole.getBlue().getX()==c.getX()+1 && wormhole.getBlue().getY()==c.getY()){	 //és ez kék portál
+			if((1==Math.abs(wormhole.getBlue().getX()-c.getX()) &&(0==Math.abs(wormhole.getBlue().getY()-c.getY())))|| (0==Math.abs(wormhole.getBlue().getX()-c.getX()) &&(1==Math.abs(wormhole.getBlue().getY()-c.getY())))){	 // ez kék portál
 			System.out.println("From Blue to Yellow");
 			if(wormhole.getYellowDir()==ONeil.Directions.Up){
 				Coord cord= new Coord(0,0);
@@ -50,9 +50,10 @@ Image image;
 				cord.setY(wormhole.getYellow().getY());
 				return cord;
 				}
-			else return location;
+					else return location;
 				}
-			else if (wormhole.getYellow().getX()==c.getX()+1 && wormhole.getYellow().getY()==c.getY()){
+			
+			if((1==Math.abs(wormhole.getYellow().getX()-c.getX()) &&(0==Math.abs(wormhole.getYellow().getY()-c.getY())))|| (0==Math.abs(wormhole.getYellow().getX()-c.getX()) &&(1==Math.abs(wormhole.getYellow().getY()-c.getY())))){
 				System.out.println("From Yellow to Blue side");
 			
 			if(wormhole.getBlueDir()==ONeil.Directions.Up){
@@ -85,7 +86,72 @@ Image image;
 				}
 			else return location;
 			}
+			else if (wormhole.getRed().getX()==c.getX()+1 && wormhole.getRed().getY()==c.getY()){
+			System.out.println("From Red to Green side");
+		
+		if(wormhole.getGreenDir()==Jaffa.Directions.Up){
+			Coord cord= new Coord(0,0);
+			cord.setX(wormhole.getGreen().getX());
+			cord.setY(wormhole.getGreen().getY()+1);
+			return cord;
 			
+			}
+		else if(wormhole.getGreenDir()==Jaffa.Directions.Down){
+			Coord cord= new Coord(0,0);
+			cord.setX(wormhole.getGreen().getX());
+			cord.setY(wormhole.getGreen().getY()-1);
+			return cord;
+			
+			}
+		else if(wormhole.getGreenDir()==Jaffa.Directions.Right){
+			System.out.println("From Right");
+			Coord cord= new Coord(0,0);
+			cord.setX(wormhole.getGreen().getX()-1);
+			cord.setY(wormhole.getGreen().getY());
+			return cord;
+			
+			}
+		else if(wormhole.getGreenDir()==Jaffa.Directions.Left){
+			Coord cord= new Coord(0,0);
+			cord.setX(wormhole.getGreen().getX()+1);
+			cord.setY(wormhole.getGreen().getY());
+			return cord;
+			}
+		else return location;
+		}
+		else if (wormhole.getGreen().getX()==c.getX()+1 && wormhole.getGreen().getY()==c.getY()){
+			System.out.println("From Green to Red side");
+		
+		if(wormhole.getRedDir()==Jaffa.Directions.Up){
+			Coord cord= new Coord(0,0);
+			cord.setX(wormhole.getRed().getX());
+			cord.setY(wormhole.getRed().getY()+1);
+			return cord;
+			
+			}
+		else if(wormhole.getRedDir()==Jaffa.Directions.Down){
+			Coord cord= new Coord(0,0);
+			cord.setX(wormhole.getRed().getX());
+			cord.setY(wormhole.getRed().getY()-1);
+			return cord;
+			
+			}
+		else if(wormhole.getRedDir()==Jaffa.Directions.Right){
+			System.out.println("From Right");
+			Coord cord= new Coord(0,0);
+			cord.setX(wormhole.getRed().getX()-1);
+			cord.setY(wormhole.getRed().getY());
+			return cord;
+			
+			}
+		else if(wormhole.getRedDir()==Jaffa.Directions.Left){
+			Coord cord= new Coord(0,0);
+			cord.setX(wormhole.getRed().getX()+1);
+			cord.setY(wormhole.getRed().getY());
+			return cord;
+			}
+		else return location;
+		}
 			else return location;
 		}
 		
