@@ -18,6 +18,9 @@ public class WormHole {
 	//ha bevan allitva kek es sarga portal akkor igazat ad vissza
 	//BluePortal es YellowPortal beállitasa kivulrol - Bullet osztalybol
 	//vigyazni kell a null beíllitasara ha megszunik a portal
+	public WormHole(){
+		System.out.println("Wormhole is open");
+	}
 	public Boolean isOpen() {
 		//System.out.println("WormHole: isOpen metódus hívás");
 		if (BluePortal!= null && YellowPortal != null)

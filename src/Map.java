@@ -10,7 +10,7 @@ public class Map {
 	private int sizeX;
 	private int sizeY;
 	private int ZPMcount;
-	public Tile[][] map = new Tile[5][4]; // Sorokszáma/Oszlopok száma
+	public Tile[][] map = new Tile[20][20]; // Sorokszáma/Oszlopok száma
 	public int getSizeX() {
 		return sizeX;		
 	}
@@ -25,7 +25,7 @@ public class Map {
 		oneil=o;
 		int Y=0;
 		
-		BufferedReader br = new BufferedReader(new FileReader("ProtoMap.csv")); // Amikor ezt lecseréljük írjuk át a map nagyságát is 
+		BufferedReader br = new BufferedReader(new FileReader("FinalMap.csv")); // Amikor ezt lecseréljük írjuk át a map nagyságát is 
 			try {
 				String line; ;
 				while ((line= br.readLine())!= null) {
@@ -59,8 +59,10 @@ public class Map {
 						}
 						else if (c[i].contains("SC")){
 							int Dx,Dy;
-							Dx=Character.getNumericValue(c[i].charAt(2)); 
-							Dy=Character.getNumericValue(c[i].charAt(3));		    		
+							Dx=Character.getNumericValue(c[i].charAt(2))*10; 
+							Dx+=Character.getNumericValue(c[i].charAt(3)); 
+							Dy=Character.getNumericValue(c[i].charAt(4))*10;
+							Dy+=Character.getNumericValue(c[i].charAt(5)); 
 							map[Y][i]=new Scale(new Coord(i,Y),new Coord(Dy,Dx),this);
 							map[Dx][Dy]=new Door(new Coord(Dy,Dx));  
 						}
