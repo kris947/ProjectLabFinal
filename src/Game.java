@@ -6,14 +6,16 @@ import java.util.EnumSet;
 import java.lang.Object;
 
 public class Game {
-	public static void main(String[] args) throws IOException  {
-
-		//Az eddigi Game osztály van ebben , és ha ez arra jó ,ha tesztelni akarjuk stdinputtba tudunk beírni parancsokat
-		manualtest();
-	
-			}
+	/*public static void main(String[] args) throws IOException  
+	{
+		manualtest();			
+	}*/
 	
 	
+	
+	
+	//----------------------------------
+	//Az eddigi Game osztály van ebben , és ha ez arra jó ,ha tesztelni akarjuk stdinputtba tudunk beírni parancsokat
 	public static void manualtest() throws IOException{
 		String n;	
 		Map map = new Map();
@@ -182,20 +184,25 @@ public class Game {
 						System.out.println("Remaining life: "+o.lives);
 							//System.out.println("blue"+wh.getBlue().getX()+wh.getBlue().getY()+" Yellow "+wh.getYellow().getX()+wh.getYellow().getY());
 					}
-						else System.out.println("Rosszcsont !! ELöbb töltsd be a pályát és kezd játszani.");
+						else 
+							System.out.println("Rosszcsont !! ELöbb töltsd be a pályát és kezd játszani.");
 							
-						}
+					}
 					
 					
 		    //--------------
 			    }
 				   // String everything = sb.toString();
-				} finally {
+				} 
+			finally 
+				{
 				    br2.close();
-				}
-		
+				}		
 	}
-		}
+	//---------------------------
+	
+	
+}
 
 
 
