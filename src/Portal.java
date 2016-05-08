@@ -23,7 +23,7 @@ Image image;
 		//System.out.println("kuyta");
 		if (wormhole.isOpen()==true){  //Ha nyitva van
 			
-			if((1==Math.abs(wormhole.getBlue().getX()-c.getX()) &&(0==Math.abs(wormhole.getBlue().getY()-c.getY())))|| (0==Math.abs(wormhole.getBlue().getX()-c.getX()) &&(1==Math.abs(wormhole.getBlue().getY()-c.getY())))){	 // ez kék portál
+			if(isColour(c,wormhole.getBlue())&& isGoodDir(c,wormhole.getBlueDir(),wormhole.getBlue())){	 // ez kék portál
 			System.out.println("From Blue to Yellow");
 			if(wormhole.getYellowDir()==ONeil.Directions.Up){
 				Coord cord= new Coord(0,0);
@@ -50,10 +50,10 @@ Image image;
 				cord.setY(wormhole.getYellow().getY());
 				return cord;
 				}
-					else return location;
+					else return c;
 				}
 			
-			if((1==Math.abs(wormhole.getYellow().getX()-c.getX()) &&(0==Math.abs(wormhole.getYellow().getY()-c.getY())))|| (0==Math.abs(wormhole.getYellow().getX()-c.getX()) &&(1==Math.abs(wormhole.getYellow().getY()-c.getY())))){
+			if(isColour(c,wormhole.getYellow())&& isGoodDir(c,wormhole.getYellowDir(),wormhole.getYellow())){
 				System.out.println("From Yellow to Blue side");
 			
 			if(wormhole.getBlueDir()==ONeil.Directions.Up){
@@ -84,9 +84,10 @@ Image image;
 				cord.setY(wormhole.getBlue().getY());
 				return cord;
 				}
-			else return location;
+			//else return location;
+			else return c;
 			}
-			else if (wormhole.getRed().getX()==c.getX()+1 && wormhole.getRed().getY()==c.getY()){
+			/*else if (isColour(c,wormhole.getRed())){
 			System.out.println("From Red to Green side");
 		
 		if(wormhole.getGreenDir()==Jaffa.Directions.Up){
@@ -119,7 +120,7 @@ Image image;
 			}
 		else return location;
 		}
-		else if (wormhole.getGreen().getX()==c.getX()+1 && wormhole.getGreen().getY()==c.getY()){
+		else if (isColour(c,wormhole.getGreen())){
 			System.out.println("From Green to Red side");
 		
 		if(wormhole.getRedDir()==Jaffa.Directions.Up){
@@ -151,12 +152,13 @@ Image image;
 			return cord;
 			}
 		else return location;
-		}
-			else return location;
+		}*/
+			//else return location;
+			else return c;
 		}
 		
-			
-		else return location;	 //egyébként a helyzetét
+		//else return location;	
+		else return c;	 //egyébként a helyzetét
 		}
 	
 	//koord lekérdezése
@@ -183,7 +185,40 @@ Image image;
 		return false;
 	}
 	
-	
+	public boolean isColour(Coord c,Coord colour)
+	{
+		if((1==Math.abs(colour.getX()-c.getX()) &&(0==Math.abs(colour.getY()-c.getY())))|| (0==Math.abs(colour.getX()-c.getX()) &&(1==Math.abs(colour.getY()-c.getY()))))
+		return true;
+		else 
+		return false;
+	}
+	public boolean isGoodDir(Coord c,Caracter.Directions dir,Coord colour){
+		if(dir==Caracter.Directions.Down){
+			if(c.getY()==colour.getY()-1){
+				return true;
+			}
+			return false;
+		}
+		else if(dir==Caracter.Directions.Up){
+			if(c.getY()==colour.getY()+1){
+				return true;
+			}
+			return false;
+		}
+		else if(dir==Caracter.Directions.Left){
+			if(c.getX()==colour.getX()+1){
+				return true;
+			}
+			return false;
+		}
+		else if(dir==Caracter.Directions.Right){
+			if(c.getX()==colour.getX()-1){
+				return true;
+			}
+			return false;
+		}
+		return false;
+	}
 	@Override
 	public boolean fly(Bullet b)
 	 {
