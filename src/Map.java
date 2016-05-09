@@ -1,8 +1,11 @@
+import java.awt.Image;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+
+import javax.swing.ImageIcon;
 
 //A pálya osztálya
 public class Map {
@@ -31,6 +34,7 @@ public class Map {
 		
 		BufferedReader br = new BufferedReader(new FileReader("FinalMap.csv")); // Amikor ezt lecseréljük írjuk át a map nagyságát is 
 			try {
+				Image image;
 				String line; ;
 				while ((line= br.readLine())!= null) {
 					String[]c=line.split(";");
@@ -38,13 +42,27 @@ public class Map {
 					sizeY = Y+1 ;
 					for(int i=0;i<c.length;i++){
 						if (c[i].equals("W")){
-							map[Y][i]=new Wall(new Coord(i,Y));
+							ImageIcon ic = new ImageIcon("wall2.jpg");
+					        image = ic.getImage();
+							map[Y][i]=new Wall(new Coord(i,Y),image);
 						}
+						else if (c[i].equals("w")){
+							ImageIcon ic = new ImageIcon("wall1.jpg");
+					        image = ic.getImage();
+							map[Y][i]=new Wall(new Coord(i,Y),image);
+						}						
 						else if (c[i].equals("G")){
 							map[Y][i]=new Ground(new Coord(i,Y));
 						}
 						else if (c[i].equals("S")){
-							map[Y][i]=new SpecialWall(new Coord(i,Y));
+							ImageIcon ic = new ImageIcon("specialwall2.jpg");
+					        image = ic.getImage();
+							map[Y][i]=new SpecialWall(new Coord(i,Y),image);
+						}
+						else if (c[i].equals("s")){
+							ImageIcon ic = new ImageIcon("specialwall1.jpg");
+					        image = ic.getImage();
+							map[Y][i]=new SpecialWall(new Coord(i,Y),image);
 						}
 						else if (c[i].equals("B")){
 							map[Y][i]=new Ground(new Coord(i,Y));
