@@ -20,23 +20,46 @@ public class Caracter {
 			this.lives=lives;
 	 }
 	 
-	 public void move() {
+	 public void move( Caracter.Directions dir) {
 		 if(lives>0) {
-			switch (direction) {
+			 
+			 
+			 
+			switch (dir) {
 				case Up:  //Felfele mozgás
+					
+					if(direction == dir){
 					loc = map.map[loc.getY()-1][loc.getX()].stepOn(loc); //Koordináták beállítása
+					map.map[loc.getY()-1][loc.getX()].stepoff();
+					}
+					else
 					direction = Directions.Up;
 				break;
+				
 				case Down: //Lefele mozgás
+					if(direction == dir){
 					loc = map.map[loc.getY()+1][loc.getX()].stepOn(loc); //Koordináták beállítása
+					map.map[loc.getY()+1][loc.getX()].stepoff();
+					}
+					else
 					direction = Directions.Down;
 				break;
+				
 				case Left: //Balra mozgás
+					if(direction == dir){
 					loc = map.map[loc.getY()][loc.getX()-1].stepOn(loc); //Koordináták beállítása
+					map.map[loc.getY()][loc.getX()-1].stepoff();
+					}
+					else
 					direction = Directions.Left;
 				break;
+				
 				case Right: //Jobbra mozgás
+					if(direction == dir){
 					loc = map.map[loc.getY()][loc.getX()+1].stepOn(loc); //Koordináták beállítása
+					map.map[loc.getY()][loc.getX()+1].stepoff();
+					}
+					else
 					direction = Directions.Right;
 				break;		
 			}
@@ -56,4 +79,5 @@ public class Caracter {
 		 lives--;
 	 }
 
+	 public Image getImage(){return image;}
 }
