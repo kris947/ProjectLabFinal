@@ -11,7 +11,7 @@ public class Map {
 	private int sizeY;
 	private int ZPMcount;
 	Game game;
-	public Tile[][] map = new Tile[5][5]; // Sorokszáma/Oszlopok száma
+	public Tile[][] map = new Tile[20][20]; // Sorokszáma/Oszlopok száma
 	
 	
 	public int getSizeX() {
@@ -29,7 +29,7 @@ public class Map {
 		oneil=o;
 		int Y=0;
 		
-		BufferedReader br = new BufferedReader(new FileReader("ProtoMap.csv")); // Amikor ezt lecseréljük írjuk át a map nagyságát is 
+		BufferedReader br = new BufferedReader(new FileReader("FinalMap.csv")); // Amikor ezt lecseréljük írjuk át a map nagyságát is 
 			try {
 				String line; ;
 				while ((line= br.readLine())!= null) {

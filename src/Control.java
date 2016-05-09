@@ -3,7 +3,7 @@ import java.awt.Image;
 
 public class Control 
 {
-	private Game game;
+	public Game game;
 	
 	public Control(Game game)
 	{
