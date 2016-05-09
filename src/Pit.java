@@ -1,36 +1,46 @@
 //Osztály a szakadék kezelésére
 public class Pit extends Tile {
-	ONeil oneil;
+
+	Game game;
+	Coord startpoz=new Coord(2,1);
 	
 	//Konstruktor
-	Pit( ONeil oneill,Coord c ){
+	Pit( Game g,Coord c ){
 		super(c);
-		oneil=oneill;
-		//System.out.println("Pit: konstruktor hívás");
+		game = g;
 		
 	}
 
 	//Kezeli az esetet amikor Oneill a szakadékba lép
 	@Override
 	public Coord stepOn(Coord c) {
-		//System.out.println("Coord: stepOn metódus hívás");
-		Coord tempcord=new Coord(2,1);
 		
-		if(oneil.lives>1){ //Ha van még élete..
-		oneil.lives--;  //..Akkor csökkentjük
-		//System.out.println("O'neil élete csökken és visszakerül a kezdõ pozícióba");
-		return tempcord;
+		if (game.o.getLoc().equals(location))
+		{
+			game.o.DecrementLife();
+			return startpoz;
 		}
-		endGame(); //Ha már nincs élete akkor vége ajátéknak
-		return null;
-	}
-	
-	//Játék vége a kezelése
-	public void endGame(){
-		//System.out.println("Pit: endGame metódus meghívása");
-		//System.out.println("A játéknak vége a misszió elbukott");
-		System.exit(0);
 		
-	}
+		
+		if (game.j.getLoc().equals(location))
+		{
+			game.j.DecrementLife();
+			return startpoz;
+		}
+		
+		if (game.r.getLoc().equals(location))
+		{
+			game.r.DecrementLife();
+			return startpoz;
+		}
+		
+		else return startpoz;
+	
+
+		
+		
+		
+		
+		}
 	
 }

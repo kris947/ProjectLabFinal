@@ -62,5 +62,9 @@ public class ONeil extends Caracter{
 			object = null;
 		break;		
 	}
-}
+	}
+	
+
+
+	
 }

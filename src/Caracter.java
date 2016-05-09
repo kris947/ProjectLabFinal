@@ -19,7 +19,9 @@ public class Caracter {
 			this.map=map;
 			this.lives=lives;
 	 }
+	 
 	 public void move() {
+		 if(lives>0) {
 			switch (direction) {
 				case Up:  //Felfele mozgás
 					loc = map.map[loc.getY()-1][loc.getX()].stepOn(loc); //Koordináták beállítása
@@ -38,12 +40,20 @@ public class Caracter {
 					direction = Directions.Right;
 				break;		
 			}
-		}
+		 }
+	 }
+	 
+	 public int getLife()
+	 {
+		 return lives;
+	 }
+	 
 	 public Coord getLoc() {
 			return loc;
 		}
 
-public void DecrementLife(){
-	lives--;
-}
+	 public void DecrementLife(){
+		 lives--;
+	 }
+
 }

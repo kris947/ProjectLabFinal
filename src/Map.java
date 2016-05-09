@@ -10,14 +10,18 @@ public class Map {
 	private int sizeX;
 	private int sizeY;
 	private int ZPMcount;
+	Game game;
 	public Tile[][] map = new Tile[5][5]; // Sorokszáma/Oszlopok száma
+	
+	
 	public int getSizeX() {
 		return sizeX;		
 	}
 	public int getSizeY() {
 		return sizeY;
 	}
-	public Map() {
+	public Map(Game g) {
+		game = g;
 		
 	}
 
@@ -49,7 +53,7 @@ public class Map {
 							map[Y][i]=new Ground(new Coord(i,Y));
 						}
 						else if (c[i].equals("P")){
-							map[Y][i]=new Pit(oneil,new Coord(i,Y));
+							map[Y][i]=new Pit(game,new Coord(i,Y));
 						}	
 						else if (c[i].equals("D")){
 						}
@@ -74,37 +78,10 @@ public class Map {
 		    br.close();
 		}
 	}
-	//
-	public void getMap(){
-		System.out.println(getSizeY());
-		System.out.println(getSizeX());
-		System.out.println();
-		for (int i=0;i<getSizeY();i++){
-			for (int j=0;j<getSizeX()-1;j++){
-				if (j==oneil.loc.getX()&& i==oneil.loc.getY())
-					System.out.print("O"+i+j+"  ");
-				else if (map[i][j] instanceof Portal)
-					System.out.print("P"+i+j+"  ");
-				else if (map[i][j] instanceof Ground)
-					System.out.print("G"+i+j+"  ");
-				else if (map[i][j] instanceof SpecialWall)
-					System.out.print("S"+i+j+"  ");
-				else if (map[i][j] instanceof Door){
-					System.out.print("D"+i+j+"  ");}
-				else if (map[i][j] instanceof Wall)
-					System.out.print("W"+i+j+"  ");
-				
-				else if (map[i][j] instanceof Pit)
-					System.out.print("P"+i+j+"  ");
-				else if (map[i][j] instanceof SpaceShip)
-					System.out.print("SS"+i+j+"  ");
-				
-				else if (map[i][j] instanceof Scale)
-					System.out.print("SC"+i+j+"  ");				
-			}
-			System.out.println();
-		}
 
+
+	public int getZPMcount()
+	{
+		return ZPMcount;
 	}
-	public int getZPMcount(){return ZPMcount;}
 }

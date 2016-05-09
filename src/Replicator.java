@@ -10,6 +10,7 @@ public class Replicator extends Caracter{
 		super(map,lives);
 		loc = new Coord(2,1); //(oszlop,sor)
 	}	
+	
 	public void RandDirection(){
 		Random rand=new Random();
 		int n=rand.nextInt(4);
@@ -26,11 +27,18 @@ public class Replicator extends Caracter{
 			direction=Directions.Left;
 		}
 	}
+	
 	public int  RandValue(){
 		Random rand=new Random();
-		int n;
-		return  n=rand.nextInt(10);
+		return  rand.nextInt(10);
 	}
+	
+	@Override
+	 public void DecrementLife(){
+		 lives--;
+		 map.map[loc.getX()][loc.getY()]=new Ground(loc);		 
+	 }
+	
 }
 
 
