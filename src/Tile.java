@@ -42,11 +42,11 @@ public abstract class Tile {
 	
 	 public boolean fly(Bullet b)
 	 {
-		 //System.out.println("Tile: repûûûûlj");
+
 		 return true;
 	 }
 	
-	
+	public void stepoff(){};
 	public void openDoor(){};
 	public void closeDoor(){};
 	public void setWH(WormHole wh){};

@@ -53,4 +53,9 @@ public class Scale extends Tile {
 		return location;
 		
 	}
+	
+	@Override
+	public void stepoff(){
+		map.map[door.getY()][door.getX()].closeDoor();
+	}
 }
