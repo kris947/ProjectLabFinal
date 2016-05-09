@@ -26,7 +26,7 @@ public class Scale extends Tile {
 		this.door = door;
 		this.map = map;
 		ImageIcon ic = new ImageIcon("scale.jpg");
-        image = ic.getImage();
+        Image image = ic.getImage();
 	}
 	
 	@Override
@@ -53,9 +53,9 @@ public class Scale extends Tile {
 
 	@Override
 	public Coord stepOn(Coord c) {
-		//System.out.println("Scale stepon metódus");
+		
 		map.map[door.getY()][door.getX()].openDoor();
-		//System.out.println(door.getX()+"  "+door.getY());
+		
 		return location;
 		
 	}

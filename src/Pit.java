@@ -6,14 +6,14 @@ import javax.swing.ImageIcon;
 public class Pit extends Tile {
 
 	Game game;
-	Coord startpoz=new Coord(2,1);
+	Coord startpoz=new Coord(2,1); // Oneil , vagy Jaffa kiinduló piziciója
 	
 	//Konstruktor
 	Pit( Game g,Coord c ){
 		super(c);
 		game = g;
 		ImageIcon ic = new ImageIcon("pit.jpg");
-        image = ic.getImage();
+        Image image = ic.getImage();
 		
 	}
 
