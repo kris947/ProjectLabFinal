@@ -1,3 +1,5 @@
+import java.awt.Image;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -13,6 +15,7 @@ public class View {
 	{		
 		control = c;
 		frame = new JFrame();
+		gpanel = new GamePanel(this);
 		
 		frame.setSize(1000, 1000);
 		frame.setTitle("Get_rekt");
@@ -22,7 +25,9 @@ public class View {
 
 	public void Paint()
 	{		
-		frame.repaint();
+
+
+		panel.repaint();
 	}
 	
 	

@@ -23,7 +23,7 @@ public class Menu extends JPanel
         Image image = ic.getImage();
         image.getScaledInstance(1000, 1000, Image.SCALE_AREA_AVERAGING);
 
-        g.drawImage(image, 5,5, this); 
+        g.drawImage(image, 0, 0, this); 
     }
 	
 }
