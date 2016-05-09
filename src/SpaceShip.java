@@ -6,7 +6,7 @@ public class SpaceShip extends Tile {
 	
 	private Coord location;
 	Useable object;
-	Image image;
+	
 	SpaceShip(Coord c){
 		super(c);
 		ImageIcon ic = new ImageIcon("spaceship.jpg");
