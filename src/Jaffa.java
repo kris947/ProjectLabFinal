@@ -1,3 +1,6 @@
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
 
 public class Jaffa extends Caracter {
 	private int weight;
@@ -6,6 +9,8 @@ public class Jaffa extends Caracter {
 	public Jaffa(Map map,int lives) {
 		super(map,lives);
 		loc = new Coord(9,12); //(oszlop,sor)
+		ImageIcon ic = new ImageIcon("Jaffa.png");
+        Image image = ic.getImage();
 	}
 	
 

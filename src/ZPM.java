@@ -1,6 +1,8 @@
 import java.awt.Image;
 import java.util.Random;
 
+import javax.swing.ImageIcon;
+
 //Eklell döntenünk , hogy a ZPMcount  modul hol tároljuk el;
 public class ZPM extends Useable {
 
@@ -19,6 +21,8 @@ ZPM(Map map)
 	randc[5]=new Coord(2,1);
 	randc[6]=new Coord(3,0);
 	randc[7]=new Coord(4,1);
+	ImageIcon ic = new ImageIcon("zmp.png");
+    Image image = ic.getImage();
 }
 
 
