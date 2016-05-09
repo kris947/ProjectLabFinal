@@ -22,6 +22,7 @@ public 	Replicator r=null;
 	{
 		o = new ONeil(map,3);
 		j= new Jaffa(map,3);
+		r= new Replicator(map,1);
 		try {
 			map.initmap(o,j);
 		} catch (IOException e) {

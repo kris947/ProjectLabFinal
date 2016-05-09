@@ -1,5 +1,7 @@
 import java.util.Random;
 
+import javax.swing.ImageIcon;
+
 /*
  * A Replicator mozgása , egy szálon fog futni , mely  100 ms onként meghívja a RandDirection, és RandValue függvényt , ami eldönti ,h milyen
  * irányba , és mennyit lép 
@@ -8,7 +10,8 @@ public class Replicator extends Caracter{
 
 	public Replicator(Map map,int lives) {
 		super(map,lives);
-		loc = new Coord(2,1); //(oszlop,sor)
+		loc = new Coord(3,1); //(oszlop,sor)
+		image = new ImageIcon("replicator.png").getImage();
 	}	
 	
 	public Caracter.Directions RandDirection(){

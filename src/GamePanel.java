@@ -39,10 +39,10 @@ public class GamePanel extends JPanel
 		}
 		CharGraphics OGrafInfo = view.control.ODraw();
 		CharGraphics JGrafInfo = view.control.JDraw();
-		//CharGraphics RGrafInfo = view.control.RDraw();
+		CharGraphics RGrafInfo = view.control.RDraw();
 		g.drawImage(OGrafInfo.getImage(), OGrafInfo.getloc().getX()*50,OGrafInfo.getloc().getY()*50, 50 , 50,this);
 		g.drawImage(JGrafInfo.getImage(), JGrafInfo.getloc().getX()*50,JGrafInfo.getloc().getY()*50, 50 , 50,this);
-		//g.drawImage(RGrafInfo.getImage(), RGrafInfo.getloc().getX()*50,RGrafInfo.getloc().getY()*50, 50 , 50,this);
+		g.drawImage(RGrafInfo.getImage(), RGrafInfo.getloc().getX()*50,RGrafInfo.getloc().getY()*50, 50 , 50,this);
 		
 		
 		/*Image[] images = view.control.getDrawData(1,1);
