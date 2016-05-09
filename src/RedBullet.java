@@ -19,7 +19,9 @@ public class RedBullet extends Bullet{
 	{
 		//System.out.println("RedBullett: open metódus hívás");
 		map.map[loc.getY()][loc.getX()]=new Portal(loc);
-		wormhole.setRed(new Coord( loc.getY(),loc.getX()));
+		wormhole.setRed(new Coord( loc.getY(),loc.getX()));	
+		wormhole.setRedDir(dir);
+		map.map[loc.getY()][loc.getX()].setWH(wormhole);
 		//System.out.println("RedBullet: piros portál nyílt");
 	}
 	

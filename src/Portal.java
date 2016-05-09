@@ -87,7 +87,7 @@ Image image;
 			//else return location;
 			else return c;
 			}
-			/*else if (isColour(c,wormhole.getRed())){
+			/*else if (isColour(c,wormhole.getRed())&& isGoodDir(c,wormhole.getRedDir(),wormhole.getRed())){
 			System.out.println("From Red to Green side");
 		
 		if(wormhole.getGreenDir()==Jaffa.Directions.Up){
@@ -120,7 +120,7 @@ Image image;
 			}
 		else return location;
 		}
-		else if (isColour(c,wormhole.getGreen())){
+		else if (isColour(c,wormhole.getGreen())&& isGoodDir(c,wormhole.getGreenDir(),wormhole.getGreen())){
 			System.out.println("From Green to Red side");
 		
 		if(wormhole.getRedDir()==Jaffa.Directions.Up){
