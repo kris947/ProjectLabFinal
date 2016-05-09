@@ -14,10 +14,10 @@ public class Menu extends JPanel
 	}
 	
 	@Override
-    public void paint(Graphics g) {
+    public void paint(Graphics g) 
+	{
         super.paint(g);
-        
-        
+             
         URL loc = this.getClass().getResource("uj.jpg");
         ImageIcon iia = new ImageIcon(loc);
         Image image = iia.getImage();
