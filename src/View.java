@@ -7,9 +7,9 @@ import javax.swing.JPanel;
 public class View {
 	Control control;
 	private JFrame frame;
-	JPanel panel;	//Az ablakon megjelenített panel.
-	GamePanel gpanel;
-	Menu menu;
+	public JPanel panel;	//Az ablakon megjelenített panel.
+	private GamePanel gpanel;
+	private Menu menu;
 	
 	public View(Control c)
 	{		

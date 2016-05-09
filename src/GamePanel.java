@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 //játék pálya megjelenítésére szolgáló JPanel
 public class GamePanel extends JPanel
 {
-	View view;
+	private View view;
 	
 	public GamePanel(View v) 
 	{
