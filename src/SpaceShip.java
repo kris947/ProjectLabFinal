@@ -1,5 +1,7 @@
 import java.awt.Image;
 
+import javax.swing.ImageIcon;
+
 public class SpaceShip extends Tile {
 	
 	private Coord location;
@@ -7,6 +9,8 @@ public class SpaceShip extends Tile {
 	Image image;
 	SpaceShip(Coord c){
 		super(c);
+		ImageIcon ic = new ImageIcon("spaceship.jpg");
+        Image image = ic.getImage();
 	}
 	
 	public void endGame() {

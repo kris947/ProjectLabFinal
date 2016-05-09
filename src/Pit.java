@@ -1,3 +1,7 @@
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+
 //Osztály a szakadék kezelésére
 public class Pit extends Tile {
 
@@ -8,6 +12,8 @@ public class Pit extends Tile {
 	Pit( Game g,Coord c ){
 		super(c);
 		game = g;
+		ImageIcon ic = new ImageIcon("pit.jpg");
+        Image image = ic.getImage();
 		
 	}
 

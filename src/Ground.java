@@ -1,3 +1,7 @@
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+
 //Osztály a ground kezelésére
 public class Ground extends Tile {
 	public Boolean hasLifeOnIT; //tárolja hogy van-e élet a ground-on
@@ -7,6 +11,8 @@ public class Ground extends Tile {
 	public Ground (Coord c) {
 		super(c);
 		//System.out.println("Ground: konstruktor hívás");
+		ImageIcon ic = new ImageIcon("ground.jpg");
+        Image image = ic.getImage();
 	}
 	
 	//Metódus annak az esetnek a kezelésére ha vki groundra lép

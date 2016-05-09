@@ -1,3 +1,7 @@
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+
 //Osztály a fal típusú mezõ kezelésére
 public class Wall extends Tile {
 	
@@ -6,6 +10,8 @@ public class Wall extends Tile {
 		
 		super(c);
 		//System.out.println("W");
+		ImageIcon ic = new ImageIcon("wall1.jpg");
+        Image image = ic.getImage();
 	}
 	
 	//A lövedék megáll, ha falba csapódik

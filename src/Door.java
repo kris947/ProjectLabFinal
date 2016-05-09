@@ -1,3 +1,7 @@
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+
 //Osztály a pályán elhelyeszkedõ ajtók kezelésére
 public class Door extends  Wall {
 	private Boolean isOpen; //True, ha nyitva az ajtó, false ha csukva
@@ -7,6 +11,8 @@ public class Door extends  Wall {
 		super(c);
 		//System.out.println("Door: konsturktor hívás");
 		isOpen=false; //Alapértelmezetten csukva van
+		ImageIcon ic = new ImageIcon("door1.jpg");
+        Image image = ic.getImage();
 	}
 	
 	//Metódus: az ajtó kinyitására illetve becsukására szolgál
