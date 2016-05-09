@@ -13,7 +13,7 @@ public abstract class Bullet {
 		}
 	
 	ONeil.Directions dir;
-	
+	//Ez itt nem fix h jó 
 	//Konstruktor
 	public Bullet(ONeil.Directions directions, Coord coord, Map m) {
 		//System.out.println("Bullet: konstruktor hívás");

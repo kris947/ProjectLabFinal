@@ -22,6 +22,7 @@ public class BlueBullet extends Bullet {
 		//System.out.println("BlueBullet: open metódus hívás");
 		map.map[loc.getY()][loc.getX()]=new Portal(loc);
 		wormhole.setBlue(new Coord( loc.getY(),loc.getX()));
+		wormhole.setBlueDir(dir);
 		map.map[loc.getY()][loc.getX()].setWH(wormhole);
 		//System.out.println("BlueBullet: Kék portál nyílt");
 	}

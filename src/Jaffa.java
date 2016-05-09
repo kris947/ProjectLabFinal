@@ -5,7 +5,7 @@ public class Jaffa extends Caracter {
 	 //Konstruktor
 	public Jaffa(Map map,int lives) {
 		super(map,lives);
-		loc = new Coord(0,0); //(oszlop,sor)
+		loc = new Coord(9,12); //(oszlop,sor)
 	}
 	
 
