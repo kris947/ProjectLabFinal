@@ -2,10 +2,10 @@ import java.awt.Image;
 public class Caracter {
 	
 	 private Image image;
-	 int lives; //életeinek a száma
+	 int lives; //Ã©leteinek a szÃ¡ma
 	 Map map;   
-	 public Coord loc;  //koordinátái
-	 public Useable object; //milyen tárgy van nála
+	 public Coord loc;  //koordinÃ¡tÃ¡i
+	 public Useable object; //milyen tÃ¡rgy van nÃ¡la
 	 public enum Directions{
 		  Up, 
 		  Down, 
@@ -20,29 +20,49 @@ public class Caracter {
 			this.lives=lives;
 	 }
 	 
-	 public void move() {
+	 public void move( Caracter.Directions dir) {
 		 if(lives>0) {
-			switch (direction) {
-				case Up:  //Felfele mozgás
-					loc = map.map[loc.getY()-1][loc.getX()].stepOn(loc); //Koordináták beállítása
+			 		 
+			switch (dir) {
+				case Up:  //Felfele mozgï¿½s
+					
+					if(direction == dir){
+					loc = map.map[loc.getY()-1][loc.getX()].stepOn(loc); 
+					map.map[loc.getY()-1][loc.getX()].stepoff();
+					}
+					else
 					direction = Directions.Up;
 				break;
-				case Down: //Lefele mozgás
-					loc = map.map[loc.getY()+1][loc.getX()].stepOn(loc); //Koordináták beállítása
+				
+				case Down: //Lefele mozgï¿½s
+					if(direction == dir){
+					loc = map.map[loc.getY()+1][loc.getX()].stepOn(loc); 
+					map.map[loc.getY()+1][loc.getX()].stepoff();
+					}
+					else
 					direction = Directions.Down;
 				break;
-				case Left: //Balra mozgás
-					loc = map.map[loc.getY()][loc.getX()-1].stepOn(loc); //Koordináták beállítása
+				
+				case Left: //Balra mozgï¿½s
+					if(direction == dir){
+					loc = map.map[loc.getY()][loc.getX()-1].stepOn(loc); 
+					map.map[loc.getY()][loc.getX()-1].stepoff();
+					}
+					else
 					direction = Directions.Left;
 				break;
-				case Right: //Jobbra mozgás
-					loc = map.map[loc.getY()][loc.getX()+1].stepOn(loc); //Koordináták beállítása
+				
+				case Right: //Jobbra mozgï¿½s
+					if(direction == dir){
+					loc = map.map[loc.getY()][loc.getX()+1].stepOn(loc); 
+					map.map[loc.getY()][loc.getX()+1].stepoff();
+					}
+					else
 					direction = Directions.Right;
 				break;		
 			}
 		 }
 	 }
-	 
 	 public int getLife()
 	 {
 		 return lives;
@@ -55,5 +75,7 @@ public class Caracter {
 	 public void DecrementLife(){
 		 lives--;
 	 }
+	 
+	 public Image getImage(){return image;}
 
 }
