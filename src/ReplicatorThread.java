@@ -12,9 +12,10 @@ public class ReplicatorThread extends Thread {
 				{
 					replicator.RandDirection();
 					for(int i=0;i<replicator.RandValue();i++){
-						replicator.move(replicator.RandDirection());
-					}
+						replicator.move(replicator.direction);
+					
 		        Thread.sleep(1000);
+					}
 		      }
 		    } catch(InterruptedException e) {}
 		}
