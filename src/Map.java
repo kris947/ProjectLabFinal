@@ -76,7 +76,7 @@ public class Map {
 						else if (c[i].equals("D")){
 						}
 		    		
-						else if (c[i].equals("SS")){
+						else if (c[i].contains("SS")){
 							map[Y][i]=new SpaceShip(new Coord(i,Y));
 						}
 						else if (c[i].contains("SC")){

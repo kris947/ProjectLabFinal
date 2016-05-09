@@ -8,7 +8,7 @@ public class Door extends  Wall {
 	
 	//Konstruktor
 	public Door (Coord c) {
-		super(c);
+		super(c,new ImageIcon("door.jpg").getImage());
 		//System.out.println("Door: konsturktor hívás");
 		isOpen=false; //Alapértelmezetten csukva van
 		ImageIcon ic = new ImageIcon("door1.jpg");
