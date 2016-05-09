@@ -14,7 +14,7 @@ public class View {
 		control = c;
 		frame = new JFrame();
 		
-		frame.setSize(800, 800);
+		frame.setSize(1000, 1000);
 		frame.setTitle("Get_rekt");
 		frame.setVisible(true);
 	}

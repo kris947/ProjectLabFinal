@@ -18,10 +18,11 @@ public class Menu extends JPanel
 	{
         super.paint(g);
              
-        URL loc = this.getClass().getResource("uj.jpg");
-        ImageIcon iia = new ImageIcon(loc);
-        Image image = iia.getImage();
-        
+
+        ImageIcon ic = new ImageIcon("completemainmenu.jpg");
+        Image image = ic.getImage();
+        image.getScaledInstance(1000, 1000, Image.SCALE_AREA_AVERAGING);
+
         g.drawImage(image, 5,5, this); 
     }
 	
