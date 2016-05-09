@@ -1,26 +1,22 @@
 //Ez szar így ...
 public class ReplicatorThread extends Thread {
-			Replicator r=null;
-		  public ReplicatorThread(Map map){
-		    r=new Replicator(map,1);
-		  }
+		private Replicator replicator=null;
+		public ReplicatorThread(Map map){
+		    replicator=new Replicator(map,1);
+		}
 
-		  public void run(){
-
-		    try {
-
-		      for(;;){
-		        r.RandDirection();
-		       for(int i=0;i<r.RandValue();i++){
-		    	   r.move();
-		       }
+		public void run(){
+			try 
+			{
+				while(replicator.lives > 0)
+				{
+					replicator.RandDirection();
+					for(int i=0;i<replicator.RandValue();i++){
+						replicator.move(replicator.RandDirection());
+					}
 		        Thread.sleep(1000);
 		      }
-
-		    } catch(InterruptedException e) {
-
-		      
-		    }
-		  }
+		    } catch(InterruptedException e) {}
+		}
 	}
 
