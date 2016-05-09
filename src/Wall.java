@@ -6,12 +6,11 @@ import javax.swing.ImageIcon;
 public class Wall extends Tile {
 	
 	//Megmondja, hogy ONeil mit csináljon, ha falra akar lépni
-	public Wall (Coord c) {
+	public Wall (Coord c, Image image) {
 		
 		super(c);
 		//System.out.println("W");
-		ImageIcon ic = new ImageIcon("wall1.jpg");
-        image = ic.getImage();
+        this.image = image;
 	}
 	
 	//A lövedék megáll, ha falba csapódik

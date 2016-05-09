@@ -11,9 +11,9 @@ public class GamePanel extends JPanel
 	
 	public GamePanel(View v) 
 	{
-		super();
-		setBounds(0, 0, 1000, 1000);
 		setLayout(null);
+		setBounds(0, 0, 1000, 1000);
+		
 		view = v;
 		
 	}
