@@ -7,7 +7,7 @@ public class SpecialWall extends Wall {
 	public SpecialWall (Coord c) {
 		super(c);
 		ImageIcon ic = new ImageIcon("specialwall1.jpg");
-        Image image = ic.getImage();
+        image = ic.getImage();
 	}
 	
 	//Megmondja, hogy ONeil mit csináljon, ha falra akar lépni 

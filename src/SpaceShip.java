@@ -10,7 +10,7 @@ public class SpaceShip extends Tile {
 	SpaceShip(Coord c){
 		super(c);
 		ImageIcon ic = new ImageIcon("spaceship.jpg");
-        Image image = ic.getImage();
+        image = ic.getImage();
 	}
 	
 	public void endGame() {

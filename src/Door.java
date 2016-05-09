@@ -12,7 +12,7 @@ public class Door extends  Wall {
 		//System.out.println("Door: konsturktor hívás");
 		isOpen=false; //Alapértelmezetten csukva van
 		ImageIcon ic = new ImageIcon("door1.jpg");
-        Image image = ic.getImage();
+        image = ic.getImage();
 	}
 	
 	//Metódus: az ajtó kinyitására illetve becsukására szolgál

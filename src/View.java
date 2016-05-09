@@ -25,8 +25,6 @@ public class View {
 
 	public void Paint()
 	{		
-
-
 		panel.repaint();
 	}
 	

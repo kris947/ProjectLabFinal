@@ -1,7 +1,7 @@
 import java.awt.Image;
 public class Caracter {
 	
-	 private Image image;
+	 protected Image image;
 	 int lives; //életeinek a száma
 	 Map map;   
 	 public Coord loc;  //koordinátái

@@ -10,7 +10,7 @@ public class Jaffa extends Caracter {
 		super(map,lives);
 		loc = new Coord(9,12); //(oszlop,sor)
 		ImageIcon ic = new ImageIcon("Jaffa.png");
-        Image image = ic.getImage();
+        image = ic.getImage();
 	}
 	
 

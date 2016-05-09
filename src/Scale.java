@@ -26,7 +26,7 @@ public class Scale extends Tile {
 		this.door = door;
 		this.map = map;
 		ImageIcon ic = new ImageIcon("scale.jpg");
-        Image image = ic.getImage();
+        image = ic.getImage();
 	}
 	
 	@Override

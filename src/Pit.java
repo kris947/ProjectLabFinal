@@ -13,7 +13,7 @@ public class Pit extends Tile {
 		super(c);
 		game = g;
 		ImageIcon ic = new ImageIcon("pit.jpg");
-        Image image = ic.getImage();
+        image = ic.getImage();
 		
 	}
 
