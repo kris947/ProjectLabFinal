@@ -24,4 +24,6 @@ public abstract class Useable {
 	public int getZPMcount(){
 		return ZPMCount;
 	}
+    
+    public Image getImage() { return image; }
 }

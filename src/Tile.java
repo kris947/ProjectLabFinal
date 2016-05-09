@@ -59,6 +59,8 @@ public abstract class Tile {
 		}
 		else return false;
 	}
+    
+    public Image getImage() { return image; }
 	
 	
 }
