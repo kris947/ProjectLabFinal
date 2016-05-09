@@ -46,8 +46,7 @@ public abstract class Tile {
 		 return true;
 	 }
 	
-	 
-	public void stepoff(){};
+	
 	public void openDoor(){};
 	public void closeDoor(){};
 	public void setWH(WormHole wh){};

@@ -16,8 +16,7 @@ public class Scale extends Tile {
 	private Coord door;
 	public Map map;
 	
-	public Scale(Coord location, Coord door, Map map)
-	{
+	public Scale(Coord location, Coord door, Map map){
 		super(location);
 		//System.out.println("Scale: konsturktor hívás");
 		this.door = door;
@@ -54,14 +53,4 @@ public class Scale extends Tile {
 		return location;
 		
 	}
-	
-	@Override
-	public void stepoff()
-	{
-		map.map[door.getY()][door.getX()].closeDoor();
-		
-	}
-	
-	
-	
 }
