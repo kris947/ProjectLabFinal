@@ -7,6 +7,7 @@ public class Application {
 		Control control = new Control(game);
 		View view = new View(control);
 		control.game.init();
+		control.addView(view);
 				
 		view.setPanel(new GamePanel(view));
 		view.Paint();

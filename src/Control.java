@@ -7,12 +7,16 @@ import java.awt.event.KeyListener;
 public class Control implements KeyListener
 {
 	public Game game;
-	
+	public View view;
 	public Control(Game game)
 	{
 		this.game = game;
+		
 	}
 	
+	public void addView(View view){
+		this.view=view;
+	}
 	public Image[] getDrawData(int x, int y)
 	{
 		Image[] images= new Image[2];
@@ -47,10 +51,7 @@ public class Control implements KeyListener
 		return new CharGraphics(c,image);
 		
 	}
-	 
-      public void actionPerformed(ActionEvent evt) {
-         System.out.println("2");
-      }
+	
 	@Override
 	public void keyReleased(KeyEvent e) {
 
@@ -68,34 +69,28 @@ public class Control implements KeyListener
 		if(e.getKeyCode() == KeyEvent.VK_W)
 		{
 			game.o.move(game.o.direction.Up);
+			view.Paint();
 			System.out.println(game.o.getLoc().getX() + " " + game.o.getLoc().getY());
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_A)
 		{
 			game.o.move(game.o.direction.Left);
-<<<<<<< HEAD
+			view.Paint();
 			System.out.println(game.o.getLoc().getX() + " " + game.o.getLoc().getY());
-=======
-			System.out.println(game.o.getLoc().getX()+"   "+game.o.getLoc().getY());
->>>>>>> origin/master
+
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_S)
 		{
 			game.o.move(game.o.direction.Down);
-<<<<<<< HEAD
+			view.Paint();
 			System.out.println(game.o.getLoc().getX() + " " + game.o.getLoc().getY());
-=======
-			System.out.println(game.o.getLoc().getX()+"   "+game.o.getLoc().getY());
->>>>>>> origin/master
+
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_D)
 		{
 			game.o.move(game.o.direction.Right);
-<<<<<<< HEAD
+			view.Paint();
 			System.out.println(game.o.getLoc().getX() + " " + game.o.getLoc().getY());
-=======
-			System.out.println(game.o.getLoc().getX()+"   "+game.o.getLoc().getY());
->>>>>>> origin/master
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_E)
 		{
