@@ -2,9 +2,18 @@ import java.awt.Image;
 
 import javax.swing.ImageIcon;
 
+
+
 //Osztály ONeil kezelésére
 public class ONeil extends Caracter{ 
 		
+	/*public enum Directions{
+		  Up, 
+		  Down, 
+		  Left, 
+		  Right  
+		}*/
+	//static Directions dir = Directions.Right;
 	 
 	 //Konstruktor
 	public ONeil(Map map,int lives) {

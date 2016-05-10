@@ -1,9 +1,16 @@
 import java.awt.Image;
-
 import javax.swing.ImageIcon;
 
+
+
 public class Jaffa extends Caracter {
-	
+	/*public enum Directions{
+		  Up, 
+		  Down, 
+		  Left, 
+		  Right  
+		}
+	static Directions direction = Directions.Right;*/
 	 
 	 //Konstruktor
 	public Jaffa(Map map,int lives) {
