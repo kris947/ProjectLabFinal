@@ -4,7 +4,7 @@ import javax.swing.ImageIcon;
 
 //Osztály ONeil kezelésére
 public class ONeil extends Caracter{ 
-	 private int weight;
+		
 	 
 	 //Konstruktor
 	public ONeil(Map map,int lives) {
@@ -12,6 +12,7 @@ public class ONeil extends Caracter{
 		loc = new Coord(2,1); //(oszlop,sor)
 		ImageIcon ic = new ImageIcon("ONeil.png");
         image = ic.getImage();
+        weight=100;
 	}	
 	//Felvesz egy tárgyat
 	public void pickUp() {

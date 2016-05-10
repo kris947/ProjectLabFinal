@@ -86,7 +86,7 @@ public class Map {
 						}
 						else if (c[i].equals("B")){
 							map[Y][i]=new Ground(new Coord(i,Y));
-							map[Y][i].setObj(new Box(1));
+							map[Y][i].setObj(new Box());
 						}
 						else if (c[i].equals("Z")){
 							map[Y][i]=new Ground(new Coord(i,Y));

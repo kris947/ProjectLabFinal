@@ -13,7 +13,7 @@ public class Caracter {
 		  Right  
 		}
 	 Directions direction = Directions.Right;
-	 
+	 protected int weight;
 	 
 	 public Caracter(Map map,int lives){
 			this.map=map;

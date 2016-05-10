@@ -6,14 +6,13 @@ import javax.swing.ImageIcon;
 public class Box extends Useable {
 	
 	public Image image;
-	private int weight;
 	
  	//Konstruktor
- 	public Box(int weight)
+ 	public Box()
  	{
 		ImageIcon ic = new ImageIcon("box.png");
         image = ic.getImage();
-        this.weight=weight;
+        this.weight=50;
  	}
    //A használható objektumokkal való interakciót írja le
 	@Override

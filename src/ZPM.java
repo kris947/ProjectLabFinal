@@ -13,8 +13,9 @@ public Coord[] randc = new Coord[8];
 ZPM(Map map)
 { 
 	ImageIcon ic = new ImageIcon("zmp.png");
-	 image = ic.getImage();
+	image = ic.getImage();
 	m=map;
+	this.weight=50;
 	randc[0]=new Coord(11,7);
 	randc[1]=new Coord(11,10);
 	randc[2]=new Coord(1,17);
