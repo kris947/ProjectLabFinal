@@ -1,5 +1,6 @@
 
 import java.awt.Image;
+import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -46,7 +47,10 @@ public class Control implements KeyListener
 		return new CharGraphics(c,image);
 		
 	}
-	
+	 
+      public void actionPerformed(ActionEvent evt) {
+         System.out.println("2");
+      }
 	@Override
 	public void keyReleased(KeyEvent e) {
 
@@ -64,22 +68,22 @@ public class Control implements KeyListener
 		if(e.getKeyCode() == KeyEvent.VK_W)
 		{
 			game.o.move(game.o.direction.Up);
-			System.out.println(game.o.getLoc());
+			System.out.println(game.o.getLoc().getX() + " " + game.o.getLoc().getY());
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_A)
 		{
 			game.o.move(game.o.direction.Left);
-			System.out.println(game.o.getLoc());
+			System.out.println(game.o.getLoc().getX()+"   "+game.o.getLoc().getY());
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_S)
 		{
 			game.o.move(game.o.direction.Down);
-			System.out.println(game.o.getLoc());
+			System.out.println(game.o.getLoc().getX()+"   "+game.o.getLoc().getY());
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_D)
 		{
 			game.o.move(game.o.direction.Right);
-			System.out.println(game.o.getLoc());
+			System.out.println(game.o.getLoc().getX()+"   "+game.o.getLoc().getY());
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_E)
 		{
@@ -87,11 +91,11 @@ public class Control implements KeyListener
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_B)
 		{
-			
+			game.o.shoot('b', game.wh);
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_Y)
 		{
-			
+			game.o.shoot('y', game.wh);
 		}
 	}
 	

@@ -21,6 +21,7 @@ public class Caracter {
 	 }
 	 
 	 public void move( Caracter.Directions dir) {
+		
 		 if(lives>0) {
 			 		 
 			switch (dir) {
