@@ -1,6 +1,6 @@
 import java.awt.Image;
 
-
+//A zöld lövedéket reprezentáló osztály
 public class GreenBullet extends Bullet{
 	private Image image;
 	public WormHole wormhole;
