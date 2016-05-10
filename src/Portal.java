@@ -1,16 +1,20 @@
 import java.awt.Image;
 
+import javax.swing.ImageIcon;
+
 //Osztály a Portal kezelésére
 public class Portal extends Tile {
 private Coord location; //a portál koordinátája
 public WormHole wormhole;
 Useable object;
-Image image;
+//Image image;
 
 //Konstruktor
 	Portal(Coord c){
 		super( new Coord(c.getX(),c.getY()));
 		//System.out.println("Portal: konstruktor hívás");
+		ImageIcon ic = new ImageIcon("blueportal1.jpg");
+        image = ic.getImage();
 	};
 	
 	public void setWH(WormHole wh) {
