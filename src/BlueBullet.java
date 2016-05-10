@@ -1,5 +1,7 @@
 import java.awt.Image;
 
+import javax.swing.ImageIcon;
+
 //Osztály a kék lövedék kezelésére
 public class BlueBullet extends Bullet {
 	private Image image;
@@ -16,6 +18,11 @@ public class BlueBullet extends Bullet {
 	//Portál nyitás
 	public void open() 
 	{
+		ImageIcon ic = new ImageIcon("specialwall1.jpg");
+	    image = ic.getImage();
+			if(wormhole.isOpen()==true){
+				map.map[wormhole.getBlue().getY()][wormhole.getBlue().getX()]=new SpecialWall(new Coord(wormhole.getBlue().getY(),wormhole.getBlue().getX()),image);
+			}
 		System.out.println("BlueBullet: open metódus hívás");
 		map.map[loc.getY()][loc.getX()]=new Portal(loc); //Portal letrehoza a megfelelo helyen
 		wormhole.setBlue(new Coord(loc.getY(),loc.getX()));	//Kivalasztjuk a kek portalt

@@ -1,5 +1,7 @@
 import java.awt.Image;
 
+import javax.swing.ImageIcon;
+
 //Osztály: Sárga lövedék
 public class YellowBullet extends Bullet {
 	private Image image;
@@ -16,6 +18,11 @@ public class YellowBullet extends Bullet {
 	
 	public void open()
 	{
+		ImageIcon ic = new ImageIcon("specialwall1.jpg");
+	    image = ic.getImage();
+			if(wormhole.isOpen()==true){
+				map.map[wormhole.getYellow().getY()][wormhole.getYellow().getX()]=new SpecialWall(new Coord(wormhole.getYellow().getY(),wormhole.getYellow().getX()),image);
+			}
 		map.map[loc.getY()][loc.getX()]=new Portal(loc);
 		wormhole.setYellow(new Coord( loc.getY(),loc.getX()));
 		wormhole.setYellowDir(dir);
