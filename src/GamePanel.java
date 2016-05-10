@@ -31,6 +31,7 @@ public class GamePanel extends JPanel
 				g.drawImage(images[0], i*50, j*50, 50,50,this); 
 				if(images.length == 2 )
 				{
+					
 					g.drawImage(images[1], i*50, j*50,50,50,this);
 				}
 					

@@ -50,7 +50,27 @@ public class Map {
 							ImageIcon ic = new ImageIcon("wall1.jpg");
 					        image = ic.getImage();
 							map[Y][i]=new Wall(new Coord(i,Y),image);
-						}						
+						}			
+						else if (c[i].equals("(-")){  //Ball felsõ
+							ImageIcon ic = new ImageIcon("wall12.jpg");
+					        image = ic.getImage();
+							map[Y][i]=new Wall(new Coord(i,Y),image);
+						}			
+						else if (c[i].equals("-)")){    //Jobb felsõ
+							ImageIcon ic = new ImageIcon("wall21.jpg");
+					        image = ic.getImage();
+							map[Y][i]=new Wall(new Coord(i,Y),image);
+						}		
+						else if (c[i].equals("_)")){   //Bal alsó
+							ImageIcon ic = new ImageIcon("wall112.jpg");
+					        image = ic.getImage();
+							map[Y][i]=new Wall(new Coord(i,Y),image);
+						}		
+						else if (c[i].equals("(_")){  // Jobb alsó
+							ImageIcon ic = new ImageIcon("wall121.jpg");
+					        image = ic.getImage();
+							map[Y][i]=new Wall(new Coord(i,Y),image);
+						}		
 						else if (c[i].equals("G")){
 							map[Y][i]=new Ground(new Coord(i,Y));
 						}
@@ -66,9 +86,11 @@ public class Map {
 						}
 						else if (c[i].equals("B")){
 							map[Y][i]=new Ground(new Coord(i,Y));
+							map[Y][i].setObj(new Box());
 						}
 						else if (c[i].equals("Z")){
 							map[Y][i]=new Ground(new Coord(i,Y));
+							map[Y][i].setObj(new ZPM(this));
 						}
 						else if (c[i].equals("P")){
 							map[Y][i]=new Pit(game,new Coord(i,Y));
@@ -94,6 +116,8 @@ public class Map {
 		} 
 		finally {
 		    br.close();
+		    
+		    
 		}
 	}
 

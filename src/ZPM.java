@@ -11,7 +11,9 @@ public Image image;
 public Coord[] randc = new Coord[8];
 
 ZPM(Map map)
-{
+{ 
+	ImageIcon ic = new ImageIcon("zmp.png");
+	 image = ic.getImage();
 	m=map;
 	randc[0]=new Coord(0,0);
 	randc[1]=new Coord(0,2);
@@ -21,8 +23,7 @@ ZPM(Map map)
 	randc[5]=new Coord(2,1);
 	randc[6]=new Coord(3,0);
 	randc[7]=new Coord(4,1);
-	ImageIcon ic = new ImageIcon("zmp.png");
-    Image image = ic.getImage();
+	
 }
 
 
@@ -40,7 +41,8 @@ ZPM(Map map)
 		int value = rand.nextInt(8); 
 		Coord added = randc[value];
 		m.map[added.getX()][added.getY()].setObj(new ZPM(m));
-		
 	}
+	@Override
+	 public Image getImage() { return image; }
    
 }

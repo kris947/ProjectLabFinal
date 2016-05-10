@@ -16,6 +16,7 @@ public class Control
 		images[0] = game.getMap().map[y][x].getImage();
 		if(game.getMap().map[y][x].getObj() != null)
 		{
+			
 			images[1]= game.getMap().map[y][x].getObj().getImage();
 		}
 		

@@ -24,5 +24,6 @@ public class Box extends Useable {
 		//System.out.println("Box: getZPMcount metódus hívás");
 		return ZPMCount;
 	}
-	
+	@Override
+	 public Image getImage() { return image; }
 }
