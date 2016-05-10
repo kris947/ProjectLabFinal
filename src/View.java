@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 
-public class View {
+public class View{
 	Control control;
 	private JFrame frame;
 	public JPanel panel;	//Az ablakon megjelenített panel.
@@ -21,7 +21,9 @@ public class View {
 		frame.setTitle("Get_rekt");
 		frame.setVisible(true);
 		frame.setResizable(false);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.addKeyListener(c);
+		
 	}
 	
 
@@ -37,6 +39,7 @@ public class View {
 		panel = p;
 		frame.add(panel);
 	}
+
 	
 	
 }
