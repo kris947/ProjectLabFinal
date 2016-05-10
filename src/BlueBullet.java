@@ -19,7 +19,7 @@ public class BlueBullet extends Bullet {
 	//Portál nyitás
 	public void open() 
 	{
-		//System.out.println("BlueBullet: open metódus hívás");
+		System.out.println("BlueBullet: open metódus hívás");
 		map.map[loc.getY()][loc.getX()]=new Portal(loc);
 		wormhole.setBlue(new Coord( loc.getY(),loc.getX()));
 		wormhole.setBlueDir(dir);
