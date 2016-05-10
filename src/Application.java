@@ -10,6 +10,7 @@ public class Application {
 				
 		view.setPanel(new GamePanel(view));
 		view.Paint();
+		
 
 	}
 

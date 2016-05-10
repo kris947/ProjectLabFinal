@@ -1,7 +1,9 @@
 
 import java.awt.Image;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-public class Control 
+public class Control implements KeyListener
 {
 	public Game game;
 	
@@ -45,5 +47,48 @@ public class Control
 		
 	}
 	
+	@Override
+	public void keyReleased(KeyEvent e) {
+
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+	
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		System.out.println(e.getKeyCode());
+		
+		if(e.getKeyCode() == KeyEvent.VK_W)
+		{
+			//game.o.move();
+		}
+		else if(e.getKeyCode() == KeyEvent.VK_A)
+		{
+			//game.o.move();
+		}
+		else if(e.getKeyCode() == KeyEvent.VK_S)
+		{
+			//game.o.move();
+		}
+		else if(e.getKeyCode() == KeyEvent.VK_D)
+		{
+			//game.o.move();
+		}
+		else if(e.getKeyCode() == KeyEvent.VK_E)
+		{
+			
+		}
+		else if(e.getKeyCode() == KeyEvent.VK_B)
+		{
+			
+		}
+		else if(e.getKeyCode() == KeyEvent.VK_Y)
+		{
+			
+		}
+	}
 	
 }
