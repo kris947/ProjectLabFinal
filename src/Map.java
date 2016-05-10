@@ -115,6 +115,7 @@ public class Map {
 		    }
 		} 
 		finally {
+			map[14][18].setObj(new ZPM(this));
 		    br.close();
 		    
 		    

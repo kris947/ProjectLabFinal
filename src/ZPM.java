@@ -15,14 +15,14 @@ ZPM(Map map)
 	ImageIcon ic = new ImageIcon("zmp.png");
 	 image = ic.getImage();
 	m=map;
-	randc[0]=new Coord(0,0);
-	randc[1]=new Coord(0,2);
-	randc[2]=new Coord(1,1);
-	randc[3]=new Coord(1,2);
-	randc[4]=new Coord(2,0);
-	randc[5]=new Coord(2,1);
-	randc[6]=new Coord(3,0);
-	randc[7]=new Coord(4,1);
+	randc[0]=new Coord(11,7);
+	randc[1]=new Coord(11,10);
+	randc[2]=new Coord(1,17);
+	randc[3]=new Coord(17,1);
+	randc[4]=new Coord(15,11);
+	randc[5]=new Coord(2,8);
+	randc[6]=new Coord(6,8);
+	randc[7]=new Coord(18,14);
 	
 }
 
