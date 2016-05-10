@@ -94,7 +94,13 @@ public class Control implements KeyListener
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_E)
 		{
-			
+			if(game.o.object==null)
+			game.o.pickUp();
+			else {
+				System.out.println("asd");
+				game.o.dropDown();
+			}
+			view.Paint();
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_B)
 		{

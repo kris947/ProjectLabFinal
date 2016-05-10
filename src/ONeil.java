@@ -18,17 +18,21 @@ public class ONeil extends Caracter{
 	public void pickUp() {
 		switch (direction) {
 			case Up:   //Fel
+				System.out.println("yaay");
 				object = map.map[loc.getY()-1][loc.getX()].getObj(); //Koordináták beállítása
+				map.map[loc.getY()-1][loc.getX()].setObj(null);
 			break;
 			case Down: //le
 				object = map.map[loc.getY()+1][loc.getX()].getObj(); //Koordináták beállítása
+				map.map[loc.getY()+1][loc.getX()].setObj(null);
 			break;
 			case Left: //Balra
 				object = map.map[loc.getY()][loc.getX()-1].getObj(); //Koordináták beállítása
-				
+				map.map[loc.getY()][loc.getX()-1].setObj(null);
 			break;
 			case Right: //Jobb
 				object = map.map[loc.getY()][loc.getX()+1].getObj(); //Koordináták beállítása
+				map.map[loc.getY()][loc.getX()+1].setObj(null);
 			break;		
 		}
 		if(object!=null){

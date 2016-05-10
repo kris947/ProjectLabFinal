@@ -54,13 +54,15 @@ public abstract class Tile {
 	public boolean setObj(Useable object) {
 		//System.out.println("Tile: setObj metódus hívás");
 		if(object == null){
+			//System.out.println("asd");
 		this.object = object;
 		return true;
 		}
-		else return false;
+		else {
+		this.object = object;
+		}return false;
 	}
     
     public Image getImage() { return image; }
-	
 	
 }
