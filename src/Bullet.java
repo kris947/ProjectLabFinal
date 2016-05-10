@@ -10,9 +10,9 @@ public abstract class Bullet {
 		  Down, 
 		  Left, 
 		  Right
-		}
+	}
 	
-	ONeil.Directions dir;
+	protected ONeil.Directions dir;
 	//Ez itt nem fix h jó 
 	//Konstruktor
 	public Bullet(ONeil.Directions directions, Coord coord, Map m) {

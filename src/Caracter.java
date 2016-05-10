@@ -25,7 +25,7 @@ public class Caracter {
 		 if(lives>0) {
 			 		 
 			switch (dir) {
-				case Up:  //Felfele mozg�s
+				case Up:  //Felfele mozgas
 					
 					if(direction == dir){
 					loc = map.map[loc.getY()-1][loc.getX()].stepOn(loc); 
@@ -64,19 +64,24 @@ public class Caracter {
 			}
 		 }
 	 }
+	 
+	 //visszadja ONeill eleteinek a szamat
 	 public int getLife()
 	 {
 		 return lives;
 	 }
 	 
+	 //visszadja ONeill helyzetet
 	 public Coord getLoc() {
-			return loc;
-		}
+		return loc;
+	}
 
+	 //csokkenti ONeill eleteinek a szamat eggyel
 	 public void DecrementLife(){
 		 lives--;
 	 }
 	 
+	 //visszaadja az Image-t
 	 public Image getImage(){return image;}
 
 }
