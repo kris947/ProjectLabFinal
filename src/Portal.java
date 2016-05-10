@@ -10,10 +10,22 @@ Useable object;
 //Image image;
 
 //Konstruktor
-	Portal(Coord c){
+	Portal(Coord c,char colour){
 		super( new Coord(c.getX(),c.getY()));
 		//System.out.println("Portal: konstruktor hívás");
-		ImageIcon ic = new ImageIcon("blueportal1.jpg");
+		ImageIcon ic=null;
+		switch (colour) {
+		case 'b': ic = new ImageIcon("blueportal1.jpg");
+		break;
+		case 'y': ic = new ImageIcon("yellowportal1.jpg");
+		break;
+		case 'r':ic = new ImageIcon("redportal1.jpg");
+		break;
+		case 'g': ic = new ImageIcon("greenportal1.jpg");
+		break;
+		
+		}
+		
         image = ic.getImage();
 	};
 	
@@ -24,7 +36,7 @@ Useable object;
 	//A portálra lépést kezeli
 	@Override 
 	public Coord stepOn(Coord c) {
-		//System.out.println("kuyta");
+		
 		if (wormhole.isOpen()==true){  //Ha nyitva van
 			
 			if(isColour(c,wormhole.getBlue())&& isGoodDir(c,wormhole.getBlueDir(),wormhole.getBlue())){	 // ez kék portál

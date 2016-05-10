@@ -23,7 +23,7 @@ public class YellowBullet extends Bullet {
 			if(wormhole.isOpen()==true){
 				map.map[wormhole.getYellow().getY()][wormhole.getYellow().getX()]=new SpecialWall(new Coord(wormhole.getYellow().getY(),wormhole.getYellow().getX()),image);
 			}
-		map.map[loc.getY()][loc.getX()]=new Portal(loc);
+		map.map[loc.getY()][loc.getX()]=new Portal(loc,'y');
 		wormhole.setYellow(new Coord( loc.getY(),loc.getX()));
 		wormhole.setYellowDir(dir);
 		map.map[loc.getY()][loc.getX()].setWH(wormhole);
