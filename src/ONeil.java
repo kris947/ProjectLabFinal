@@ -65,7 +65,7 @@ public class ONeil extends Caracter{
 			map.map[loc.getY()][loc.getX()+1].setObj(object); //Koordináták beállítása
 			object = null;
 		break;		
-	}
+		}
 	}
 	
 

@@ -21,6 +21,7 @@ public class View {
 		frame.setTitle("Get_rekt");
 		frame.setVisible(true);
 		frame.setResizable(false);
+		frame.addKeyListener(c);
 	}
 	
 

@@ -63,19 +63,23 @@ public class Control implements KeyListener
 		
 		if(e.getKeyCode() == KeyEvent.VK_W)
 		{
-			//game.o.move();
+			game.o.move(game.o.direction.Up);
+			System.out.println(game.o.getLoc());
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_A)
 		{
-			//game.o.move();
+			game.o.move(game.o.direction.Left);
+			System.out.println(game.o.getLoc());
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_S)
 		{
-			//game.o.move();
+			game.o.move(game.o.direction.Down);
+			System.out.println(game.o.getLoc());
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_D)
 		{
-			//game.o.move();
+			game.o.move(game.o.direction.Right);
+			System.out.println(game.o.getLoc());
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_E)
 		{
