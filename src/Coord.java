@@ -29,10 +29,12 @@ public class Coord {
 		this.y=y;
 	}
 	
+	//Összehasonlítja, hogy két koordináta egyenlõ-e
 	public boolean equals(Coord c2)
 	{
-		if( x==c2.getX() && y == c2.getY() ){ return true;} 
-		
-		else return false;
+		if( x==c2.getX() && y == c2.getY() )
+			return true; 	//egyenlõség esetén igazzal térünk vissza
+		else 
+			return false;	//egyenlõtlenség esetén hamissal térünk vissza
 	}
 }

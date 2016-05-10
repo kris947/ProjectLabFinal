@@ -5,19 +5,21 @@ import java.io.InputStreamReader;
 import java.util.EnumSet;
 import java.lang.Object;
 
+//Az MVC kialakitasahoz szukseges osztaly
 public class Game {
-public	ONeil o = null;
-public 	Jaffa j = null;
-public 	Replicator r=null;
-	Map map = new Map(this);
+public	ONeil o = null;  //ONeil referencia
+public 	Jaffa j = null;  //Jaffa referencia
+public 	Replicator r=null; //Replicator referencia
+	Map map = new Map(this); 
 	WormHole wh=new WormHole();
 
-	
+	//Konstruktor
 	Game()
 	{
-
+		
 	}
 	
+	//Inicializáló függvény
 	public void init()
 	{
 		o = new ONeil(map,3);
@@ -26,13 +28,13 @@ public 	Replicator r=null;
 		try {
 			map.initmap(o,j);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		
 	}
 	
+	//visszaadja a mapot
 	public Map getMap()
 	{
 		return map;

@@ -35,15 +35,15 @@ public class Door extends  Wall {
 	@Override
 	public Coord stepOn(Coord c) {
 		System.out.println("Door: stepOn metódus hívás");
-		if(isOpen==false)
+		if(isOpen==false) 
 		{	
 			System.out.println("ONeill marad a helyén.");
-			return c; //visszatér a ONeill koordinátáival
+			return c; //visszatér a ONeill koordinátáival zárt ajtó esetén
 		}
 		else
 		{
 			System.out.println("ONeill átmehet az ajtón");
-			return this.getLoc(); //Visszatér az ajtó koordinátájával
+			return this.getLoc(); //Visszatér az ajtó koordinátájával nyitott ajtó esetén
 		}
 	}
 }
