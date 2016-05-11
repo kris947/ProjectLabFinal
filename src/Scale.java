@@ -38,6 +38,7 @@ public class Scale extends Tile {
 		System.out.println("Scale: setObj metódus hívás");
 		//this.object = object;
 		pressedweight+=50;
+		// Az objects tömb  pl 100 / 50 => 2-1 tehát elsõ eleme
 		objects[(pressedweight / 50)-1]=object;
 		System.out.println(pressedweight);
 		if( pressedweight>=100)	
