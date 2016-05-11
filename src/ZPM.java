@@ -34,7 +34,7 @@ ZPM(Map map)
 	public void redeem() {
 		//A ZPM modul beváltása 
 		ZPMCount++;
-		//System.out.println("A ZPM modul sikeresen elhelyezõdött");
+		System.out.println("A ZPM modul sikeresen elhelyezõdött"+" "+ZPMCount);
 		
 		//todo: Random zpm lerakása
 		
@@ -42,6 +42,8 @@ ZPM(Map map)
 		int value = rand.nextInt(8); 
 		Coord added = randc[value];
 		m.map[added.getX()][added.getY()].setObj(new ZPM(m));
+		//Ez nem fix h jó
+		//System.gc();
 	}
 	@Override
 	 public Image getImage() { return image; }
