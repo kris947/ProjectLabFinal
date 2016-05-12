@@ -20,31 +20,86 @@ public class Pit extends Tile {
 	@Override
 	public Coord stepOn(Coord c) {
 		
-		if (game.o.getLoc().equals(location))
+		Caracter.Directions od=game.o.direction;
+		Caracter.Directions jd=game.j.direction;
+		Caracter.Directions rd=game.r.direction;
+		
+		switch(od)  // Ha oneil iránya ... akkor megnézem hogy abba az irányban egyel a pit elõtt áll e mielõtt belelép
 		{
-			game.o.DecrementLife();
-			return startpoz;
+			case Down:
+				if(game.o.getLoc().equals(new Coord(location.getX(),location.getY()-1)))
+				{
+					game.o.DecrementLife();
+					System.out.println(game.o.lives);
+					return startpoz;
+				}break;
+			case Up:
+				if(game.o.getLoc().equals(new Coord(location.getX(),location.getY()+1)))
+				{
+					game.o.DecrementLife();
+					return startpoz;
+				}break;
+			case Left:
+				if(game.o.getLoc().equals(new Coord(location.getX()+1,location.getY())))
+				{
+					game.o.DecrementLife();
+					return startpoz;
+				}break;
+			case Right:
+				if(game.o.getLoc().equals(new Coord(location.getX()-1,location.getY())))
+				{
+					game.o.DecrementLife();
+					return startpoz;
+				}break;	
 		}
 		
+		
+		
+		switch(rd)
+		{
+			case Up:
+				if(game.r.getLoc().equals(new Coord(location.getX(),location.getY()+1)))
+				{
+					game.r.loc=location;
+					game.r.DecrementLife();
+					return location;
+				}break;
+			case Down:
+				if(game.r.getLoc().equals(new Coord(location.getX(),location.getY()-1)))
+				{
+					game.r.loc=location;
+					game.r.DecrementLife();
+					return location;
+					
+				}break;
+			case Left:
+				if(game.r.getLoc().equals(new Coord(location.getX()+1,location.getY())))
+				{
+					game.r.loc=location;
+					game.r.DecrementLife();
+					return location;
+					
+				}break;
+			case Right:
+				if(game.r.getLoc().equals(new Coord(location.getX()-1,location.getY())))
+				{
+					game.r.loc=location;
+					game.r.DecrementLife();
+					return location;
+					
+				}break;
+		}
 		
 		if (game.j.getLoc().equals(location))
 		{
 			game.j.DecrementLife();
 			return startpoz;
 		}
-		
-		if (game.r.getLoc().equals(location))
-		{
-			game.r.DecrementLife();
+		else 
 			return startpoz;
-		}
 		
-		else return startpoz;
 	
 
-		
-		
-		
 		
 		}
 	

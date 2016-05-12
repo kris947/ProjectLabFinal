@@ -31,17 +31,17 @@ public class GamePanel extends JPanel
 	private Image VGportalImage;
 	private Image HGportalImage;
 	// Oneil 4 irány
-	private Image UoneilImage;
-	private Image DoneilImage;
-	private Image oneilImage;
-	private Image LoneilImage;
+	public Image UoneilImage;
+	public Image DoneilImage;
+	public Image oneilImage;
+	public Image LoneilImage;
 	//replicator
 	private Image replicatorImage;
 	// jaffa 4 irány
-	private Image jaffaImage;
-	private Image UjaffaImage;
-	private Image DjaffaImage;
-	private Image LjaffaImage;
+	public Image jaffaImage;
+	public Image UjaffaImage;
+	public Image DjaffaImage;
+	public Image LjaffaImage;
 	
 	// Rajzolás 0,1 secenként
 	Timer drawTimer;
@@ -62,25 +62,25 @@ public class GamePanel extends JPanel
 		pitImage = new ImageIcon("pit.jpg").getImage();
 		scaleImage = new ImageIcon("scale.jpg").getImage();
 		ssImage = new ImageIcon("spaceship.jpg").getImage();
-		swImage = new ImageIcon("specialwall1.jpg").getImage();
-		wallImage = new ImageIcon("wall1.jpg").getImage();
+		swImage = new ImageIcon("specialwall_new.jpg").getImage();
+		wallImage = new ImageIcon("wall_new.jpg").getImage();
 		zpmImage = new ImageIcon("zpm.png").getImage();
 		//replicator
 		replicatorImage = new ImageIcon("replicator.png").getImage();
 		//Portálok
-		VYportalImage = new ImageIcon("yellowportal1.jpg").getImage();
-		HYportalImage = new ImageIcon("yellowportal2.jpg").getImage();
-		VBportalImage = new ImageIcon("blueportal1.jpg").getImage();
-		HBportalImage = new ImageIcon("blueportal2.jpg").getImage();
-		HRportalImage = new ImageIcon("redportal1.jpg").getImage();
-		VRportalImage = new ImageIcon("redportal2.jpg").getImage();
-		HGportalImage = new ImageIcon("greenportal1.jpg").getImage();
-		VGportalImage = new ImageIcon("greenportal2.jpg").getImage();
+		VYportalImage = new ImageIcon("yellowportal1_new.jpg").getImage();
+		HYportalImage = new ImageIcon("yellowportal2_new.jpg").getImage();
+		VBportalImage = new ImageIcon("blueportal1_new.jpg").getImage();
+		HBportalImage = new ImageIcon("blueportal2_new.jpg").getImage();
+		HRportalImage = new ImageIcon("redportal1_new.jpg").getImage();
+		VRportalImage = new ImageIcon("redportal2_new.jpg").getImage();
+		HGportalImage = new ImageIcon("greenportal1_new.jpg").getImage();
+		VGportalImage = new ImageIcon("greenportal2_new.jpg").getImage();
 		//Oneil
-		oneilImage = new ImageIcon("ONeil.png").getImage();
-		LoneilImage = new ImageIcon("ONeil.png").getImage();
-		UoneilImage = new ImageIcon("ONeil.png").getImage();
-		DoneilImage = new ImageIcon("ONeil.png").getImage();
+		oneilImage = new ImageIcon("ONeilR.png").getImage();
+		LoneilImage = new ImageIcon("ONeilL.png").getImage();
+		UoneilImage = new ImageIcon("ONeilUp.png").getImage();
+		DoneilImage = new ImageIcon("ONeilD.png").getImage();
 		//Jaffa
 		UjaffaImage = new ImageIcon("Jaffa.png").getImage();
 		DjaffaImage = new ImageIcon("Jaffa.png").getImage();
@@ -174,13 +174,13 @@ public class GamePanel extends JPanel
 		switch(OGrafInfo.getDir())
 		{
 			case Up:
-				drawTile(OGrafInfo.getX(),OGrafInfo.getY(),oneilImage,g); 
+				drawTile(OGrafInfo.getX(),OGrafInfo.getY(),UoneilImage,g); 
 			break;
 			case Down:
-				drawTile(OGrafInfo.getX(),OGrafInfo.getY(),jaffaImage,g); 
+				drawTile(OGrafInfo.getX(),OGrafInfo.getY(),DoneilImage,g); 
 			break;
 			case Left:
-				drawTile(OGrafInfo.getX(),OGrafInfo.getY(),replicatorImage,g); 
+				drawTile(OGrafInfo.getX(),OGrafInfo.getY(),LoneilImage,g); 
 			break;
 			case Right:
 				drawTile(OGrafInfo.getX(),OGrafInfo.getY(),oneilImage,g); 
@@ -200,7 +200,7 @@ public class GamePanel extends JPanel
 				drawTile(JGrafInfo.getX(),JGrafInfo.getY(),replicatorImage,g); 
 			break;
 			case Right:
-				drawTile(JGrafInfo.getX(),JGrafInfo.getY(),oneilImage,g); 
+				drawTile(JGrafInfo.getX(),JGrafInfo.getY(),jaffaImage,g); 
 			break;
 			
 		}

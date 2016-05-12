@@ -64,39 +64,41 @@ public class Control implements KeyListener
 	}
 
 	@Override
-	public void keyPressed(KeyEvent e) {
-		System.out.println(e.getKeyCode());
+	public void keyPressed(KeyEvent e)
+	{
 		
 		if(e.getKeyCode() == KeyEvent.VK_W)
 		{
 			game.o.move(game.o.direction.Up);
 			view.Paint();
-			System.out.println(game.o.getLoc().getX() + " " + game.o.getLoc().getY());
+			//System.out.println(game.o.getLoc().getX() + " " + game.o.getLoc().getY());
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_A)
 		{
 			game.o.move(game.o.direction.Left);
 			view.Paint();
-			System.out.println(game.o.getLoc().getX() + " " + game.o.getLoc().getY());
+			//System.out.println(game.o.getLoc().getX() + " " + game.o.getLoc().getY());
 
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_S)
 		{
 			game.o.move(game.o.direction.Down);
 			view.Paint();
-			System.out.println(game.o.getLoc().getX() + " " + game.o.getLoc().getY());
+			//System.out.println(game.o.getLoc().getX() + " " + game.o.getLoc().getY());
 
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_D)
 		{
 			game.o.move(game.o.direction.Right);
 			view.Paint();
-			System.out.println(game.o.getLoc().getX() + " " + game.o.getLoc().getY());
+			//System.out.println(game.o.getLoc().getX() + " " + game.o.getLoc().getY());
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_E)
 		{
 			if(game.o.object==null)
+			{
 				game.o.pickUp();
+			}
 			else 
 				game.o.dropDown();
 			view.Paint();

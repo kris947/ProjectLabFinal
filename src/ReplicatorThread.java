@@ -11,7 +11,7 @@ public class ReplicatorThread extends Thread
 		{
 			try 
 			{
-				while(replicator.lives > 0)
+				while(replicator.getLife() > 0)
 				{
 					int step;
 					Caracter.Directions tempDir = replicator.direction;
@@ -20,10 +20,10 @@ public class ReplicatorThread extends Thread
 						step=1;
 					else 
 						step=2;
-					for(int i=0;i<2;i++)
+					for(int i=0;i<step;i++)
 					{
 						replicator.move(replicator.direction);
-						Thread.sleep(500);
+						Thread.sleep(300);
 					}
 					
 				}

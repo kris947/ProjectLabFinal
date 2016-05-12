@@ -1,8 +1,8 @@
 import java.awt.Image;
 public class Caracter {
 	
-	 int lives; //életeinek a száma
-	 Map map;   
+	 protected int lives; //életeinek a száma
+	 public Map map;   
 	 public Coord loc;  //koordinátái
 	 public Useable object; //milyen tárgy van nála
 	 public enum Directions{

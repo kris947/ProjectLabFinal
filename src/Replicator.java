@@ -16,7 +16,6 @@ public class Replicator extends Caracter{
 	public Caracter.Directions RandDirection(){
 		Random rand=new Random();
 		int n=rand.nextInt(4);
-		System.out.println(n);
 		if (n==1){
 			return Caracter.Directions.Up;
 		}
@@ -42,7 +41,7 @@ public class Replicator extends Caracter{
 	@Override
 	 public void DecrementLife(){
 		 lives--;
-		 map.map[loc.getX()][loc.getY()]=new Ground(loc);		 
+		 map.map[loc.getY()][loc.getX()]=new Ground(loc);		 
 	 }
 	
 }
