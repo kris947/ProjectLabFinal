@@ -5,13 +5,9 @@ import javax.swing.ImageIcon;
 //Osztály a box megvalósítására
 public class Box extends Useable {
 	
-	public Image image;
-	
  	//Konstruktor
  	public Box()
  	{
-		ImageIcon ic = new ImageIcon("box.png");
-        image = ic.getImage();
         this.weight=50;
         type="box";
  	}
@@ -28,8 +24,7 @@ public class Box extends Useable {
 		//System.out.println("Box: getZPMcount metódus hívás");
 		return ZPMCount;
 	}
-	
-	//Visszadja az Image-t
-	@Override
-	 public Image getImage() { return image; }
 }
+	
+	
+	

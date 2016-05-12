@@ -15,7 +15,6 @@ import java.awt.Image;
 
 
 public abstract class Tile {
-	protected Image image;
 	public Useable object;
 	public Coord location;
 	protected String type = "tile";
@@ -63,6 +62,4 @@ public abstract class Tile {
 		}return false;
 	}
     
-    public Image getImage() { return image; }
-	
 }

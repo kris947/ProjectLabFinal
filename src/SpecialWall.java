@@ -6,7 +6,6 @@ public class SpecialWall extends Wall {
 	
 	public SpecialWall (Coord c, Image image) {
 		super(c,image);
-        this.image = image;
         type="specialwall";
 	}
 	

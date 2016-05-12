@@ -4,7 +4,6 @@ import javax.swing.ImageIcon;
 
 //Abstract osztály használati tárgyak leírására
 public abstract class Useable {
-	public  Image image;
 	static protected int  ZPMCount=0;
 	protected int weight;
 	protected String type= "Useable";
@@ -18,5 +17,5 @@ public abstract class Useable {
 		return ZPMCount;
 	}
     
-    public Image getImage() { 	return image; }
+   
 }

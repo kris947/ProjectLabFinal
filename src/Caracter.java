@@ -1,7 +1,6 @@
 import java.awt.Image;
 public class Caracter {
 	
-	 protected Image image;
 	 int lives; //életeinek a száma
 	 Map map;   
 	 public Coord loc;  //koordinátái
@@ -81,8 +80,4 @@ public class Caracter {
 	 public void DecrementLife(){
 		 lives--;
 	 }
-	 
-	 //visszaadja az Image-t
-	 public Image getImage(){return image;}
-
 }

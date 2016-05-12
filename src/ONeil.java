@@ -19,8 +19,6 @@ public class ONeil extends Caracter{
 	public ONeil(Map map,int lives) {
 		super(map,lives);
 		loc = new Coord(2,1); //(oszlop,sor)
-		ImageIcon ic = new ImageIcon("ONeil.png");
-        image = ic.getImage();
         weight=100;
 	}	
 	//Felvesz egy tárgyat

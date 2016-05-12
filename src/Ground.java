@@ -11,8 +11,6 @@ public class Ground extends Tile {
 	public Ground (Coord c) {
 		super(c);
 		//System.out.println("Ground: konstruktor hívás");
-		ImageIcon ic = new ImageIcon("ground.jpg");
-        image = ic.getImage();
         type = "ground";
 	}
 	

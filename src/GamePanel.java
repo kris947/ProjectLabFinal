@@ -1,5 +1,8 @@
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.Timer;
 
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
@@ -40,12 +43,18 @@ public class GamePanel extends JPanel
 	private Image DjaffaImage;
 	private Image LjaffaImage;
 	
+	// Rajzolás 0,1 secenként
+	Timer drawTimer;
+	
 
 	public GamePanel(View v) 
 	{
 		setLayout(null);
 		setBounds(0, 0, 1000, 1000);
 		view = v;
+		drawTimer =new javax.swing.Timer(100, new drawTimerListener());
+		drawTimer.start();
+		
 		//Pályaelemek
 		groundImage = new ImageIcon("ground.jpg").getImage();
 		boxImage = new ImageIcon("box.png").getImage();
@@ -196,11 +205,19 @@ public class GamePanel extends JPanel
 			
 		}
 		
-		drawTile(JGrafInfo.getX(),JGrafInfo.getY(),jaffaImage,g);
 		drawTile(RGrafInfo.getX(),RGrafInfo.getY(),replicatorImage,g);
-		
 		
 	}
 	
+	class drawTimerListener implements ActionListener
+	{
+
+		@Override
+		public void actionPerformed(ActionEvent arg0)
+		{
+			repaint();
+		}
+		
+	}
 	
 }

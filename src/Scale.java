@@ -21,6 +21,7 @@ public class Scale extends Tile {
 	public Map map;
 	public Useable objects[]=new Useable [10];
 	public int pressedweight;
+	
 	public Scale(Coord location, Coord door, Map map){
 		super(location);
 		//System.out.println("Scale: konsturktor hívás");
@@ -28,8 +29,6 @@ public class Scale extends Tile {
 		this.map = map;
 	//	objects=new Useable() [] ;
 		pressedweight=0;
-		ImageIcon ic = new ImageIcon("scale.jpg");
-        image = ic.getImage();
         type="scale";
 	}
 	

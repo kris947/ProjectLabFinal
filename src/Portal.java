@@ -13,34 +13,6 @@ Useable object;
 	Portal(Coord c,char colour,WormHole wh){
 		super( new Coord(c.getX(),c.getY()));
 		wormhole = wh;
-		ImageIcon ic=null;
-		switch (colour) {
-		case 'b': 
-			if((wormhole.getBlueDir()==Caracter.Directions.Up)||(wormhole.getBlueDir()==Caracter.Directions.Down))
-			ic = new ImageIcon("blueportal1.jpg");
-			else ic = new ImageIcon("blueportal2.jpg");
-		break;
-		case 'y':
-			if((wormhole.getYellowDir()==Caracter.Directions.Up)||(wormhole.getYellowDir()==Caracter.Directions.Down))
-			ic = new ImageIcon("yellowportal1.jpg");
-			else 
-				ic = new ImageIcon("yellowportal2.jpg");
-		break;
-		case 'r':
-			if((wormhole.getRedDir()==Caracter.Directions.Up)||(wormhole.getRedDir()==Caracter.Directions.Down))
-			ic = new ImageIcon("redportal1.jpg");
-			else 
-				ic = new ImageIcon("redportal2.jpg");
-		break;
-		case 'g':
-			if((wormhole.getGreenDir()==Caracter.Directions.Up)||(wormhole.getGreenDir()==Caracter.Directions.Down))
-			ic = new ImageIcon("greenportal1.jpg");
-			else 
-				ic = new ImageIcon("greenportal2.jpg");
-		break;
-		}
-		
-        image = ic.getImage();
         type="portal";
 	};
 	

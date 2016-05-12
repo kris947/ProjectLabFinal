@@ -9,8 +9,6 @@ public class SpaceShip extends Tile {
 	
 	SpaceShip(Coord c){
 		super(c);
-		ImageIcon ic = new ImageIcon("spaceship.jpg");
-        image = ic.getImage();
         type = "spaceship";
 	}
 	

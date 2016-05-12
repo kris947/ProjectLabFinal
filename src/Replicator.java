@@ -10,13 +10,13 @@ public class Replicator extends Caracter{
 
 	public Replicator(Map map,int lives) {
 		super(map,lives);
-		loc = new Coord(3,1); //(oszlop,sor)
-		image = new ImageIcon("replicator.png").getImage();
+		loc = new Coord(10,10); //(oszlop,sor)
 	}	
 	
 	public Caracter.Directions RandDirection(){
 		Random rand=new Random();
-		int n=rand.nextInt(3); n++;
+		int n=rand.nextInt(4);
+		System.out.println(n);
 		if (n==1){
 			return Caracter.Directions.Up;
 		}
@@ -26,14 +26,15 @@ public class Replicator extends Caracter{
 		else if (n==3){
 			 return Caracter.Directions.Right;
 		}
-		else if (n==4){
+		else if (n==0){
 			 return Caracter.Directions.Left;
 		}
 		else 
-			return direction;
+			return Caracter.Directions.Up;
 	}
 	
-	public int  RandValue(){
+	public int  RandValue()
+	{
 		Random rand=new Random();
 		return  rand.nextInt(4);
 	}

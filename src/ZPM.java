@@ -12,8 +12,6 @@ public Coord[] randc = new Coord[8];
 
 ZPM(Map map)
 { 
-	ImageIcon ic = new ImageIcon("zmp.png");
-	image = ic.getImage();
 	type="zpm";
 	m=map;
 	this.weight=50;
@@ -47,7 +45,5 @@ ZPM(Map map)
 		//Ez nem fix h jó
 		//System.gc();
 	}
-	@Override
-	 public Image getImage() { return image; }
-   
 }
+	
