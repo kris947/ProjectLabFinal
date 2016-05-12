@@ -14,6 +14,7 @@ public class Pit extends Tile {
 		game = g;
 		ImageIcon ic = new ImageIcon("pit.jpg");
         image = ic.getImage();
+        type="pit";
 		
 	}
 

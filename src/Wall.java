@@ -11,6 +11,7 @@ public class Wall extends Tile {
 		super(c);
 		//System.out.println("W");
         this.image = image;
+        type= "wall";
 	}
 	
 	//A lövedék megáll, ha falba csapódik

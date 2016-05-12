@@ -13,6 +13,7 @@ public class Door extends  Wall {
 		isOpen=false; //Alapértelmezetten csukva van
 		ImageIcon ic = new ImageIcon("door1.jpg");
         image = ic.getImage();
+        type = "door";
 	}
 	
 	//Metódus: az ajtó kinyitására illetve becsukására szolgál

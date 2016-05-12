@@ -18,10 +18,10 @@ public abstract class Tile {
 	protected Image image;
 	public Useable object;
 	public Coord location;
+	protected String type = "tile";
+	public Tile(){}
 	
-	public Tile(){
-		
-	}
+	public String getType(){ return type;}
 	
 	public Tile(Coord c) {
 		object = null;

@@ -11,6 +11,7 @@ public class View{
 	private GamePanel gpanel;
 	private Menu menu;
 	
+	
 	public View(Control c)
 	{		
 		control = c;

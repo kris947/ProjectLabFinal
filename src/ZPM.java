@@ -14,6 +14,7 @@ ZPM(Map map)
 { 
 	ImageIcon ic = new ImageIcon("zmp.png");
 	image = ic.getImage();
+	type="zpm";
 	m=map;
 	this.weight=50;
 	randc[0]=new Coord(11,7);
@@ -24,6 +25,7 @@ ZPM(Map map)
 	randc[5]=new Coord(2,8);
 	randc[6]=new Coord(6,8);
 	randc[7]=new Coord(18,14);
+	
 	
 }
 

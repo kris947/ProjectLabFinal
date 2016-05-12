@@ -4,18 +4,19 @@ import java.awt.Image;
 public class CharGraphics 
 {
 	private Coord loc;      //A karakter koordinataja
-	private Image image;	//A karakterhez tartozo Image
+	Caracter.Directions dir;	//A karakterhez tartozo Image
 	
 	//Konstruktor
-	public CharGraphics(Coord loc, Image image)
+	public CharGraphics(Coord loc, Caracter.Directions d)
 	{
 		this.loc=loc;
-		this.image=image;
+		dir =d;
 	}
 	
 	//visszaadja a karakter helyzetet
-	public Coord getloc(){ return loc;}
+	public int getX(){ return loc.getX();}
+	public int getY(){ return loc.getY();}
 	
 	//visszadja a karakterhez tartozo kepet
-	public Image getImage(){ return image;}
+	public Caracter.Directions getDir(){ return dir;}
 }

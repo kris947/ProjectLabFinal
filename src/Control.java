@@ -17,38 +17,39 @@ public class Control implements KeyListener
 	public void addView(View view){
 		this.view=view;
 	}
-	public Image[] getDrawData(int x, int y)
+	public String[] getDrawData(int x, int y)
 	{
-		Image[] images= new Image[2];
-		images[0] = game.getMap().map[y][x].getImage();
+		String[] types= new String[2];
+		types[0] = game.getMap().map[y][x].getType();
 		if(game.getMap().map[y][x].getObj() != null)
 		{
-			
-			images[1]= game.getMap().map[y][x].getObj().getImage();
+			types[1]= game.getMap().map[y][x].getObj().getType();
 		}
 		
-		return images;
+		return types;
 	}
 	
 	public CharGraphics ODraw()
 	{
-		Image image = game.o.getImage();
+		
 		Coord c = game.o.getLoc();
-		return new CharGraphics(c,image);
+		Caracter.Directions d = game.o.getDir();
+		return new CharGraphics(c,d);
 	}
 	
 	public CharGraphics JDraw()
 	{
-		Image image = game.j.getImage();
+		
 		Coord c = game.j.getLoc();
-		return new CharGraphics(c,image);
+		Caracter.Directions d = game.j.getDir();
+		return new CharGraphics(c,d);
 	}
 	
 	public CharGraphics RDraw()
 	{
-		Image image = game.r.getImage();
 		Coord c = game.r.getLoc();
-		return new CharGraphics(c,image);
+		Caracter.Directions d = game.r.getDir();
+		return new CharGraphics(c,d);
 		
 	}
 	
@@ -95,11 +96,9 @@ public class Control implements KeyListener
 		else if(e.getKeyCode() == KeyEvent.VK_E)
 		{
 			if(game.o.object==null)
-			game.o.pickUp();
-			else {
-				System.out.println("asd");
+				game.o.pickUp();
+			else 
 				game.o.dropDown();
-			}
 			view.Paint();
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_B)

@@ -41,6 +41,7 @@ Useable object;
 		}
 		
         image = ic.getImage();
+        type="portal";
 	};
 	
 	/*public void setWH(WormHole wh) {

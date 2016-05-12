@@ -70,6 +70,7 @@ public class Caracter {
 	 {
 		 return lives;
 	 }
+	 public Caracter.Directions getDir(){return direction; }
 	 
 	 //visszadja ONeill helyzetet
 	 public Coord getLoc() {

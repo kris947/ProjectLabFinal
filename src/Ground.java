@@ -13,6 +13,7 @@ public class Ground extends Tile {
 		//System.out.println("Ground: konstruktor hívás");
 		ImageIcon ic = new ImageIcon("ground.jpg");
         image = ic.getImage();
+        type = "ground";
 	}
 	
 	//Metódus annak az esetnek a kezelésére ha vki groundra lép

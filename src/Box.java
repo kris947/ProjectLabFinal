@@ -13,6 +13,7 @@ public class Box extends Useable {
 		ImageIcon ic = new ImageIcon("box.png");
         image = ic.getImage();
         this.weight=50;
+        type="box";
  	}
    //A használható objektumokkal való interakciót írja le
 	@Override

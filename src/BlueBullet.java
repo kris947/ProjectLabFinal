@@ -17,7 +17,8 @@ public class BlueBullet extends Bullet {
 	
 	//Portál nyitás
 	public void open() 
-	{	ImageIcon ic=null;
+	{	
+		ImageIcon ic=null;
 		if((wormhole.getBlueDir()==Caracter.Directions.Right) ||(wormhole.getBlueDir()==Caracter.Directions.Left))
 		 ic = new ImageIcon("specialwall2.jpg");
 		else 
@@ -26,7 +27,7 @@ public class BlueBullet extends Bullet {
 			if(wormhole.isOpen()==true){
 				map.map[wormhole.getBlue().getY()][wormhole.getBlue().getX()]=new SpecialWall(new Coord(wormhole.getBlue().getY(),wormhole.getBlue().getX()),image);
 			}
-		System.out.println("BlueBullet: open metódus hívás");
+		//System.out.println("BlueBullet: open metódus hívás");
 		wormhole.setBlue(new Coord(loc.getY(),loc.getX()));	//Kivalasztjuk a kek portalt
 		wormhole.setBlueDir(dir);
 	//	map.map[loc.getY()][loc.getX()].setWH(wormhole);

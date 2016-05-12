@@ -16,7 +16,7 @@ public class Replicator extends Caracter{
 	
 	public Caracter.Directions RandDirection(){
 		Random rand=new Random();
-		int n=rand.nextInt(4);
+		int n=rand.nextInt(3); n++;
 		if (n==1){
 			return Caracter.Directions.Up;
 		}
@@ -35,7 +35,7 @@ public class Replicator extends Caracter{
 	
 	public int  RandValue(){
 		Random rand=new Random();
-		return  rand.nextInt(3);
+		return  rand.nextInt(4);
 	}
 	
 	@Override

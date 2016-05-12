@@ -27,7 +27,7 @@ public class ONeil extends Caracter{
 	public void pickUp() {
 		switch (direction) {
 			case Up:   //Fel
-				System.out.println("yaay");
+				
 				object = map.map[loc.getY()-1][loc.getX()].getObj(); //Koordináták beállítása
 				map.map[loc.getY()-1][loc.getX()].setObj(null);
 			break;
@@ -40,6 +40,7 @@ public class ONeil extends Caracter{
 				map.map[loc.getY()][loc.getX()-1].setObj(null);
 			break;
 			case Right: //Jobb
+				System.out.println("doboz felvéve");
 				object = map.map[loc.getY()][loc.getX()+1].getObj(); //Koordináták beállítása
 				map.map[loc.getY()][loc.getX()+1].setObj(null);
 			break;		

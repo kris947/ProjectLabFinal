@@ -11,6 +11,7 @@ public class Application {
 				
 		view.setPanel(new GamePanel(view));
 		view.Paint();
+		(new ReplicatorThread(game.r)).start();
 		
 
 	}

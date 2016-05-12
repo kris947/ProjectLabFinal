@@ -11,6 +11,7 @@ public class SpaceShip extends Tile {
 		super(c);
 		ImageIcon ic = new ImageIcon("spaceship.jpg");
         image = ic.getImage();
+        type = "spaceship";
 	}
 	
 	public void endGame() {

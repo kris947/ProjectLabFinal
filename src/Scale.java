@@ -30,6 +30,7 @@ public class Scale extends Tile {
 		pressedweight=0;
 		ImageIcon ic = new ImageIcon("scale.jpg");
         image = ic.getImage();
+        type="scale";
 	}
 	
 	@Override
