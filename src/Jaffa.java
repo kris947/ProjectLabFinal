@@ -40,24 +40,27 @@ public class Jaffa extends Caracter {
 	}
 	
 	//Lövés kezelése
-	public void shoot(char c,WormHole w) {
-		System.out.println("ONeil: shoot metódus hívás");
-		if(c=='r')
-		{
-			Thread rb = new Thread(new RedBullet(direction, loc , map,w));
-	        rb.start();
-			/*RedBullet r = new RedBullet(direction, loc , map,w);
-			r.move();*/
-		}
-		else 
-		{
-			Thread gb = new Thread(new GreenBullet(direction, loc , map,w));
-	        gb.start();
-			/*GreenBullet g = new GreenBullet(direction, loc , map,w);
-			g.move();*/
+		public void shoot(char c,WormHole w) {
+			System.out.println("Jaffa: shoot metódus hívás");
+			if(c=='r')
+			{
+				
+		        RedBullet red = new RedBullet(direction, loc , map,w);
+				Thread rb = new Thread(red);
+		        rb.start();
+		        map.shots.add(red);
+			}
+			else 
+			{
+				GreenBullet green = new GreenBullet(direction, loc , map,w);
+				Thread gb = new Thread(green);
+		        gb.start();
+		        map.shots.add(green);
+				
+			}
+			
 		}
 		
-	}
 	
 	//Item lerakása
 	public void dropDown() {

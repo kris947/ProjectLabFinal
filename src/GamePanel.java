@@ -89,8 +89,8 @@ public class GamePanel extends JPanel
 		HYportalImage = new ImageIcon("yellowportal2_new.jpg").getImage();
 		VBportalImage = new ImageIcon("blueportal1_new.jpg").getImage();
 		HBportalImage = new ImageIcon("blueportal2_new.jpg").getImage();
-		HRportalImage = new ImageIcon("redportal2_new.jpg").getImage();
-		VRportalImage = new ImageIcon("redportal1_new.jpg").getImage();
+		HRportalImage = new ImageIcon("redportal1_new.jpg").getImage();
+		VRportalImage = new ImageIcon("redportal2_new.jpg").getImage();
 		HGportalImage = new ImageIcon("greenportal2_new.jpg").getImage();
 		VGportalImage = new ImageIcon("greenportal1_new.jpg").getImage();
 		//Oneil
@@ -116,7 +116,7 @@ public class GamePanel extends JPanel
 		//Bullets
 		BlueBullet = new ImageIcon("bluebullet.png").getImage();
 		YellowBullet = new ImageIcon("yellowbullet.png").getImage();
-		GreenBullet = new ImageIcon("redbullet.png").getImage();
+		GreenBullet = new ImageIcon("greenbullet.png").getImage();
 		RedBullet = new ImageIcon("redbullet.png").getImage();
 	}
 	
@@ -264,6 +264,10 @@ public class GamePanel extends JPanel
 				drawTile(current.loc.getX(),current.loc.getY(),BlueBullet,g);
 			if (current.type == "yellow")
 				drawTile(current.loc.getX(),current.loc.getY(),YellowBullet,g);
+			if (current.type == "red")
+				drawTile(current.loc.getX(),current.loc.getY(),RedBullet,g);
+			if (current.type == "green")
+				drawTile(current.loc.getX(),current.loc.getY(),GreenBullet,g);
 		}
 					
 	}
