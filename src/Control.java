@@ -112,9 +112,9 @@ public class Control implements KeyListener
 					view.getGpanel().oneilImage = view.getGpanel().RboxOneil;
 				}
 			}
-			else 
+			else if(game.o.dropDown() == true)
 			{
-				game.o.dropDown();
+				
 				view.getGpanel().UoneilImage = view.getGpanel().UnoboxOneil;
 				view.getGpanel().DoneilImage = view.getGpanel().DnoboxOneil;
 				view.getGpanel().LoneilImage = view.getGpanel().LnoboxOneil;

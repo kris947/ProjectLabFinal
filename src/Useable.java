@@ -10,9 +10,8 @@ public abstract class Useable {
 	
 	public String getType(){return type;}
 	
-	public abstract  void redeem(); //A használható objektumokkal való interakciót írja le
-	{
-	}
+	//igazzal tér vissza ha beváltható(ZPM) hamissal ha nem
+	public abstract  boolean redeem(); //A használható objektumokkal való interakciót írja le
 	
 	public int getZPMcount(){
 		return ZPMCount;

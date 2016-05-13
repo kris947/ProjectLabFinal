@@ -31,7 +31,7 @@ ZPM(Map map)
 
 
 	@Override
-	public void redeem() {
+	public boolean redeem() {
 		//A ZPM modul beváltása 
 		ZPMCount++;
 		System.out.println("A ZPM modul sikeresen elhelyezõdött"+" "+ZPMCount);
@@ -44,6 +44,7 @@ ZPM(Map map)
 		m.map[added.getX()][added.getY()].setObj(new ZPM(m));
 		//Ez nem fix h jó
 		//System.gc();
+		return true;
 	}
 }
 	

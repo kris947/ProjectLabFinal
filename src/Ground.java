@@ -22,21 +22,8 @@ public class Ground extends Tile {
 
 	}
 	
+
 	
-	@Override
-	public boolean setObj(Useable object) {
-		//System.out.println("Ground: setObj metódus hívás");
-		this.object = object;
-		
-		if(object != null){	
-			
-			return true;
-		}
-		else {
-			return false;
-		}
-		
-	}
 	@Override
 	public Useable getObj() {
 		//System.out.println("Ground: getObj metódus hívás");

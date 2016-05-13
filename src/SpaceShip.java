@@ -5,7 +5,7 @@ import javax.swing.ImageIcon;
 public class SpaceShip extends Tile {
 	
 	private Coord location;
-	Useable object;
+	//Useable object;
 	
 	SpaceShip(Coord c){
 		super(c);
@@ -40,21 +40,39 @@ public class SpaceShip extends Tile {
    return location;
    }
    public void setLoc(Coord c){location=c;}
-   public Useable getObj(){
-		//System.out.println("SpaceShip: getObj metódus hívás");
-	   return object;}
+   
+   @Override
+   public Useable takeObj()
+   {
+	   return object;
+   }
 
+   @Override
    public boolean setObj(Useable o){
-		//Itt még le kell kezelni ha ládát teszünk rá azt ne nyelje el
 	   //System.out.println("SpaceShip: setObj metódus hívás");
-		if(object == null){
-		this.object = o;
-		object.redeem();
-		object=null;
-		return true;
-		}
-		else return false;
-   };
+	   if(o == null)	//tárgy levételekor
+	   {		
+		   object = null;
+		   return true;
+	   }
+	   else
+	   {
+		   if(object != null) //ha van vmi a spaceshipen akkor nem rakhatunk rá semmit
+			   return false;
+		   else if (o.redeem()== true)  //ha ZPM-et rak rá akkor az eltünik
+		   {
+			   object = null;
+			   return true;
+		   }
+		   else  //ha box-ot akar rátenni és nincs rajta semmi akkor rá kerül
+		   {
+			   object = o;
+			   return true;
+		   }
+	   }
+	   
+   }
+   
 
 }
 

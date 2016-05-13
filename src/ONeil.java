@@ -44,9 +44,6 @@ public class ONeil extends Caracter{
 				map.map[loc.getY()][loc.getX()+1].setObj(null);
 			break;		
 		}
-		if(object!=null){
-			
-		}
 	}
 	
 	//Lövés kezelése
@@ -66,25 +63,39 @@ public class ONeil extends Caracter{
 		}
 	}
 	
-	public void dropDown() {
+	//boolean - sikeres volt-e a lerakás
+	public boolean dropDown() {
 		switch (direction) {
 		case Up: //fel
-			map.map[loc.getY()-1][loc.getX()].setObj(object); //Koordináták beállítása
-			object = null;
+			if (map.map[loc.getY()-1][loc.getX()].setObj(object) == true)	//Koordináták beállítása
+			{ 
+				object = null;
+				return true;
+			}
 		break;
 		case Down: //le
-			map.map[loc.getY()+1][loc.getX()].setObj(object); //Koordináták beállítása
-			object = null;
+			if (map.map[loc.getY()+1][loc.getX()].setObj(object) == true)
+			{ 
+				object = null;
+				return true;
+			}
 		break;
 		case Left: //balra
-			map.map[loc.getY()][loc.getX()-1].setObj(object); //Koordináták beállítása
-			object = null;
+			if (map.map[loc.getY()][loc.getX()-1].setObj(object) == true)
+			{
+				object = null;
+				return true;
+			}
 		break;
 		case Right: //jobbra
-			map.map[loc.getY()][loc.getX()+1].setObj(object); //Koordináták beállítása
-			object = null;
+			if (map.map[loc.getY()][loc.getX()+1].setObj(object) == true)
+			{
+				object = null;
+				return true;
+			}
 		break;		
 		}
+		return false;
 	}
 	
 

@@ -28,6 +28,12 @@ public class Wall extends Tile {
 		//System.out.println("Falba utkozott");
 		return k;
 	}
+	
+	@Override
+	public boolean setObj(Useable o)
+	{
+		return false;
+	}
 
 	
 

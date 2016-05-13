@@ -13,9 +13,9 @@ public class Box extends Useable {
  	}
    //A használható objektumokkal való interakciót írja le
 	@Override
-	public void redeem() {
+	public boolean redeem() {
 		//System.out.println("Box: redeem metódus hívás");
-		
+		return false;
 	}
 
 	//visszaadja a zmp-k számát

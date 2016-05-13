@@ -96,11 +96,13 @@ public class Pit extends Tile {
 			return startpoz;
 		}
 		else 
-			return startpoz;
-		
-	
-
-		
+			return startpoz;		
 		}
+	
+	@Override
+	public boolean setObj(Useable o)
+	{
+		return true;
+	}
 	
 }

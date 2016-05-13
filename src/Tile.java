@@ -51,19 +51,23 @@ public abstract class Tile {
 	public void closeDoor(){};
 	public void setWH(WormHole wh){};
 	
-public Useable takeObj(){
+	public Useable takeObj(){
 				return object;
 	}
-	public boolean setObj(Useable object) {
-		//System.out.println("Tile: setObj metódus hívás");
-		if(object == null){
-			//System.out.println("asd");
-		this.object = object;
-		return true;
+
+	
+	public boolean setObj(Useable o) {
+		//System.out.println("Ground: setObj metódus hívás");
+		if(o==null)
+			object=o;	
+		if(object == null){	
+			this.object = o;
+			return true;
 		}
-		else {
-		this.object = object;
-		}return false;
+		else 
+		{
+			return false;
+		}	
 	}
     
 }
