@@ -100,7 +100,7 @@ public class GamePanel extends JPanel
 		VBportalImage = new ImageIcon("blueportal1_new.jpg").getImage();
 		HBportalImage = new ImageIcon("blueportal2_new.jpg").getImage();
 		VRportalImage = new ImageIcon("redportal1_new.jpg").getImage();
-		HRportalImage = new ImageIcon("redportal1_new.jpg").getImage();	
+		HRportalImage = new ImageIcon("redportal2_new2.jpg").getImage();	
 		VGportalImage = new ImageIcon("greenportal1_new.jpg").getImage();
 		HGportalImage = new ImageIcon("greenportal2_new.jpg").getImage();	
 		//Oneil
