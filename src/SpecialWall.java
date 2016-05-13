@@ -4,8 +4,8 @@ import javax.swing.ImageIcon;
 
 public class SpecialWall extends Wall {
 	
-	public SpecialWall (Coord c, Image image) {
-		super(c,image);
+	public SpecialWall (Coord c) {
+		super(c);
         type="specialwall";
 	}
 	

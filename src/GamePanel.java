@@ -53,6 +53,11 @@ public class GamePanel extends JPanel
 	public Image UjaffaImage;
 	public Image DjaffaImage;
 	public Image LjaffaImage;
+	// 4 Bullet
+	public Image BlueBullet;
+	public Image YellowBullet;
+	public Image GreenBullet;
+	public Image RedBullet;
 	
 	// Rajzolás 0,1 secenként
 	Timer drawTimer;
@@ -108,7 +113,11 @@ public class GamePanel extends JPanel
 		DjaffaImage = new ImageIcon("Jaffa.png").getImage();
 		LjaffaImage = new ImageIcon("Jaffa.png").getImage();
 		jaffaImage = new ImageIcon("Jaffa.png").getImage();
-		
+		//Bullets
+		BlueBullet = new ImageIcon("bluebullet.png").getImage();
+		YellowBullet = new ImageIcon("yellowbullet.png").getImage();
+		GreenBullet = new ImageIcon("redbullet.png").getImage();
+		RedBullet = new ImageIcon("redbullet.png").getImage();
 	}
 	
 	public void drawTile(int x, int y, Image images, Graphics g)
@@ -168,7 +177,7 @@ public class GamePanel extends JPanel
 						else
 							drawTile(i , j, HBportalImage, g);
 					}
-					else if(new Coord(i,j).equals(view.control.game.wh.getYellow()))
+					else if(view.control.game.wh.getYellow() != null && new Coord(i,j).equals(view.control.game.wh.getYellow()))
 					{
 						if((view.control.game.wh.getYellowDir()==Caracter.Directions.Up)||(view.control.game.wh.getYellowDir()==Caracter.Directions.Down))
 							drawTile(i , j, VYportalImage, g);
@@ -232,6 +241,15 @@ public class GamePanel extends JPanel
 		
 		drawTile(RGrafInfo.getX(),RGrafInfo.getY(),replicatorImage,g);
 		
+		for(int i=0;i<view.control.game.map.shots.size();i++)
+		{
+			Bullet current = view.control.game.map.shots.get(i);
+			if (current.type == "blue")
+				drawTile(current.loc.getX(),current.loc.getY(),BlueBullet,g);
+			if (current.type == "yellow")
+				drawTile(current.loc.getX(),current.loc.getY(),YellowBullet,g);
+		}
+					
 	}
 	
 	class drawTimerListener implements ActionListener

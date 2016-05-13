@@ -4,6 +4,7 @@ import javax.swing.ImageIcon;
 
 
 
+
 //Osztály ONeil kezelésére
 public class ONeil extends Caracter{ 
 		
@@ -51,12 +52,17 @@ public class ONeil extends Caracter{
 	//Lövés kezelése
 	public void shoot(char c,WormHole w) {
 		if(c=='b'){
-			BlueBullet b = new BlueBullet(direction, loc , map,w);
-			b.move();
+			BlueBullet blue = new BlueBullet(direction, loc , map,w);
+			Thread bb = new Thread(blue);
+	        bb.start();
+	        map.shots.add(blue);
 			}
 		else {
-			YellowBullet y = new YellowBullet(direction, loc , map,w);
-			y.move();
+			//YellowBullet y = new YellowBullet(direction, loc , map,w);
+			YellowBullet yellow = new YellowBullet(direction, loc , map,w);
+			Thread yb = new Thread(yellow);
+	        yb.start();
+	        map.shots.add(yellow);
 		}
 	}
 	

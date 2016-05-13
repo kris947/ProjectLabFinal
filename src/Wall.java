@@ -6,7 +6,7 @@ import javax.swing.ImageIcon;
 public class Wall extends Tile {
 	
 	//Megmondja, hogy ONeil mit csináljon, ha falra akar lépni
-	public Wall (Coord c, Image image) {
+	public Wall (Coord c) {
 		
 		super(c);
 		//System.out.println("W");

@@ -1,8 +1,9 @@
 
 //Abstract osztály: a lövedék kezelésére
-public abstract class Bullet {
+public abstract class Bullet implements Runnable{
 	protected Map map;     
 	protected Coord loc;  //lövedék pozíciója
+	protected String type= "Bullet";
 	
 	//enum az irányokra
 	public enum Directions{
@@ -25,7 +26,7 @@ public abstract class Bullet {
 	
 	
 	//a lövedék mozgását írja le
-	public void move() {
+	public void run() {
 		//System.out.println("Bullet: move metódus hívás");
 		//System.out.println(loc.getY()+" "+loc.getX());
 		
@@ -57,6 +58,14 @@ public abstract class Bullet {
 				
 				//System.out.println("Bullet: Lövedék jobbra pew-pew");
 				break;
+			}
+			if (flying == false)
+				map.shots.remove(this);
+			try {
+				Thread.sleep(200);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 		}
 	}

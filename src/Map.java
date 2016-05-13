@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 
@@ -15,6 +16,8 @@ public class Map {
 	private int ZPMcount;
 	Game game;
 	public Tile[][] map = new Tile[20][20]; // Sorokszáma/Oszlopok száma
+	public ArrayList<Bullet> shots = new ArrayList();
+	
 	
 	
 	public int getSizeX() {
@@ -44,32 +47,32 @@ public class Map {
 						if (c[i].equals("W")){
 							ImageIcon ic = new ImageIcon("wall2.jpg");
 					        image = ic.getImage();
-							map[Y][i]=new Wall(new Coord(i,Y),image);
+							map[Y][i]=new Wall(new Coord(i,Y));
 						}
 						else if (c[i].equals("w")){
 							ImageIcon ic = new ImageIcon("wall1.jpg");
 					        image = ic.getImage();
-							map[Y][i]=new Wall(new Coord(i,Y),image);
+							map[Y][i]=new Wall(new Coord(i,Y));
 						}			
 						else if (c[i].equals("(-")){  //Ball felsõ
 							ImageIcon ic = new ImageIcon("wall12.jpg");
 					        image = ic.getImage();
-							map[Y][i]=new Wall(new Coord(i,Y),image);
+							map[Y][i]=new Wall(new Coord(i,Y));
 						}			
 						else if (c[i].equals("-)")){    //Jobb felsõ
 							ImageIcon ic = new ImageIcon("wall21.jpg");
 					        image = ic.getImage();
-							map[Y][i]=new Wall(new Coord(i,Y),image);
+							map[Y][i]=new Wall(new Coord(i,Y));
 						}		
 						else if (c[i].equals("_)")){   //Bal alsó
 							ImageIcon ic = new ImageIcon("wall112.jpg");
 					        image = ic.getImage();
-							map[Y][i]=new Wall(new Coord(i,Y),image);
+							map[Y][i]=new Wall(new Coord(i,Y));
 						}		
 						else if (c[i].equals("(_")){  // Jobb alsó
 							ImageIcon ic = new ImageIcon("wall121.jpg");
 					        image = ic.getImage();
-							map[Y][i]=new Wall(new Coord(i,Y),image);
+							map[Y][i]=new Wall(new Coord(i,Y));
 						}		
 						else if (c[i].equals("G")){
 							map[Y][i]=new Ground(new Coord(i,Y));
@@ -77,12 +80,12 @@ public class Map {
 						else if (c[i].equals("S")){
 							ImageIcon ic = new ImageIcon("specialwall2.jpg");
 					        image = ic.getImage();
-							map[Y][i]=new SpecialWall(new Coord(i,Y),image);
+							map[Y][i]=new SpecialWall(new Coord(i,Y));
 						}
 						else if (c[i].equals("s")){
 							ImageIcon ic = new ImageIcon("specialwall1.jpg");
 					        image = ic.getImage();
-							map[Y][i]=new SpecialWall(new Coord(i,Y),image);
+							map[Y][i]=new SpecialWall(new Coord(i,Y));
 						}
 						else if (c[i].equals("B")){
 							map[Y][i]=new Ground(new Coord(i,Y));

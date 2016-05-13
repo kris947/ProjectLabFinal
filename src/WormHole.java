@@ -35,7 +35,10 @@ public class WormHole {
 	//YellowPortal koordinatait adja vissza
 	public Coord getYellow() {
 		//System.out.println("WormHole: getYellow metódus hívás");
-		return (new Coord(YellowPortal.getY(),YellowPortal.getX()));
+		if (YellowPortal != null)
+			return (new Coord(YellowPortal.getY(),YellowPortal.getX()));
+		else 
+			return null;
 	}
 	
 	//GreenPortal koordinatait adja vissza
