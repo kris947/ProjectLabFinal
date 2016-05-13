@@ -247,7 +247,7 @@ public class GamePanel extends JPanel
 			break;
 			case Left:
 				drawTile(JGrafInfo.getX(),JGrafInfo.getY(),LjaffaImage,g); 
-			break;
+			break;   
 			case Right:
 				drawTile(JGrafInfo.getX(),JGrafInfo.getY(),RjaffaImage,g); 
 			break;
