@@ -49,7 +49,7 @@ public class GamePanel extends JPanel
 	//replicator
 	private Image replicatorImage;
 	// jaffa 4 irány
-	public Image jaffaImage;
+	public Image RjaffaImage;
 	public Image UjaffaImage;
 	public Image DjaffaImage;
 	public Image LjaffaImage;
@@ -89,8 +89,8 @@ public class GamePanel extends JPanel
 		HYportalImage = new ImageIcon("yellowportal2_new.jpg").getImage();
 		VBportalImage = new ImageIcon("blueportal1_new.jpg").getImage();
 		HBportalImage = new ImageIcon("blueportal2_new.jpg").getImage();
-		HRportalImage = new ImageIcon("redportal2_new.jpg").getImage();
-		VRportalImage = new ImageIcon("redportal1_new.jpg").getImage();
+		HRportalImage = new ImageIcon("redportal1_new.jpg").getImage();
+		VRportalImage = new ImageIcon("redportal2_new.jpg").getImage();
 		HGportalImage = new ImageIcon("greenportal2_new.jpg").getImage();
 		VGportalImage = new ImageIcon("greenportal1_new.jpg").getImage();
 		//Oneil
@@ -109,10 +109,10 @@ public class GamePanel extends JPanel
 		DboxOneil = new ImageIcon("DboxO.png").getImage();
 		LboxOneil = new ImageIcon("LboxO.png").getImage();
 		//Jaffa
-		UjaffaImage = new ImageIcon("Jaffa.png").getImage();
-		DjaffaImage = new ImageIcon("Jaffa.png").getImage();
-		LjaffaImage = new ImageIcon("Jaffa.png").getImage();
-		jaffaImage = new ImageIcon("Jaffa.png").getImage();
+		UjaffaImage = new ImageIcon("Jaffa1.png").getImage();
+		RjaffaImage = new ImageIcon("Jaffa2.png").getImage();
+		DjaffaImage = new ImageIcon("Jaffa3.png").getImage();
+		LjaffaImage = new ImageIcon("Jaffa4.png").getImage();
 		//Bullets
 		BlueBullet = new ImageIcon("bluebullet.png").getImage();
 		YellowBullet = new ImageIcon("yellowbullet.png").getImage();
@@ -240,16 +240,16 @@ public class GamePanel extends JPanel
 		switch(JGrafInfo.getDir())
 		{
 			case Up:
-				drawTile(JGrafInfo.getX(),JGrafInfo.getY(),oneilImage,g); 
+				drawTile(JGrafInfo.getX(),JGrafInfo.getY(),UjaffaImage,g); 
 			break;
 			case Down:
-				drawTile(JGrafInfo.getX(),JGrafInfo.getY(),jaffaImage,g); 
+				drawTile(JGrafInfo.getX(),JGrafInfo.getY(),DjaffaImage,g); 
 			break;
 			case Left:
-				drawTile(JGrafInfo.getX(),JGrafInfo.getY(),replicatorImage,g); 
+				drawTile(JGrafInfo.getX(),JGrafInfo.getY(),LjaffaImage,g); 
 			break;
 			case Right:
-				drawTile(JGrafInfo.getX(),JGrafInfo.getY(),jaffaImage,g); 
+				drawTile(JGrafInfo.getX(),JGrafInfo.getY(),RjaffaImage,g); 
 			break;
 			
 		}
