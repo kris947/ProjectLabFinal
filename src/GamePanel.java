@@ -62,7 +62,7 @@ public class GamePanel extends JPanel
 		setLayout(null);
 		setBounds(0, 0, 1000, 1000);
 		view = v;
-		drawTimer =new javax.swing.Timer(100, new drawTimerListener());
+		drawTimer =new Timer(100, new drawTimerListener());
 		drawTimer.start();
 		
 		//Pályaelemek
