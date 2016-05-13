@@ -26,20 +26,20 @@ public class ONeil extends Caracter{
 		switch (direction) {
 			case Up:   //Fel
 				
-				object = map.map[loc.getY()-1][loc.getX()].getObj(); //Koordináták beállítása
+				object = map.map[loc.getY()-1][loc.getX()].takeObj(); //Koordináták beállítása
 				map.map[loc.getY()-1][loc.getX()].setObj(null);
 			break;
 			case Down: //le
-				object = map.map[loc.getY()+1][loc.getX()].getObj(); //Koordináták beállítása
+				object = map.map[loc.getY()+1][loc.getX()].takeObj(); //Koordináták beállítása
 				map.map[loc.getY()+1][loc.getX()].setObj(null);
 			break;
 			case Left: //Balra
-				object = map.map[loc.getY()][loc.getX()-1].getObj(); //Koordináták beállítása
+				object = map.map[loc.getY()][loc.getX()-1].takeObj(); //Koordináták beállítása
 				map.map[loc.getY()][loc.getX()-1].setObj(null);
 			break;
 			case Right: //Jobb
 				System.out.println("doboz felvéve");
-				object = map.map[loc.getY()][loc.getX()+1].getObj(); //Koordináták beállítása
+				object = map.map[loc.getY()][loc.getX()+1].takeObj(); //Koordináták beállítása
 				map.map[loc.getY()][loc.getX()+1].setObj(null);
 			break;		
 		}

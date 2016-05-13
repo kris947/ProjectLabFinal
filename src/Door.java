@@ -29,6 +29,11 @@ public class Door extends  Wall {
 			isOpen=false; //..csukja be
 		} 
 	}
+	@Override
+	public void closeDoor(){
+		
+		isOpen=false;
+	}
 	
 	//Csukott ajtó esetén nem engedi át ONeillt, nyitott ajtó esetén pedig igen
 	@Override
