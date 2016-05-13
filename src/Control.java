@@ -53,6 +53,8 @@ public class Control implements KeyListener
 	
 	public CharGraphics RDraw()
 	{
+		if(game.r ==null)
+			return null;
 		Coord c = game.r.getLoc();
 		Caracter.Directions d = game.r.getDir();
 		return new CharGraphics(c,d);

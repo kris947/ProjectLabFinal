@@ -38,25 +38,28 @@ public abstract class Bullet implements Runnable{
 			case Up:  //ha felfele megy
 				loc.setY(loc.getY()-1); 
 				flying=map.map[loc.getY()][loc.getX()].fly(this);  //Koordináta beállítása
-				
+				if(loc.equals(map.replicator.loc))
+					map.replicator.die();
+					
 				//System.out.println("Bullet: Lövedék fel pew-pew");
 				break;
 			case Down: //ha lefele megy
 				loc.setY(loc.getY()+1);
 				flying=map.map[loc.getY()][loc.getX()].fly(this);  //Koordináta beállítása
-								//System.out.println("Lövedék lel pew-pew");
+				if(loc.equals(map.replicator.loc))
+					map.replicator.die();
 				break;
 			case Left: //ha balra megy
 				loc.setX(loc.getX()-1);
 				flying=map.map[loc.getY()][loc.getX()].fly(this); //Koordináta beállítása
-				
-				//System.out.println("Lövedék balra pew-pew");
+				if(loc.equals(map.replicator.loc))
+					map.replicator.die();
 				break;
 			case Right: //ha jobbra megy
 				loc.setX(loc.getX()+1);
 				flying=map.map[loc.getY()][loc.getX()].fly(this); //Koordináta beállítása
-				
-				//System.out.println("Bullet: Lövedék jobbra pew-pew");
+				if(loc.equals(map.replicator.loc))
+					map.replicator.die();
 				break;
 			}
 			if (flying == false)

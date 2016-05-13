@@ -78,6 +78,7 @@ public class Caracter {
 
 	 //csokkenti ONeill eleteinek a szamat eggyel
 	 public void DecrementLife(){
+		 object=null;
 		 lives--;
 	 }
 }

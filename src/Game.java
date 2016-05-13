@@ -26,7 +26,7 @@ public 	Replicator r=null; //Replicator referencia
 		j= new Jaffa(map,3);
 		r= new Replicator(map,1);
 		try {
-			map.initmap(o,j);
+			map.initmap(o,j,r);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

@@ -39,10 +39,17 @@ public class Replicator extends Caracter{
 	}
 	
 	@Override
-	 public void DecrementLife(){
-		 lives--;
-		 map.map[loc.getY()][loc.getX()]=new Ground(loc);		 
+	 public void DecrementLife()
+	{
+		lives--;
+		map.map[loc.getY()][loc.getX()]=new Ground(loc);
+		die();
 	 }
+	
+	public void die()
+	{
+		map.game.r = null;
+	}
 	
 }
 

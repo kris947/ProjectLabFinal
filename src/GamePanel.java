@@ -239,7 +239,8 @@ public class GamePanel extends JPanel
 			
 		}
 		
-		drawTile(RGrafInfo.getX(),RGrafInfo.getY(),replicatorImage,g);
+		if(RGrafInfo != null)
+			drawTile(RGrafInfo.getX(),RGrafInfo.getY(),replicatorImage,g);
 		
 		for(int i=0;i<view.control.game.map.shots.size();i++)
 		{

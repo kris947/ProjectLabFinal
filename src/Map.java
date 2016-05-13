@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
 //A pálya osztálya
 public class Map {
 	public ONeil oneil;
+	public Replicator replicator;
 	private int sizeX;
 	private int sizeY;
 	private int ZPMcount;
@@ -31,13 +32,13 @@ public class Map {
 		
 	}
 
-	public void initmap(ONeil o,Jaffa j) throws IOException{
+	public void initmap(ONeil o,Jaffa j,Replicator r) throws IOException{
 		oneil=o;
+		replicator = r;
 		int Y=0;
 		
 		BufferedReader br = new BufferedReader(new FileReader("FinalMap.csv")); // Amikor ezt lecseréljük írjuk át a map nagyságát is 
 			try {
-				Image image;
 				String line; ;
 				while ((line= br.readLine())!= null) {
 					String[]c=line.split(";");
@@ -45,46 +46,30 @@ public class Map {
 					sizeY = Y+1 ;
 					for(int i=0;i<c.length;i++){
 						if (c[i].equals("W")){
-							ImageIcon ic = new ImageIcon("wall2.jpg");
-					        image = ic.getImage();
 							map[Y][i]=new Wall(new Coord(i,Y));
 						}
 						else if (c[i].equals("w")){
-							ImageIcon ic = new ImageIcon("wall1.jpg");
-					        image = ic.getImage();
 							map[Y][i]=new Wall(new Coord(i,Y));
 						}			
 						else if (c[i].equals("(-")){  //Ball felsõ
-							ImageIcon ic = new ImageIcon("wall12.jpg");
-					        image = ic.getImage();
 							map[Y][i]=new Wall(new Coord(i,Y));
 						}			
 						else if (c[i].equals("-)")){    //Jobb felsõ
-							ImageIcon ic = new ImageIcon("wall21.jpg");
-					        image = ic.getImage();
 							map[Y][i]=new Wall(new Coord(i,Y));
 						}		
 						else if (c[i].equals("_)")){   //Bal alsó
-							ImageIcon ic = new ImageIcon("wall112.jpg");
-					        image = ic.getImage();
 							map[Y][i]=new Wall(new Coord(i,Y));
 						}		
 						else if (c[i].equals("(_")){  // Jobb alsó
-							ImageIcon ic = new ImageIcon("wall121.jpg");
-					        image = ic.getImage();
 							map[Y][i]=new Wall(new Coord(i,Y));
 						}		
 						else if (c[i].equals("G")){
 							map[Y][i]=new Ground(new Coord(i,Y));
 						}
 						else if (c[i].equals("S")){
-							ImageIcon ic = new ImageIcon("specialwall2.jpg");
-					        image = ic.getImage();
 							map[Y][i]=new SpecialWall(new Coord(i,Y));
 						}
 						else if (c[i].equals("s")){
-							ImageIcon ic = new ImageIcon("specialwall1.jpg");
-					        image = ic.getImage();
 							map[Y][i]=new SpecialWall(new Coord(i,Y));
 						}
 						else if (c[i].equals("B")){
