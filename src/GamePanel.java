@@ -99,10 +99,10 @@ public class GamePanel extends JPanel
 		HYportalImage = new ImageIcon("yellowportal2_new.jpg").getImage();
 		VBportalImage = new ImageIcon("blueportal1_new.jpg").getImage();
 		HBportalImage = new ImageIcon("blueportal2_new.jpg").getImage();
-		HRportalImage = new ImageIcon("redportal1_new.jpg").getImage();
-		VRportalImage = new ImageIcon("redportal2_new.jpg").getImage();
-		HGportalImage = new ImageIcon("greenportal2_new.jpg").getImage();
+		VRportalImage = new ImageIcon("redportal1_new.jpg").getImage();
+		HRportalImage = new ImageIcon("redportal2_new.jpg").getImage();	
 		VGportalImage = new ImageIcon("greenportal1_new.jpg").getImage();
+		HGportalImage = new ImageIcon("greenportal2_new.jpg").getImage();	
 		//Oneil
 		oneilImage = new ImageIcon("ONeilR.png").getImage();
 		LoneilImage = new ImageIcon("ONeilL.png").getImage();
