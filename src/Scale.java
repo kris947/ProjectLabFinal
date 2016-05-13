@@ -63,7 +63,9 @@ public class Scale extends Tile {
 	
 	@Override
 	public Useable takeObj(){
-		int act=(pressedweight / 50)-1;
+		int act=objcount-1;
+		objcount--;
+		
 		if(act>=0)
 		{
 			if(act==0)
@@ -71,18 +73,23 @@ public class Scale extends Tile {
 			else 
 				object=objects[act-1];
 		
-			pressedweight-=50;
+			pressedweight-=objects[act].getweight();
 		
 			if( pressedweight<100)
 				map.map[door.getY()][door.getX()].closeDoor();
+			
 			if(act==0)
 				object=null;
 			
-			return objects[act];
+			Useable temp = objects[act];
+			objects[act]= null;
+			
+			return temp;
 		}
-		else object=null;
+		else 
+			object=null;
 		
-		return null;
+		return object;
 	}
 
 
