@@ -2,7 +2,6 @@ import java.awt.Image;
 
 //A zöld lövedéket reprezentáló osztály
 public class GreenBullet extends Bullet{
-	private Image image;
 	public WormHole wormhole;
 	
 	//Konstruktor
@@ -10,8 +9,7 @@ public class GreenBullet extends Bullet{
 	{
 		super(directions,coord,m);
 		wormhole=w;
-		//System.out.println("GreenBullet: konstruktor hívás");
-			
+		type = "green";
 	}
 	
 	//Portál nyitás

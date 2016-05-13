@@ -116,7 +116,7 @@ public class GamePanel extends JPanel
 		//Bullets
 		BlueBullet = new ImageIcon("bluebullet.png").getImage();
 		YellowBullet = new ImageIcon("yellowbullet.png").getImage();
-		GreenBullet = new ImageIcon("redbullet.png").getImage();
+		GreenBullet = new ImageIcon("greenbullet.png").getImage();
 		RedBullet = new ImageIcon("redbullet.png").getImage();
 	}
 	
@@ -264,6 +264,10 @@ public class GamePanel extends JPanel
 				drawTile(current.loc.getX(),current.loc.getY(),BlueBullet,g);
 			if (current.type == "yellow")
 				drawTile(current.loc.getX(),current.loc.getY(),YellowBullet,g);
+			if (current.type == "red")
+				drawTile(current.loc.getX(),current.loc.getY(),RedBullet,g);
+			if (current.type == "green")
+				drawTile(current.loc.getX(),current.loc.getY(),GreenBullet,g);
 		}
 					
 	}

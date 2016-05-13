@@ -11,6 +11,7 @@ public class RedBullet extends Bullet{
 		super(directions,coord,m);
 		wormhole=w;
 		//System.out.println("RedBullet: konstruktor hívás");
+		type = "red";
 			
 	}
 	

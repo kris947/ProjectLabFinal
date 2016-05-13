@@ -44,17 +44,17 @@ public class Jaffa extends Caracter {
 		System.out.println("ONeil: shoot metódus hívás");
 		if(c=='r')
 		{
-			Thread rb = new Thread(new RedBullet(direction, loc , map,w));
+	        RedBullet red = new RedBullet(direction, loc , map,w);
+			Thread rb = new Thread(red);
 	        rb.start();
-			/*RedBullet r = new RedBullet(direction, loc , map,w);
-			r.move();*/
+	        map.shots.add(red);
 		}
 		else 
 		{
-			Thread gb = new Thread(new GreenBullet(direction, loc , map,w));
+	        GreenBullet green = new GreenBullet(direction, loc , map,w);
+			Thread gb = new Thread(green);
 	        gb.start();
-			/*GreenBullet g = new GreenBullet(direction, loc , map,w);
-			g.move();*/
+	        map.shots.add(green);
 		}
 		
 	}
