@@ -28,6 +28,7 @@ public class View{
 	}
 	
 	public GamePanel getGpanel(){return gpanel;}
+
 	
 	public void Paint()
 	{		

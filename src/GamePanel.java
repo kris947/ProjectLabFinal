@@ -40,7 +40,7 @@ public class GamePanel extends JPanel
 	public Image DboxOneil;
 	public Image LboxOneil;
 	public Image RboxOneil;
-	//Oneil dobozzal
+	//Oneil doboz nelkul
 	public Image UnoboxOneil;
 	public Image DnoboxOneil;
 	public Image LnoboxOneil;
@@ -92,7 +92,7 @@ public class GamePanel extends JPanel
 		UoneilImage = new ImageIcon("ONeilUp.png").getImage();
 		DoneilImage = new ImageIcon("ONeilD.png").getImage();
 		//Oneil doboz nélkül
-		UnoboxOneil = new ImageIcon("OneilU.png").getImage();
+		UnoboxOneil = new ImageIcon("OneilUp.png").getImage();
 		RnoboxOneil = new ImageIcon("ONeilR.png").getImage();
 		DnoboxOneil = new ImageIcon("ONeilD.png").getImage();
 		LnoboxOneil = new ImageIcon("ONeilL.png").getImage();

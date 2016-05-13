@@ -98,13 +98,13 @@ public class Control implements KeyListener
 			if(game.o.object==null)
 			{
 				game.o.pickUp();
-				//if(game.o.object != null && game.o.object.getType().equals("box"))
-				//{
+				if(game.o.object != null && game.o.object.getType().equals("box"))
+				{
 					view.getGpanel().UoneilImage = view.getGpanel().UboxOneil;
 					view.getGpanel().DoneilImage = view.getGpanel().DboxOneil;
 					view.getGpanel().LoneilImage = view.getGpanel().LboxOneil;
 					view.getGpanel().oneilImage = view.getGpanel().RboxOneil;
-				//}
+				}
 			}
 			else 
 			{
