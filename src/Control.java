@@ -98,9 +98,22 @@ public class Control implements KeyListener
 			if(game.o.object==null)
 			{
 				game.o.pickUp();
+				//if(game.o.object != null && game.o.object.getType().equals("box"))
+				//{
+					view.getGpanel().UoneilImage = view.getGpanel().UboxOneil;
+					view.getGpanel().DoneilImage = view.getGpanel().DboxOneil;
+					view.getGpanel().LoneilImage = view.getGpanel().LboxOneil;
+					view.getGpanel().oneilImage = view.getGpanel().RboxOneil;
+				//}
 			}
 			else 
+			{
 				game.o.dropDown();
+				view.getGpanel().UoneilImage = view.getGpanel().UnoboxOneil;
+				view.getGpanel().DoneilImage = view.getGpanel().DnoboxOneil;
+				view.getGpanel().LoneilImage = view.getGpanel().LnoboxOneil;
+				view.getGpanel().oneilImage = view.getGpanel().RnoboxOneil;
+			}
 			view.Paint();
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_B)

@@ -30,11 +30,21 @@ public class GamePanel extends JPanel
 	private Image HRportalImage;
 	private Image VGportalImage;
 	private Image HGportalImage;
-	// Oneil 4 irány
+	// Oneil 4 irány vagy dobozzal épp az értéke vagy doboz nélküli
 	public Image UoneilImage;
 	public Image DoneilImage;
 	public Image oneilImage;
 	public Image LoneilImage;
+	//Oneil dobozzal
+	public Image UboxOneil;
+	public Image DboxOneil;
+	public Image LboxOneil;
+	public Image RboxOneil;
+	//Oneil dobozzal
+	public Image UnoboxOneil;
+	public Image DnoboxOneil;
+	public Image LnoboxOneil;
+	public Image RnoboxOneil;
 	//replicator
 	private Image replicatorImage;
 	// jaffa 4 irány
@@ -57,11 +67,11 @@ public class GamePanel extends JPanel
 		
 		//Pályaelemek
 		groundImage = new ImageIcon("ground.jpg").getImage();
-		boxImage = new ImageIcon("box.png").getImage();
+		boxImage = new ImageIcon("box_new.png").getImage();
 		doorImage = new ImageIcon("door1.jpg").getImage();
 		pitImage = new ImageIcon("pit.jpg").getImage();
 		scaleImage = new ImageIcon("scale.jpg").getImage();
-		ssImage = new ImageIcon("spaceship.jpg").getImage();
+		ssImage = new ImageIcon("spaceship_new.jpg").getImage();
 		swImage = new ImageIcon("specialwall_new.jpg").getImage();
 		wallImage = new ImageIcon("wall_new.jpg").getImage();
 		zpmImage = new ImageIcon("zpm.png").getImage();
@@ -81,6 +91,16 @@ public class GamePanel extends JPanel
 		LoneilImage = new ImageIcon("ONeilL.png").getImage();
 		UoneilImage = new ImageIcon("ONeilUp.png").getImage();
 		DoneilImage = new ImageIcon("ONeilD.png").getImage();
+		//Oneil doboz nélkül
+		UnoboxOneil = new ImageIcon("OneilU.png").getImage();
+		RnoboxOneil = new ImageIcon("ONeilR.png").getImage();
+		DnoboxOneil = new ImageIcon("ONeilD.png").getImage();
+		LnoboxOneil = new ImageIcon("ONeilL.png").getImage();
+		//Oneil dobozzal
+		UboxOneil = new ImageIcon("UboxO.png").getImage();
+		RboxOneil = new ImageIcon("RboxO.png").getImage();
+		DboxOneil = new ImageIcon("DboxO.png").getImage();
+		LboxOneil = new ImageIcon("LboxO.png").getImage();
 		//Jaffa
 		UjaffaImage = new ImageIcon("Jaffa.png").getImage();
 		DjaffaImage = new ImageIcon("Jaffa.png").getImage();
