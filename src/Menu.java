@@ -8,6 +8,11 @@ import javax.swing.JPanel;
 //menü  megjelenítésére szolgáló JPanel
 public class Menu extends JPanel
 {
+	public int Menu1P;
+	public int Menu2P;
+	public int Menu3P;
+	public int Menu4P;
+	
 	public Menu() 
 	{
 		repaint();
