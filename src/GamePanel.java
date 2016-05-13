@@ -53,6 +53,16 @@ public class GamePanel extends JPanel
 	public Image UjaffaImage;
 	public Image DjaffaImage;
 	public Image LjaffaImage;
+	//jaffa  dobozzal
+	public Image UboxJaffa;
+	public Image RboxJaffa;
+	public Image DboxJaffa;
+	public Image LboxJaffa;
+	//jaffa   no dobozzal
+	public Image UnoboxJaffa;
+	public Image RnoboxJaffa;
+	public Image DnoboxJaffa;
+	public Image LnoboxJaffa;
 	// 4 Bullet
 	public Image BlueBullet;
 	public Image YellowBullet;
@@ -113,6 +123,16 @@ public class GamePanel extends JPanel
 		RjaffaImage = new ImageIcon("Jaffa2.png").getImage();
 		DjaffaImage = new ImageIcon("Jaffa3.png").getImage();
 		LjaffaImage = new ImageIcon("Jaffa4.png").getImage();
+		//Jaffa dobozzal
+		UboxJaffa = new ImageIcon("UboxJ.png").getImage();
+		RboxJaffa = new ImageIcon("RboxJ.png").getImage();
+		DboxJaffa = new ImageIcon("DboxJ.png").getImage();
+		LboxJaffa = new ImageIcon("LboxJ.png").getImage();
+		//Jaffa  no dobozzal
+		UnoboxJaffa = new ImageIcon("Jaffa1.png").getImage();
+		RnoboxJaffa = new ImageIcon("Jaffa2.png").getImage();
+		DnoboxJaffa = new ImageIcon("Jaffa3.png").getImage();
+		LnoboxJaffa = new ImageIcon("Jaffa4.png").getImage();
 		//Bullets
 		BlueBullet = new ImageIcon("bluebullet.png").getImage();
 		YellowBullet = new ImageIcon("yellowbullet.png").getImage();

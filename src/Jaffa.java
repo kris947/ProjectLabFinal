@@ -25,16 +25,20 @@ public class Jaffa extends Caracter {
 		System.out.println("ONeil: pickUp metódus hívás");
 		switch (direction) {
 			case Up:   //Fel
-				object = map.map[loc.getY()-1][loc.getX()].getObj(); //Koordináták beállítása
+				object = map.map[loc.getY()-1][loc.getX()].takeObj(); //Koordináták beállítása
+				map.map[loc.getY()-1][loc.getX()].setObj(null);
 			break;
 			case Down: //le
-				object = map.map[loc.getY()+1][loc.getX()].getObj(); //Koordináták beállítása
+				object = map.map[loc.getY()+1][loc.getX()].takeObj(); //Koordináták beállítása
+				map.map[loc.getY()+1][loc.getX()].setObj(null);
 			break;
 			case Left: //Balra
-				object = map.map[loc.getY()][loc.getX()-1].getObj(); //Koordináták beállítása
+				object = map.map[loc.getY()][loc.getX()-1].takeObj(); //Koordináták beállítása
+				map.map[loc.getY()][loc.getX()-1].setObj(null);
 			break;
 			case Right: //Jobb
-				object = map.map[loc.getY()][loc.getX()+1].getObj(); //Koordináták beállítása
+				object = map.map[loc.getY()][loc.getX()+1].takeObj(); //Koordináták beállítása
+				map.map[loc.getY()][loc.getX()+1].setObj(null);
 			break;		
 		}
 	}
@@ -59,27 +63,38 @@ public class Jaffa extends Caracter {
 		
 	}
 	
-	//Item lerakása
-	public void dropDown() {
-		System.out.println("ONeil: dropDown metódus hívás");
+	///boolean - sikeres volt-e a lerakás
+	public boolean dropDown() {
 		switch (direction) {
 		case Up: //fel
-			map.map[loc.getY()-1][loc.getX()].setObj(object); //Koordináták beállítása
-			object = null;
+			if (map.map[loc.getY()-1][loc.getX()].setObj(object) == true)	//Koordináták beállítása
+			{ 
+				object = null;
+				return true;
+			}
 		break;
 		case Down: //le
-			map.map[loc.getY()+1][loc.getX()].setObj(object); //Koordináták beállítása
-			object = null;
+			if (map.map[loc.getY()+1][loc.getX()].setObj(object) == true)
+			{ 
+				object = null;
+				return true;
+			}
 		break;
 		case Left: //balra
-			map.map[loc.getY()][loc.getX()-1].setObj(object); //Koordináták beállítása
-			object = null;
+			if (map.map[loc.getY()][loc.getX()-1].setObj(object) == true)
+			{
+				object = null;
+				return true;
+			}
 		break;
 		case Right: //jobbra
-			map.map[loc.getY()][loc.getX()+1].setObj(object); //Koordináták beállítása
-			object = null;
+			if (map.map[loc.getY()][loc.getX()+1].setObj(object) == true)
+			{
+				object = null;
+				return true;
+			}
 		break;		
+		}
+		return false;
 	}
-}
-	
 }

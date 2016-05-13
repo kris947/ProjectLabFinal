@@ -170,24 +170,24 @@ public class Control implements KeyListener
 		}
 		//Ezt még át kell írni jaffara
 		else if(e.getKeyCode() == KeyEvent.VK_K){
-			if(game.o.object==null)
+			if(game.j.object==null)
 		{
-			game.o.pickUp();
-			if(game.o.object != null && game.o.object.getType().equals("box"))
+			game.j.pickUp();
+			if(game.j.object != null && game.j.object.getType().equals("box"))
 			{
-				view.getGpanel().UoneilImage = view.getGpanel().UboxOneil;
-				view.getGpanel().DoneilImage = view.getGpanel().DboxOneil;
-				view.getGpanel().LoneilImage = view.getGpanel().LboxOneil;
-				view.getGpanel().oneilImage = view.getGpanel().RboxOneil;
+				view.getGpanel().UjaffaImage = view.getGpanel().UboxJaffa;
+				view.getGpanel().DjaffaImage = view.getGpanel().DboxJaffa;
+				view.getGpanel().LjaffaImage = view.getGpanel().LboxJaffa;
+				view.getGpanel().RjaffaImage = view.getGpanel().RboxJaffa;
 			}
 		}
-		else if(game.o.dropDown() == true)
+		else if(game.j.dropDown() == true)
 		{
 			
-			view.getGpanel().UoneilImage = view.getGpanel().UnoboxOneil;
-			view.getGpanel().DoneilImage = view.getGpanel().DnoboxOneil;
-			view.getGpanel().LoneilImage = view.getGpanel().LnoboxOneil;
-			view.getGpanel().oneilImage = view.getGpanel().RnoboxOneil;
+			view.getGpanel().UjaffaImage = view.getGpanel().UnoboxJaffa;
+			view.getGpanel().DjaffaImage = view.getGpanel().DnoboxJaffa;
+			view.getGpanel().LjaffaImage = view.getGpanel().LnoboxJaffa;
+			view.getGpanel().RjaffaImage = view.getGpanel().RnoboxJaffa;
 		}
 		view.Paint();
 		}
