@@ -14,6 +14,7 @@ Useable object;
 		super( new Coord(c.getX(),c.getY()));
 		wormhole = wh;
         type="portal";
+       
 	};
 	
 	/*public void setWH(WormHole wh) {
@@ -90,7 +91,7 @@ Useable object;
 			//else return location;
 			else return c;
 			}
-			/*else if (isColour(c,wormhole.getRed())&& isGoodDir(c,wormhole.getRedDir(),wormhole.getRed())){
+			else if (isColour(c,wormhole.getRed())&& isGoodDir(c,wormhole.getRedDir(),wormhole.getRed())){
 			System.out.println("From Red to Green side");
 		
 		if(wormhole.getGreenDir()==Jaffa.Directions.Up){
@@ -155,7 +156,7 @@ Useable object;
 			return cord;
 			}
 		else return location;
-		}*/
+		}
 			//else return location;
 			else return c;
 		}
@@ -189,7 +190,9 @@ Useable object;
 	}
 	
 	public boolean isColour(Coord c,Coord colour)
-	{
+	{   if(colour==null || c==null){
+			return false;
+			}
 		if((1==Math.abs(colour.getX()-c.getX()) &&(0==Math.abs(colour.getY()-c.getY())))|| (0==Math.abs(colour.getX()-c.getX()) &&(1==Math.abs(colour.getY()-c.getY()))))
 		return true;
 		else 

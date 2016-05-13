@@ -17,8 +17,10 @@ public class WormHole {
 	}
 	public Boolean isOpen() {
 		//System.out.println("WormHole: isOpen metódus hívás");
-		if (BluePortal!= null && YellowPortal != null) //ha nyitva van egy kek meg egy sarga portal is..
+		if ((BluePortal!= null && YellowPortal != null)|| (GreenPortal!= null && RedPortal != null) ){ //ha nyitva van egy kek meg egy sarga portal is..
+			
 			return true; //..akkor nyitva van a feregjarat
+		}
 		else 
 			return false; //ha nincs, akkor zarva van a feregjarat
 	}
@@ -42,18 +44,25 @@ public class WormHole {
 	}
 	
 	//GreenPortal koordinatait adja vissza
-	public Coord getGreen() {
-		//System.out.println("WormHole: getGreen metódus hívás");
+		public Coord getGreen() {
+			//System.out.println("WormHole: getGreen metódus hívás");
+			if(GreenPortal!=null)
+				return (new Coord(GreenPortal.getY(),GreenPortal.getX()));
+			else 
+				return null;
+		}
 		
-		return (new Coord(GreenPortal.getY(),GreenPortal.getX()));
-	}
-	
-	//RedPortal koordinatait adja vissza
-	public Coord getRed() {
-		//System.out.println("WormHole: getRed metódus hívás");
-		
-		return (new Coord(RedPortal.getY(),RedPortal.getX()));
-	}
+		//RedPortal koordinatait adja vissza
+		public Coord getRed() {
+			//System.out.println("WormHole: getRed metódus hívás");
+			
+			if(RedPortal!=null)
+				return (new Coord(RedPortal.getY(),RedPortal.getX()));
+			else 
+				return null;
+			
+			
+		}
 	
 	//BluePortal koordinatait allitja be 
 	public void setBlue(Coord c) {

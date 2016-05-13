@@ -132,6 +132,65 @@ public class Control implements KeyListener
 		{
 			game.o.shoot('y', game.wh);
 		}
+		else if(e.getKeyCode() == KeyEvent.VK_UP)
+		{
+			game.j.move(game.j.direction.Up);
+			view.Paint();
+			//System.out.println(game.o.getLoc().getX() + " " + game.o.getLoc().getY());
+		}	
+		else if(e.getKeyCode() == KeyEvent.VK_DOWN)
+		{
+			game.j.move(game.j.direction.Down);
+			view.Paint();
+			//System.out.println(game.o.getLoc().getX() + " " + game.o.getLoc().getY());
+		}	
+		else if(e.getKeyCode() == KeyEvent.VK_LEFT)
+		{
+			game.j.move(game.j.direction.Left);
+			view.Paint();
+			
+		}	
+		else if(e.getKeyCode() == KeyEvent.VK_RIGHT)
+		{
+			game.j.move(game.j.direction.Right);
+			view.Paint();
+			
+		}
+		else if(e.getKeyCode() == KeyEvent.VK_R)
+		{
+			game.j.shoot('r', game.wh);
+			
+		
+		}
+		else if(e.getKeyCode() == KeyEvent.VK_G)
+		{
+			game.j.shoot('g', game.wh);
+			
+			
+		}
+		//Ezt még át kell írni jaffara
+		else if(e.getKeyCode() == KeyEvent.VK_K){
+			if(game.o.object==null)
+		{
+			game.o.pickUp();
+			if(game.o.object != null && game.o.object.getType().equals("box"))
+			{
+				view.getGpanel().UoneilImage = view.getGpanel().UboxOneil;
+				view.getGpanel().DoneilImage = view.getGpanel().DboxOneil;
+				view.getGpanel().LoneilImage = view.getGpanel().LboxOneil;
+				view.getGpanel().oneilImage = view.getGpanel().RboxOneil;
+			}
+		}
+		else if(game.o.dropDown() == true)
+		{
+			
+			view.getGpanel().UoneilImage = view.getGpanel().UnoboxOneil;
+			view.getGpanel().DoneilImage = view.getGpanel().DnoboxOneil;
+			view.getGpanel().LoneilImage = view.getGpanel().LnoboxOneil;
+			view.getGpanel().oneilImage = view.getGpanel().RnoboxOneil;
+		}
+		view.Paint();
+		}
 	}
 	
 }

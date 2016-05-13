@@ -15,13 +15,17 @@ public class GreenBullet extends Bullet{
 	}
 	
 	//Portál nyitás
-	public void open() 
-	{
-		//System.out.println("GreenBullett: open metódus hívás");
-		
-		wormhole.setGreen(new Coord( loc.getY(),loc.getX()));
-		wormhole.setGreenDir(dir);
-		map.map[loc.getY()][loc.getX()]=new Portal(loc,'g',wormhole);
-		//System.out.println("GreenBullet: Zöld portál nyílt");*/
+		public void open() 
+		{
+			System.out.println("GreenBullett: open metódus hívás");
+			if(wormhole.getGreen() != null){
+			
+				map.map[wormhole.getGreen().getY()][wormhole.getGreen().getX()]=new SpecialWall(new Coord(wormhole.getGreen().getY(),wormhole.getGreen().getX()));
+			}
+
+			wormhole.setGreen(new Coord(loc.getY(),loc.getX()));	//Kivalasztjuk a kek portalt
+			wormhole.setGreenDir(dir);
+			map.map[loc.getY()][loc.getX()]=new Portal(loc,'g',wormhole); //Portal letrehoza a megfelelo helyen
+			//System.out.println("GreenBullet: Zöld portál nyílt");*/
+		}
 	}
-}

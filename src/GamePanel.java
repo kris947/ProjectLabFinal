@@ -89,10 +89,10 @@ public class GamePanel extends JPanel
 		HYportalImage = new ImageIcon("yellowportal2_new.jpg").getImage();
 		VBportalImage = new ImageIcon("blueportal1_new.jpg").getImage();
 		HBportalImage = new ImageIcon("blueportal2_new.jpg").getImage();
-		HRportalImage = new ImageIcon("redportal1_new.jpg").getImage();
-		VRportalImage = new ImageIcon("redportal2_new.jpg").getImage();
-		HGportalImage = new ImageIcon("greenportal1_new.jpg").getImage();
-		VGportalImage = new ImageIcon("greenportal2_new.jpg").getImage();
+		HRportalImage = new ImageIcon("redportal2_new.jpg").getImage();
+		VRportalImage = new ImageIcon("redportal1_new.jpg").getImage();
+		HGportalImage = new ImageIcon("greenportal2_new.jpg").getImage();
+		VGportalImage = new ImageIcon("greenportal1_new.jpg").getImage();
 		//Oneil
 		oneilImage = new ImageIcon("ONeilR.png").getImage();
 		LoneilImage = new ImageIcon("ONeilL.png").getImage();
@@ -184,6 +184,21 @@ public class GamePanel extends JPanel
 						else
 							drawTile(i , j, HYportalImage, g);
 					}
+					else if(view.control.game.wh.getGreen() != null && new Coord(i,j).equals(view.control.game.wh.getGreen()))
+					{
+						if((view.control.game.wh.getGreenDir()==Caracter.Directions.Up)||(view.control.game.wh.getGreenDir()==Caracter.Directions.Down))
+							drawTile(i , j, VGportalImage, g);
+						else
+							drawTile(i , j, HGportalImage, g);
+					}
+					else if(view.control.game.wh.getRed() != null && new Coord(i,j).equals(view.control.game.wh.getRed()))
+					{
+						if((view.control.game.wh.getRedDir()==Caracter.Directions.Up)||(view.control.game.wh.getRedDir()==Caracter.Directions.Down))
+							drawTile(i , j, VRportalImage, g);
+						else
+							drawTile(i , j, HRportalImage, g);
+					}
+					
 				}
 				
 				if(types[1]!=null)

@@ -15,15 +15,21 @@ public class RedBullet extends Bullet{
 	}
 	
 	//Portál nyitás
-	public void open() 
-	{
-		//System.out.println("RedBullett: open metódus hívás");
+		public void open() 
+		{
+			if(wormhole.getRed() != null){
+				map.map[wormhole.getRed().getY()][wormhole.getRed().getX()]=new SpecialWall(new Coord(wormhole.getRed().getY(),wormhole.getRed().getX()));
+			}
+
+			wormhole.setRed(new Coord(loc.getY(),loc.getX()));	//Kivalasztjuk a kek portalt
+			wormhole.setRedDir(dir);
+
+			map.map[loc.getY()][loc.getX()]=new Portal(loc,'r',wormhole); //Portal letrehoza a megfelelo helyen
+			
+			
+		}
 		
-		wormhole.setRed(new Coord( loc.getY(),loc.getX()));	
-		wormhole.setRedDir(dir);
-		map.map[loc.getY()][loc.getX()]=new Portal(loc,'r',wormhole);
-		//System.out.println("RedBullet: piros portál nyílt");
 	}
-	
-}
+
+
 
