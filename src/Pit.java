@@ -22,7 +22,9 @@ public class Pit extends Tile {
 		
 		Caracter.Directions od=game.o.direction;
 		Caracter.Directions jd=game.j.direction;
-		Caracter.Directions rd=game.r.direction;
+		Caracter.Directions rd=null;
+		if (game.r != null)
+			rd=game.r.direction;
 		
 		switch(od)  // Ha oneil iránya ... akkor megnézem hogy abba az irányban egyel a pit elõtt áll e mielõtt belelép
 		{
@@ -54,7 +56,7 @@ public class Pit extends Tile {
 		}
 		
 		
-		
+		if(rd != null)
 		switch(rd)
 		{
 			case Up:
