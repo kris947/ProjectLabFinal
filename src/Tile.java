@@ -17,6 +17,7 @@ import java.awt.Image;
 public abstract class Tile {
 	public Useable object;
 	public Coord location;
+	public boolean isOpen;
 	protected String type = "tile";
 	public Tile(){}
 	

@@ -4,7 +4,7 @@ import javax.swing.ImageIcon;
 
 //Osztály a pályán elhelyeszkedõ ajtók kezelésére
 public class Door extends  Wall {
-	private Boolean isOpen; //True, ha nyitva az ajtó, false ha csukva
+
 	
 	//Konstruktor
 	public Door (Coord c) {
@@ -17,17 +17,8 @@ public class Door extends  Wall {
 	//Metódus: az ajtó kinyitására illetve becsukására szolgál
 	@Override 
 	public void openDoor() {
-		//System.out.println("Door: open metódus hívása");
-		if(isOpen==false) //Ha csukva van..
-		{
-			//System.out.println("Ajtó kinyitva");
 			isOpen=true; //..nyissa ki
-		}
-		else   //Ha nyitva van...
-		{
-			//System.out.println("Ajtó bezárása");
-			isOpen=false; //..csukja be
-		} 
+
 	}
 	@Override
 	public void closeDoor(){

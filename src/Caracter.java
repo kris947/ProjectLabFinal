@@ -28,7 +28,7 @@ public class Caracter {
 					
 					if(direction == dir){
 					loc = map.map[loc.getY()-1][loc.getX()].stepOn(loc); 
-					map.map[loc.getY()-1][loc.getX()].stepoff();
+					map.map[loc.getY()+1][loc.getX()].stepoff();
 					}
 					else
 					direction = Directions.Up;
@@ -37,7 +37,7 @@ public class Caracter {
 				case Down: //Lefele mozg�s
 					if(direction == dir){
 					loc = map.map[loc.getY()+1][loc.getX()].stepOn(loc); 
-					map.map[loc.getY()+1][loc.getX()].stepoff();
+					map.map[loc.getY()-1][loc.getX()].stepoff();
 					}
 					else
 					direction = Directions.Down;
@@ -46,7 +46,7 @@ public class Caracter {
 				case Left: //Balra mozg�s
 					if(direction == dir){
 					loc = map.map[loc.getY()][loc.getX()-1].stepOn(loc); 
-					map.map[loc.getY()][loc.getX()-1].stepoff();
+					map.map[loc.getY()][loc.getX()+1].stepoff();
 					}
 					else
 					direction = Directions.Left;
@@ -55,7 +55,7 @@ public class Caracter {
 				case Right: //Jobbra mozg�s
 					if(direction == dir){
 					loc = map.map[loc.getY()][loc.getX()+1].stepOn(loc); 
-					map.map[loc.getY()][loc.getX()+1].stepoff();
+					map.map[loc.getY()][loc.getX()-1].stepoff();
 					}
 					else
 					direction = Directions.Right;

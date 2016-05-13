@@ -29,6 +29,12 @@ public class Control implements KeyListener
 		return types;
 	}
 	
+	public boolean dooropenat(int x, int y)
+	{
+		 return game.getMap().map[y][x].isOpen;
+		
+	}
+	
 	public CharGraphics ODraw()
 	{
 		

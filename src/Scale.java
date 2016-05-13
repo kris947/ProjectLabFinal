@@ -19,8 +19,9 @@ import javax.swing.ImageIcon;
 public class Scale extends Tile {
 	private Coord door;
 	public Map map;
-	public Useable objects[]=new Useable [10];
+	public Useable objects[] = new Useable [10];
 	public int pressedweight;
+	private int objcount = 0;
 	
 	public Scale(Coord location, Coord door, Map map){
 		super(location);
@@ -35,13 +36,14 @@ public class Scale extends Tile {
 	@Override
 	public boolean setObj(Useable object) {
 		if(object!=null){
-		System.out.println("Scale: setObj metódus hívás");
 		
-		pressedweight+=50;
-		// Az objects tömb  pl 100 / 50 => 2-1 tehát elsõ eleme
-		objects[(pressedweight / 50)-1]=object;
-		System.out.println(pressedweight);
-		this.object = objects[(pressedweight / 50)-1];
+		pressedweight+=object.getweight();
+
+		objects[objcount]=object;	
+		this.object = objects[objcount];
+		
+		objcount++;
+		
 		if( pressedweight>=100)	
 			map.map[door.getY()][door.getX()].openDoor();
 			
@@ -58,22 +60,28 @@ public class Scale extends Tile {
 		
 		return object;
 	}
+	
 	@Override
 	public Useable takeObj(){
 		int act=(pressedweight / 50)-1;
-		if(act>=0){
+		if(act>=0)
+		{
 			if(act==0)
-			object=null;
-			else object=objects[act-1];
-		pressedweight-=50;
-		if( pressedweight<100)
-		map.map[door.getX()][door.getY()].closeDoor();
-		if(act==0)
-			object=null;
-				return objects[act];
-				}
+				object=null;
+			else 
+				object=objects[act-1];
+		
+			pressedweight-=50;
+		
+			if( pressedweight<100)
+				map.map[door.getY()][door.getX()].closeDoor();
+			if(act==0)
+				object=null;
+			
+			return objects[act];
+		}
 		else object=null;
-		System.out.println("asd from take");
+		
 		return null;
 	}
 
@@ -89,6 +97,7 @@ public class Scale extends Tile {
 	
 	@Override
 	public void stepoff(){
+		if( pressedweight<100)	
 		map.map[door.getY()][door.getX()].closeDoor();
 	}
 }

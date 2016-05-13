@@ -15,6 +15,7 @@ public class GamePanel extends JPanel
 	private Image groundImage;
 	private Image boxImage;
 	private Image doorImage;
+	private Image doorOImage;
 	private Image pitImage;
 	private Image scaleImage;
 	private Image ssImage;
@@ -68,7 +69,8 @@ public class GamePanel extends JPanel
 		//Pályaelemek
 		groundImage = new ImageIcon("ground.jpg").getImage();
 		boxImage = new ImageIcon("box_new.png").getImage();
-		doorImage = new ImageIcon("door1.jpg").getImage();
+		doorImage = new ImageIcon("door_new.jpg").getImage();
+		doorOImage = new ImageIcon("dooropen_new.jpg").getImage();
 		pitImage = new ImageIcon("pit.jpg").getImage();
 		scaleImage = new ImageIcon("scale.jpg").getImage();
 		ssImage = new ImageIcon("spaceship_new.jpg").getImage();
@@ -131,7 +133,10 @@ public class GamePanel extends JPanel
 				}
 				else if(types[0].equals("door"))
 				{
-					drawTile(i , j, doorImage, g);
+					if(view.control.dooropenat(i, j))
+						drawTile(i , j, doorOImage, g);
+					else
+						drawTile(i , j, doorImage, g);
 				}
 				else if(types[0].equals("pit"))
 				{
