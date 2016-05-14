@@ -38,4 +38,16 @@ public class Door extends  Wall {
 			return this.getLoc(); //Visszatér az ajtó koordinátájával nyitott ajtó esetén
 		}
 	}
+	
+	@Override
+	 public boolean fly(Bullet b)
+	 {
+		if(isOpen==false)
+			return false;
+		else
+			return true;
+		 
+	 }
+	
+	
 }
