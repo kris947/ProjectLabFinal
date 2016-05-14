@@ -4,6 +4,8 @@ import javax.swing.ImageIcon;
 
 
 public class Jaffa extends Caracter {
+	
+	int ZPMget=0;
 	/*public enum Directions{
 		  Up, 
 		  Down, 
@@ -19,6 +21,7 @@ public class Jaffa extends Caracter {
         weight=100;
 	}
 	
+	public int getzpmw(){return ZPMget;}
 
 	//Felvesz egy tárgyat
 	public void pickUp() {

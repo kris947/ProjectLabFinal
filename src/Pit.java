@@ -56,6 +56,38 @@ public class Pit extends Tile {
 		}
 		
 		
+		switch(jd)  // Ha jaffa iránya ... akkor megnézem hogy abba az irányban egyel a pit elõtt áll e mielõtt belelép
+		{
+			case Down:
+				if(game.j.getLoc().equals(new Coord(location.getX(),location.getY()-1)))
+				{
+					game.j.DecrementLife();
+					System.out.println(game.j.lives);
+					return startpoz;
+				}break;
+			case Up:
+				if(game.j.getLoc().equals(new Coord(location.getX(),location.getY()+1)))
+				{
+					game.j.DecrementLife();
+					return startpoz;
+				}break;
+			case Left:
+				if(game.j.getLoc().equals(new Coord(location.getX()+1,location.getY())))
+				{
+					game.j.DecrementLife();
+					return startpoz;
+				}break;
+			case Right:
+				if(game.j.getLoc().equals(new Coord(location.getX()-1,location.getY())))
+				{
+					game.j.DecrementLife();
+					return startpoz;
+				}break;	
+		}
+		
+		
+		
+		
 		if(rd != null)
 		switch(rd)
 		{

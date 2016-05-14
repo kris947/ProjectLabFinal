@@ -8,6 +8,8 @@ import javax.swing.ImageIcon;
 //Osztály ONeil kezelésére
 public class ONeil extends Caracter{ 
 		
+	 int ZPMget = 0;
+	
 	/*public enum Directions{
 		  Up, 
 		  Down, 
@@ -21,7 +23,10 @@ public class ONeil extends Caracter{
 		super(map,lives);
 		loc = new Coord(2,1); //(oszlop,sor)
         weight=100;
+       
 	}	
+	public int getzpmw(){return ZPMget;}
+	
 	//Felvesz egy tárgyat
 	public void pickUp() {
 		switch (direction) {

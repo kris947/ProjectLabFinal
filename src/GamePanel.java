@@ -2,8 +2,10 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.Timer;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.Timer;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
@@ -69,9 +71,13 @@ public class GamePanel extends JPanel
 	public Image GreenBullet;
 	public Image RedBullet;
 	
+	public Image backg;
+	
+	
+	
 	// Rajzolás 0,1 secenként
 	Timer drawTimer;
-	
+
 
 	public GamePanel(View v) 
 	{
@@ -80,6 +86,10 @@ public class GamePanel extends JPanel
 		view = v;
 		drawTimer =new Timer(100, new drawTimerListener());
 		drawTimer.start();
+		
+		
+		backg = new ImageIcon("background.jpg").getImage();
+		
 		
 		//Pályaelemek
 		groundImage = new ImageIcon("ground.jpg").getImage();
@@ -150,6 +160,11 @@ public class GamePanel extends JPanel
 	@Override
     public void paint(Graphics g) 
 	{
+
+
+		
+	
+		
         //super.paint(g);
 		for(int i=0;i<20;i++)
 		{
@@ -289,7 +304,39 @@ public class GamePanel extends JPanel
 			if (current.type == "green")
 				drawTile(current.loc.getX(),current.loc.getY(),GreenBullet,g);
 		}
-					
+				
+
+		
+		g.drawImage(backg, 795, 5, 160, 35, this);
+		
+		String s = "Oneill életeinek száma:   " + view.control.game.o.getLife();
+		g.drawString(s , 800, 20);
+		String s2 = "Begyûjtött ZPM:   " + view.control.game.o.getzpmw();
+		g.drawString(s2 , 800, 35);
+		g.drawRect(795, 5, 159, 34);
+		g.drawRect(794, 4, 160, 35);
+		g.drawRect(794, 4, 161, 36);
+		g.drawRect(796, 6, 158, 33);
+		g.drawRect(796, 6, 157, 32);
+		
+		
+		g.drawImage(backg, 595, 5, 160, 35, this);
+		
+		String s3 = "Jaffa életeinek száma:   " + view.control.game.j.getLife();
+		g.drawString(s3 , 600, 20);
+		String s4 = "Begyûjtött ZPM:   " + view.control.game.j.getzpmw();
+		g.drawString(s4 , 600, 35);
+		
+		g.drawRect(595, 5, 159, 34);
+		g.drawRect(594, 4, 160, 35);
+		g.drawRect(594, 4, 161, 36);
+		g.drawRect(596, 6, 158, 33);
+		g.drawRect(596, 6, 157, 32);
+		
+	
+
+	
+		
 	}
 	
 	class drawTimerListener implements ActionListener
