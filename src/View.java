@@ -1,5 +1,10 @@
 import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -14,6 +19,9 @@ public class View{
 	private JPanel credits;
 	private JPanel rules;
 	
+	JLabel picCredits;
+	JLabel picRules;
+	
 	
 	public View(Control c)
 	{		
@@ -22,17 +30,31 @@ public class View{
 		gpanel = new GamePanel(this);
 		menu = new Menu(this);
 		
-		JLabel jlb2 = new JLabel("CREDITS");
-		jlb2.setBounds(50, 50, 100, 100);
+		
+		BufferedImage myPicture;
+		try 
+		{
+			myPicture = ImageIO.read(new File("credits.jpg"));
+			picCredits = new JLabel(new ImageIcon(myPicture));
+		} 
+		catch (IOException e) {}
+		
 		credits = new JPanel();
 		credits.setBounds(0, 0, 1000, 1000);
-		credits.add(jlb2);
+		credits.add(picCredits);
+	
+		
+		BufferedImage myPicture2;
+		try 
+		{
+			myPicture2 = ImageIO.read(new File("rules.jpg"));
+			picRules = new JLabel(new ImageIcon(myPicture2));
+		} 
+		catch (IOException e) {}
 		
 		rules = new JPanel();
 		rules.setBounds(0, 0, 1000, 1000);
-		JLabel jlb = new JLabel("RULES");
-		jlb.setBounds(50, 50, 100, 100);
-		rules.add(jlb);
+		rules.add(picRules);
 		
 		
 		panel = menu ;
