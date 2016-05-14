@@ -9,7 +9,7 @@ public class Application {
 		control.game.init();
 		control.addView(view);
 				
-		view.setPanel(view.getGpanel());
+		view.setPanel(view.getMpanel());
 		view.Paint();
 		(new ReplicatorThread(game.r)).start();
 		
