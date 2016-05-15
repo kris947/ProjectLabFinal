@@ -13,12 +13,12 @@ public abstract class Bullet implements Runnable{
 		  Right
 	}
 	
-	protected ONeil.Directions dir; 
+	protected ONeil.Directions dir;			//Hivatkozás ONeil irányára
 	//Konstruktor
 	public Bullet(ONeil.Directions directions, Coord coord, Map m) {
 		//System.out.println("Bullet: konstruktor hívás");
-		dir = directions; //
-		loc= new Coord(coord.getX(),coord.getY());
+		dir = directions; 								//Irány átadása
+		loc= new Coord(coord.getX(),coord.getY());		//Koordináta beállítása
 		map = m;
 		
 	}

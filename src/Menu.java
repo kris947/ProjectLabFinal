@@ -30,8 +30,7 @@ public class Menu extends JPanel
     public void paint(Graphics g) 
 	{
         super.paint(g);
-             
-
+            
         ImageIcon ic = new ImageIcon("completemainmenu.jpg");
         Image image = ic.getImage();
         image.getScaledInstance(1000, 1000, Image.SCALE_AREA_AVERAGING);

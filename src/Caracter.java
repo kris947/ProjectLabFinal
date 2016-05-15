@@ -11,7 +11,7 @@ public class Caracter {
 		  Left, 
 		  Right  
 		}
-	 Directions direction = Directions.Right;
+	 Directions direction = Directions.Right;		//Alap irány átadása
 	 protected int weight;
 	 
 	 public Caracter(Map map,int lives){

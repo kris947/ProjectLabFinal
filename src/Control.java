@@ -10,8 +10,9 @@ public class Control implements KeyListener, MouseListener
 {
 	public Game game;
 	public View view;
-	private boolean inMPanel;
+	private boolean inMPanel;		//Benne vagyunk-e vmilyen menüpanelban
 	
+	//Konstruktor
 	public Control(Game game)
 	{
 		this.game = game;
@@ -19,9 +20,12 @@ public class Control implements KeyListener, MouseListener
 		
 	}
 	
+	//Megefelelõ nézet társítása
 	public void addView(View view){
 		this.view=view;
 	}
+	
+	//Típusok meghatározása
 	public String[] getDrawData(int x, int y)
 	{
 		String[] types= new String[2];
@@ -34,12 +38,14 @@ public class Control implements KeyListener, MouseListener
 		return types;
 	}
 	
+	//Nyitva van-e az ajtó
 	public boolean dooropenat(int x, int y)
 	{
 		 return game.getMap().map[y][x].isOpen;
 		
 	}
 	
+	//ONeil adatai a kirajzoláshoz
 	public CharGraphics ODraw()
 	{
 		if(game.o ==null)
@@ -49,6 +55,7 @@ public class Control implements KeyListener, MouseListener
 		return new CharGraphics(c,d);
 	}
 	
+	//Jaffa adatai a kirajzoláshoz
 	public CharGraphics JDraw()
 	{
 		if(game.j ==null)
@@ -58,6 +65,7 @@ public class Control implements KeyListener, MouseListener
 		return new CharGraphics(c,d);
 	}
 	
+	//Replikátor adatai a kirajzoláshoz
 	public CharGraphics RDraw()
 	{
 		if(game.r ==null)
@@ -78,50 +86,47 @@ public class Control implements KeyListener, MouseListener
 	
 	}
 
+	//A lenyomott billenytûk lekezelése
 	@Override
 	public void keyPressed(KeyEvent e)
 	{
 		if(game.o != null)
 		{
-			if(e.getKeyCode() == KeyEvent.VK_W)
+			if(e.getKeyCode() == KeyEvent.VK_W)				//ONeil felfelé néz
 			{
-				game.o.move(game.o.direction.Up);
-				view.Paint();
-				//System.out.println(game.o.getLoc().getX() + " " + game.o.getLoc().getY());
+				game.o.move(game.o.direction.Up);			//ONeil move metódusa a felfele irányra
+				view.Paint();								//Újrarajzolás
 			}
-			else if(e.getKeyCode() == KeyEvent.VK_A)
+			else if(e.getKeyCode() == KeyEvent.VK_A)		//ONeil balra néz
 			{
-				game.o.move(game.o.direction.Left);
-				view.Paint();
-				//System.out.println(game.o.getLoc().getX() + " " + game.o.getLoc().getY());
+				game.o.move(game.o.direction.Left);			//ONeil move metódusa a bal irányra
+				view.Paint();								//Újrarajzolás
 	
 			}
-			else if(e.getKeyCode() == KeyEvent.VK_S)
+			else if(e.getKeyCode() == KeyEvent.VK_S)		//ONeil lefelé néz
 			{
-				game.o.move(game.o.direction.Down);
-				view.Paint();
-				//System.out.println(game.o.getLoc().getX() + " " + game.o.getLoc().getY());
+				game.o.move(game.o.direction.Down);			//ONeil move metódusa a lefelé irányra
+				view.Paint();								//Újrarajzolás
 	
 			}
-			else if(e.getKeyCode() == KeyEvent.VK_D)
+			else if(e.getKeyCode() == KeyEvent.VK_D)		//ONeil jobbra néz
 			{
-				game.o.move(game.o.direction.Right);
-				view.Paint();
-				//System.out.println(game.o.getLoc().getX() + " " + game.o.getLoc().getY());
+				game.o.move(game.o.direction.Right);		//ONeil move metódusa a jobb irányra
+				view.Paint();								//Újrarajzolás
 			}
-			else if(e.getKeyCode() == KeyEvent.VK_E)
+			else if(e.getKeyCode() == KeyEvent.VK_E)		//ONeil objektumhasználta
 			{
-				if(game.o.object==null)
+				if(game.o.object==null)						//ha nincs
 				{
-					game.o.pickUp();
-					if(game.o.object != null && game.o.object.getType().equals("box"))
+					game.o.pickUp();						//felvesz
+					if(game.o.object != null && game.o.object.getType().equals("box"))		//doboz, és melyik irányba néz
 					{
 						view.getGpanel().UoneilImage = view.getGpanel().UboxOneil;
 						view.getGpanel().DoneilImage = view.getGpanel().DboxOneil;
 						view.getGpanel().LoneilImage = view.getGpanel().LboxOneil;
 						view.getGpanel().oneilImage = view.getGpanel().RboxOneil;
 					}
-					if(game.o.object != null && game.o.object.getType().equals("zpm"))
+					if(game.o.object != null && game.o.object.getType().equals("zpm"))		//zpm, és melyik irányba néz
 					{
 						view.getGpanel().UoneilImage = view.getGpanel().UzpmOneil;
 						view.getGpanel().DoneilImage = view.getGpanel().DzpmOneil;
@@ -129,9 +134,8 @@ public class Control implements KeyListener, MouseListener
 						view.getGpanel().oneilImage = view.getGpanel().RzpmOneil;
 					}
 				}
-				else if(game.o.dropDown() == true)
+				else if(game.o.dropDown() == true)			//ha eldobja
 				{
-					
 					view.getGpanel().UoneilImage = view.getGpanel().UnoboxOneil;
 					view.getGpanel().DoneilImage = view.getGpanel().DnoboxOneil;
 					view.getGpanel().LoneilImage = view.getGpanel().LnoboxOneil;
@@ -139,11 +143,11 @@ public class Control implements KeyListener, MouseListener
 				}
 				view.Paint();
 			}
-			else if(e.getKeyCode() == KeyEvent.VK_B)
+			else if(e.getKeyCode() == KeyEvent.VK_B)		//ONeil kék lövés
 			{
 				game.o.shoot('b', game.wh);
 			}
-			else if(e.getKeyCode() == KeyEvent.VK_Y)
+			else if(e.getKeyCode() == KeyEvent.VK_Y)		//ONeil sárga lövés
 			{
 				game.o.shoot('y', game.wh);
 			}
@@ -151,42 +155,36 @@ public class Control implements KeyListener, MouseListener
 		
 		if(game.j != null)
 		{
-			if(e.getKeyCode() == KeyEvent.VK_UP)
+			if(e.getKeyCode() == KeyEvent.VK_UP)			//Jaffa felfelé néz
 			{
 				game.j.move(game.j.direction.Up);
 				view.Paint();
-				//System.out.println(game.o.getLoc().getX() + " " + game.o.getLoc().getY());
 			}	
-			else if(e.getKeyCode() == KeyEvent.VK_DOWN)
+			else if(e.getKeyCode() == KeyEvent.VK_DOWN)		//Jaffa lefelé néz
 			{
 				game.j.move(game.j.direction.Down);
 				view.Paint();
-				//System.out.println(game.o.getLoc().getX() + " " + game.o.getLoc().getY());
 			}	
-			else if(e.getKeyCode() == KeyEvent.VK_LEFT)
+			else if(e.getKeyCode() == KeyEvent.VK_LEFT)		//Jaffa balra néz
 			{
 				game.j.move(game.j.direction.Left);
 				view.Paint();
-				
 			}	
-			else if(e.getKeyCode() == KeyEvent.VK_RIGHT)
+			else if(e.getKeyCode() == KeyEvent.VK_RIGHT)	//Jaffa jobbra néz
 			{
 				game.j.move(game.j.direction.Right);
 				view.Paint();
-				
 			}
-			else if(e.getKeyCode() == KeyEvent.VK_R)
+			else if(e.getKeyCode() == KeyEvent.VK_R)		//Jaffa piros lövés
 			{
 				game.j.shoot('r', game.wh);
-				
-			
 			}
-			else if(e.getKeyCode() == KeyEvent.VK_G)
+			else if(e.getKeyCode() == KeyEvent.VK_G)		//Jaffa piros lövés
 			{
 				game.j.shoot('g', game.wh);				
 			}
 
-			else if(e.getKeyCode() == KeyEvent.VK_K){
+			else if(e.getKeyCode() == KeyEvent.VK_K){		//Jaffa objektumhasználata
 				if(game.j.object==null)
 			{
 				game.j.pickUp();
@@ -224,28 +222,30 @@ public class Control implements KeyListener, MouseListener
 		}
 	}
 	}
+	
+	//Egérkattintás lekezelése
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
-		if(!inMPanel)
+		if(!inMPanel)			//Ha nem vagyunk semelyik menüpanelbe
 		{
-			if(arg0.getX()>240 && arg0.getX()<770 && arg0.getY()>320 && arg0.getY()<395)
+			if(arg0.getX()>240 && arg0.getX()<770 && arg0.getY()>320 && arg0.getY()<395)		//Game
 			{
-				view.setPanel(view.getGpanel());
+				view.setPanel(view.getGpanel());		//Game panel beállítása
+				inMPanel = true;
+			}	
+			if(arg0.getX()>240 && arg0.getX()<770 && arg0.getY()>438 && arg0.getY()<523)		//Rules
+			{
+				view.setPanel(view.getRpanel());		//Rules panel beállítása
 				inMPanel = true;
 			}
-			if(arg0.getX()>240 && arg0.getX()<770 && arg0.getY()>438 && arg0.getY()<523)
+			if(arg0.getX()>240 && arg0.getX()<770 && arg0.getY()>578 && arg0.getY()<655)		//Credits
 			{
-				view.setPanel(view.getRpanel());
+				view.setPanel(view.getCpanel());		//Credits panel beállítása
 				inMPanel = true;
 			}
-			if(arg0.getX()>240 && arg0.getX()<770 && arg0.getY()>578 && arg0.getY()<655)
+			if(arg0.getX()>240 && arg0.getX()<770 && arg0.getY()>714 && arg0.getY()<788)		//Exit
 			{
-				view.setPanel(view.getCpanel());
-				inMPanel = true;
-			}
-			if(arg0.getX()>240 && arg0.getX()<770 && arg0.getY()>714 && arg0.getY()<788)
-			{
-				System.exit(0);
+				System.exit(0);							//Kilépés :(
 			}
 		}
 		

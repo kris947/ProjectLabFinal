@@ -4,13 +4,13 @@ import java.awt.Image;
 public class CharGraphics 
 {
 	private Coord loc;      //A karakter koordinataja
-	Caracter.Directions dir;	//A karakterhez tartozo Image
+	Caracter.Directions dir;	//A karakterhez tartozo irány
 	
 	//Konstruktor
 	public CharGraphics(Coord loc, Caracter.Directions d)
 	{
-		this.loc=loc;
-		dir =d;
+		this.loc=loc;			//Beállítja a helyzetet
+		dir =d;					//Beállítja az irányt
 	}
 	
 	//visszaadja a karakter helyzetet

@@ -22,11 +22,11 @@ public 	Replicator r=null; //Replicator referencia
 	//Inicializáló függvény
 	public void init()
 	{
-		o = new ONeil(map,3);
-		j= new Jaffa(map,3);
-		r= new Replicator(map,1);
+		o = new ONeil(map,3);			//ONeil létrehozása 3 élettel
+		j= new Jaffa(map,3);			//Jaffa létrehozása 3 élettel
+		r= new Replicator(map,1);		//Jaffa létrehozása 1 élettel
 		try {
-			map.initmap(o,j,r);
+			map.initmap(o,j,r);			//Map betöltése
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
