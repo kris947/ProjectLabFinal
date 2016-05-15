@@ -44,8 +44,9 @@ public class Replicator extends Caracter{
 		lives--;
 		map.map[loc.getY()][loc.getX()]=new Ground(loc);
 		die();
-	 }
+	}
 	
+	@Override
 	public void die()
 	{
 		map.game.r = null;

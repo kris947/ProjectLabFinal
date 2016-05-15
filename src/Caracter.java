@@ -80,5 +80,9 @@ public class Caracter {
 	 public void DecrementLife(){
 		 object=null;
 		 lives--;
+		 if (lives == 0)
+			 this.die();
 	 }
+	 
+	 protected void die() {};
 }

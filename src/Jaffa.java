@@ -100,4 +100,10 @@ public class Jaffa extends Caracter {
 		}
 		return false;
 	}
+	
+	@Override
+	public void die()
+	{
+		map.game.j = null;
+	}
 }

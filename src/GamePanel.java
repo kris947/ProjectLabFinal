@@ -255,39 +255,41 @@ public class GamePanel extends JPanel
 		CharGraphics JGrafInfo = view.control.JDraw();
 		CharGraphics RGrafInfo = view.control.RDraw();
 		
-		switch(OGrafInfo.getDir())
-		{
-			case Up:
-				drawTile(OGrafInfo.getX(),OGrafInfo.getY(),UoneilImage,g); 
-			break;
-			case Down:
-				drawTile(OGrafInfo.getX(),OGrafInfo.getY(),DoneilImage,g); 
-			break;
-			case Left:
-				drawTile(OGrafInfo.getX(),OGrafInfo.getY(),LoneilImage,g); 
-			break;
-			case Right:
-				drawTile(OGrafInfo.getX(),OGrafInfo.getY(),oneilImage,g); 
-			break;
-			
-		}
+		if(OGrafInfo != null)
+			switch(OGrafInfo.getDir())
+			{
+				case Up:
+					drawTile(OGrafInfo.getX(),OGrafInfo.getY(),UoneilImage,g); 
+				break;
+				case Down:
+					drawTile(OGrafInfo.getX(),OGrafInfo.getY(),DoneilImage,g); 
+				break;
+				case Left:
+					drawTile(OGrafInfo.getX(),OGrafInfo.getY(),LoneilImage,g); 
+				break;
+				case Right:
+					drawTile(OGrafInfo.getX(),OGrafInfo.getY(),oneilImage,g); 
+				break;
+				
+			}
 		
-		switch(JGrafInfo.getDir())
-		{
-			case Up:
-				drawTile(JGrafInfo.getX(),JGrafInfo.getY(),UjaffaImage,g); 
-			break;
-			case Down:
-				drawTile(JGrafInfo.getX(),JGrafInfo.getY(),DjaffaImage,g); 
-			break;
-			case Left:
-				drawTile(JGrafInfo.getX(),JGrafInfo.getY(),LjaffaImage,g); 
-			break;   
-			case Right:
-				drawTile(JGrafInfo.getX(),JGrafInfo.getY(),RjaffaImage,g); 
-			break;
-			
-		}
+		if(JGrafInfo != null)
+			switch(JGrafInfo.getDir())
+			{
+				case Up:
+					drawTile(JGrafInfo.getX(),JGrafInfo.getY(),UjaffaImage,g); 
+				break;
+				case Down:
+					drawTile(JGrafInfo.getX(),JGrafInfo.getY(),DjaffaImage,g); 
+				break;
+				case Left:
+					drawTile(JGrafInfo.getX(),JGrafInfo.getY(),LjaffaImage,g); 
+				break;   
+				case Right:
+					drawTile(JGrafInfo.getX(),JGrafInfo.getY(),RjaffaImage,g); 
+				break;
+				
+			}
 		
 		if(RGrafInfo != null)
 			drawTile(RGrafInfo.getX(),RGrafInfo.getY(),replicatorImage,g);
@@ -308,10 +310,20 @@ public class GamePanel extends JPanel
 
 		
 		g.drawImage(backg, 795, 5, 160, 35, this);
+		String s;
+		String s2;
+		if (view.control.game.o != null)
+		{
+			s = "Oneill életeinek száma:   " + view.control.game.o.getLife();
+			s2 = "Begyûjtött ZPM:   " + view.control.game.o.getzpmw();
+		}
+		else 
+		{
+			s = "Oneill életeinek száma:   0";
+			s2 = "Begyûjtött ZPM:   -";
+		}
 		
-		String s = "Oneill életeinek száma:   " + view.control.game.o.getLife();
-		g.drawString(s , 800, 20);
-		String s2 = "Begyûjtött ZPM:   " + view.control.game.o.getzpmw();
+		g.drawString(s , 800, 20);		
 		g.drawString(s2 , 800, 35);
 		g.drawRect(795, 5, 159, 34);
 		g.drawRect(794, 4, 160, 35);
@@ -320,13 +332,23 @@ public class GamePanel extends JPanel
 		g.drawRect(796, 6, 157, 32);
 		
 		
+		
 		g.drawImage(backg, 595, 5, 160, 35, this);
+		String s3;
+		String s4;		
+		if (view.control.game.j != null)
+		{
+			s3 = "Jaffa életeinek száma:   " + view.control.game.j.getLife();
+			s4 = "Begyûjtött ZPM:   " + view.control.game.j.getzpmw();
+		}
+		else 
+		{
+			s3 = "Jaffa életeinek száma:   0";
+			s4 = "Begyûjtött ZPM:   -";
+		}
 		
-		String s3 = "Jaffa életeinek száma:   " + view.control.game.j.getLife();
 		g.drawString(s3 , 600, 20);
-		String s4 = "Begyûjtött ZPM:   " + view.control.game.j.getzpmw();
 		g.drawString(s4 , 600, 35);
-		
 		g.drawRect(595, 5, 159, 34);
 		g.drawRect(594, 4, 160, 35);
 		g.drawRect(594, 4, 161, 36);

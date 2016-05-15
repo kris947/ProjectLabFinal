@@ -103,6 +103,12 @@ public class ONeil extends Caracter{
 		return false;
 	}
 	
+	@Override
+	public void die()
+	{
+		map.game.o = null;
+	}
+	
 
 
 	

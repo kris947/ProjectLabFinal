@@ -6,7 +6,7 @@ import javax.swing.ImageIcon;
 public class Pit extends Tile {
 
 	Game game;
-	Coord startpoz=new Coord(2,1); // Oneil , vagy Jaffa kiinduló piziciója
+	Coord startpoz=new Coord(9,12); // Oneil , vagy Jaffa kiinduló piziciója
 	
 	//Konstruktor
 	Pit( Game g,Coord c ){
@@ -20,19 +20,26 @@ public class Pit extends Tile {
 	@Override
 	public Coord stepOn(Coord c) {
 		
-		Caracter.Directions od=game.o.direction;
-		Caracter.Directions jd=game.j.direction;
+		//Caracter.Directions od=game.o.direction;
+		//Caracter.Directions jd=game.j.direction;
+		
 		Caracter.Directions rd=null;
 		if (game.r != null)
 			rd=game.r.direction;
+		Caracter.Directions od=null;
+		if (game.o != null)
+			od=game.o.direction;
+		Caracter.Directions jd=null;
+		if (game.j != null)
+			jd=game.j.direction;
 		
+		if(od != null)
 		switch(od)  // Ha oneil iránya ... akkor megnézem hogy abba az irányban egyel a pit elõtt áll e mielõtt belelép
 		{
 			case Down:
 				if(game.o.getLoc().equals(new Coord(location.getX(),location.getY()-1)))
 				{
 					game.o.DecrementLife();
-					System.out.println(game.o.lives);
 					return startpoz;
 				}break;
 			case Up:
@@ -55,14 +62,13 @@ public class Pit extends Tile {
 				}break;	
 		}
 		
-		
+		if(jd != null)
 		switch(jd)  // Ha jaffa iránya ... akkor megnézem hogy abba az irányban egyel a pit elõtt áll e mielõtt belelép
 		{
 			case Down:
 				if(game.j.getLoc().equals(new Coord(location.getX(),location.getY()-1)))
 				{
 					game.j.DecrementLife();
-					System.out.println(game.j.lives);
 					return startpoz;
 				}break;
 			case Up:
