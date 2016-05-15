@@ -10,9 +10,12 @@ public class Control implements KeyListener, MouseListener
 {
 	public Game game;
 	public View view;
+	private boolean inMPanel;
+	
 	public Control(Game game)
 	{
 		this.game = game;
+		inMPanel = false;
 		
 	}
 	
@@ -217,23 +220,34 @@ public class Control implements KeyListener, MouseListener
 		else if(e.getKeyCode() == KeyEvent.VK_ESCAPE)
 		{
 			view.setPanel(view.getMpanel());
-
-			System.out.println("adsfadg");
+			inMPanel = false;
 		}
 	}
 	}
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
-
-		System.out.println(arg0.getY());
-		if(arg0.getX()>240 && arg0.getX()<770 && arg0.getY()>320 && arg0.getY()<395)
-			view.setPanel(view.getGpanel());
-		if(arg0.getX()>240 && arg0.getX()<770 && arg0.getY()>438 && arg0.getY()<523)
-			view.setPanel(view.getRpanel());
-		if(arg0.getX()>240 && arg0.getX()<770 && arg0.getY()>578 && arg0.getY()<655)
-			view.setPanel(view.getCpanel());
-		if(arg0.getX()>240 && arg0.getX()<770 && arg0.getY()>714 && arg0.getY()<788)
-			System.exit(0);
+		if(!inMPanel)
+		{
+			if(arg0.getX()>240 && arg0.getX()<770 && arg0.getY()>320 && arg0.getY()<395)
+			{
+				view.setPanel(view.getGpanel());
+				inMPanel = true;
+			}
+			if(arg0.getX()>240 && arg0.getX()<770 && arg0.getY()>438 && arg0.getY()<523)
+			{
+				view.setPanel(view.getRpanel());
+				inMPanel = true;
+			}
+			if(arg0.getX()>240 && arg0.getX()<770 && arg0.getY()>578 && arg0.getY()<655)
+			{
+				view.setPanel(view.getCpanel());
+				inMPanel = true;
+			}
+			if(arg0.getX()>240 && arg0.getX()<770 && arg0.getY()>714 && arg0.getY()<788)
+			{
+				System.exit(0);
+			}
+		}
 		
 	}
 

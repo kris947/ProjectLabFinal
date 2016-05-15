@@ -27,14 +27,14 @@ public class ZPM extends Useable {
 	@Override
 	public boolean redeem() 
 	{ 
-		ZPMCount++;
 		if(ZPMCount == 2)
 		{
 			Random rand = new Random(); 
 			int value = rand.nextInt(8); 
 			Coord added = randc[value];
-			m.map[added.getX()][added.getY()].setObj(new ZPM(m));		
+			m.map[added.getX()][added.getY()].setObj(new ZPM(m));
 		}
+		ZPMCount++;
 		return true;
 	}
 }
