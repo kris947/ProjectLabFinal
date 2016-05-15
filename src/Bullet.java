@@ -3,7 +3,7 @@
 public abstract class Bullet implements Runnable{
 	protected Map map;     
 	protected Coord loc;  //lövedék pozíciója
-	protected String type= "Bullet";
+
 	
 	//Enum az irányokra
 	public enum Directions{
@@ -22,6 +22,8 @@ public abstract class Bullet implements Runnable{
 		map = m;
 		
 	}
+	
+	public String Color(){return "bullet";}
 	
 	
 	//A lövedék mozgását írja le

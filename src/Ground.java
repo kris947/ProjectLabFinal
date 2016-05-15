@@ -11,8 +11,11 @@ public class Ground extends Tile {
 	public Ground (Coord c) {
 		super(c);
 		//System.out.println("Ground: konstruktor hívás");
-        type = "ground";
+       
 	}
+	
+	@Override
+	public String getType(){ return "ground";}
 	
 	//Metódus annak az esetnek a kezelésére ha vki groundra lép
 	@Override

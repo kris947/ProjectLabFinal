@@ -317,13 +317,13 @@ public class GamePanel extends JPanel
 		for(int i=0;i<view.control.game.map.shots.size();i++)
 		{
 			Bullet current = view.control.game.map.shots.get(i);
-			if (current.type == "blue")
+			if (current.Color().equals("blue"))
 				drawTile(current.loc.getX(),current.loc.getY(),BlueBullet,g);
-			if (current.type == "yellow")
+			if (current.Color().equals("yellow"))
 				drawTile(current.loc.getX(),current.loc.getY(),YellowBullet,g);
-			if (current.type == "red")
+			if (current.Color().equals("red"))
 				drawTile(current.loc.getX(),current.loc.getY(),RedBullet,g);
-			if (current.type == "green")
+			if (current.Color().equals("green"))
 				drawTile(current.loc.getX(),current.loc.getY(),GreenBullet,g);
 		}
 				

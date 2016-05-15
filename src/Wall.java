@@ -10,8 +10,11 @@ public class Wall extends Tile {
 		
 		super(c);
 		//System.out.println("W");
-        type= "wall";
+      //  type= "wall";
 	}
+	
+	@Override
+	public String getType(){ return "wall";}
 	
 	//A lövedék megáll, ha falba csapódik
 	@Override

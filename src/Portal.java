@@ -11,9 +11,12 @@ Useable object;
 	Portal(Coord c,char colour,WormHole wh){
 		super( new Coord(c.getX(),c.getY()));
 		wormhole = wh;
-        type="portal";
+        
        
 	};
+	
+	@Override
+	public String getType(){ return "portal";}
 	
 	//A portálra lépést kezeli
 	@Override 

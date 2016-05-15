@@ -18,10 +18,9 @@ public abstract class Tile {
 	public Useable object;
 	public Coord location;
 	public boolean isOpen;
-	protected String type = "tile";
 	public Tile(){}
 	
-	public String getType(){ return type;}
+	public String getType(){ return "tile";}
 	
 	public Tile(Coord c) {
 		object = null;

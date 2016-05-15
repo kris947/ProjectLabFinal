@@ -11,8 +11,11 @@ public class Door extends  Wall {
 		super(c);
 		//System.out.println("Door: konsturktor hívás");
 		isOpen=false; //Alapértelmezetten csukva van
-        type = "door";
+     
 	}
+	
+	@Override
+	public String getType(){ return "door";}
 	
 	//Metódus: az ajtó kinyitására illetve becsukására szolgál
 	@Override 

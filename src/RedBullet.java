@@ -10,7 +10,14 @@ public class RedBullet extends Bullet{
 	{
 		super(directions,coord,m);
 		wormhole=w;
-		type = "red";		
+		
+	}
+	
+	
+	@Override
+	public String Color()
+	{
+		return "red";
 	}
 	
 	//Portál nyitás

@@ -13,9 +13,11 @@ public class Scale extends Tile {
 		this.door = door;
 		this.map = map;
 		pressedweight=0;
-        type="scale";
+       
 	}
 	
+	@Override
+	public String getType(){ return "scale";}
 	
 	@Override
 	public boolean setObj(Useable object) {

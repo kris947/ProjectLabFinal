@@ -7,7 +7,13 @@ public class YellowBullet extends Bullet {
 	public YellowBullet(ONeil.Directions directions, Coord coord, Map m,WormHole w) {
 		super(directions,coord,m); //Ososztály konstruktoranak hivasa
 		wormhole=w;	
-		type = "yellow";
+		
+	}
+	
+	@Override
+	public String Color()
+	{
+		return "yellow";
 	}
 	
 	public void open()

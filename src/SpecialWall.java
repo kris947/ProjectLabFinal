@@ -6,8 +6,11 @@ public class SpecialWall extends Wall {
 	
 	public SpecialWall (Coord c) {
 		super(c);
-        type="specialwall";
+       // type="specialwall";
 	}
+	
+	@Override
+	public String getType(){ return "specialwall";}
 	
 	//Megmondja, hogy ONeil mit csináljon, ha falra akar lépni 
 		@Override

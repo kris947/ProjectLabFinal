@@ -9,8 +9,16 @@ public class GreenBullet extends Bullet{
 	{
 		super(directions,coord,m);
 		wormhole=w;
-		type = "green";
+		
 	}
+	
+	
+	@Override
+	public String Color()
+	{
+		return "green";
+	}
+	
 	
 	//Portál nyitás
 		public void open() 

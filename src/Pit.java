@@ -12,10 +12,13 @@ public class Pit extends Tile {
 	Pit( Game g,Coord c ){
 		super(c);
 		game = g;
-        type="pit";
+      
 		
 	}
 
+	@Override
+	public String getType(){ return "pit";}
+	
 	//Kezeli az esetet amikor Oneill a szakadékba lép
 	@Override
 	public Coord stepOn(Coord c) {

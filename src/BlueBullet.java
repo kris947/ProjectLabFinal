@@ -9,7 +9,14 @@ public class BlueBullet extends Bullet {
 	{
 		super(directions,coord,m); //Ososztály konstruktoranak hivasa
 		wormhole=w;
-		type = "blue";
+		
+	}
+	
+	
+	@Override
+	public String Color()
+	{
+		return "blue";
 	}
 	
 	//Portál nyitás

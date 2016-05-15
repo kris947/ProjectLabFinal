@@ -9,8 +9,11 @@ public class SpaceShip extends Tile {
 	
 	SpaceShip(Coord c){
 		super(c);
-        type = "spaceship";
+     
 	}
+	
+	@Override
+	public String getType(){ return "spaceship";}
 	
 	public void endGame() {
 		//System.out.println("A jatéknak vége");
