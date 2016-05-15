@@ -4,7 +4,7 @@ import java.util.Random;
 public class ZPM extends Useable {
 	public Map m;
 	public Coord[] randc = new Coord[8];
-//Konstruktor
+	//Konstruktor
 	ZPM(Map map)
 	{ 
 		type="zpm";
@@ -27,13 +27,12 @@ public class ZPM extends Useable {
 	@Override
 	public boolean redeem() { 
 		ZPMCount++;
-		if(ZPMCount == 2){
+		if(ZPMCount == 2)
+		{
 			Random rand = new Random(); 
 			int value = rand.nextInt(8); 
 			Coord added = randc[value];
-			m.map[added.getX()][added.getY()].setObj(new ZPM(m));
-			System.out.println(added.getX() + " " + added.getY());
-		
+			m.map[added.getX()][added.getY()].setObj(new ZPM(m));		
 		}
 		return true;
 	}

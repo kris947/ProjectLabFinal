@@ -1,27 +1,20 @@
-import java.awt.Image;
-import javax.swing.ImageIcon;
-
-
 
 public class Jaffa extends Caracter {
 	
-	int ZPMget=0;
-	/*public enum Directions{
-		  Up, 
-		  Down, 
-		  Left, 
-		  Right  
-		}
-	static Directions direction = Directions.Right;*/
+	int ZPMget=0; //begyüjtött ZMP szám
 	 
 	 //Konstruktor
-	public Jaffa(Map map,int lives) {
+	public Jaffa(Map map,int lives) 
+	{
 		super(map,lives);
-		loc = new Coord(9,12); //(oszlop,sor)
+		loc = new Coord(10,11); //(oszlop,sor)
         weight=100;
 	}
 	
-	public int getzpmw(){return ZPMget;}
+	public int getzpmw()	//ZPM szám lekérdezéséhez
+	{
+		return ZPMget;
+	}
 
 	//Felvesz egy tárgyat
 	public void pickUp() {
@@ -46,8 +39,9 @@ public class Jaffa extends Caracter {
 		}
 	}
 	
-	//Lövés kezelése
-	public void shoot(char c,WormHole w) {
+	//Lövés kezelése - lsd ONeill
+	public void shoot(char c,WormHole w) 
+	{
 		System.out.println("ONeil: shoot metódus hívás");
 		if(c=='r')
 		{
@@ -66,12 +60,14 @@ public class Jaffa extends Caracter {
 		
 	}
 	
-	///boolean - sikeres volt-e a lerakás
+	///boolean - sikeres volt-e a lerakás - lsd. ONeill
 	public boolean dropDown() {
 		switch (direction) {
 		case Up: //fel
 			if (map.map[loc.getY()-1][loc.getX()].setObj(object) == true)	//Koordináták beállítása
 			{ 
+				if (object.redeem() == true)
+					ZPMget++;
 				object = null;
 				return true;
 			}
@@ -79,6 +75,8 @@ public class Jaffa extends Caracter {
 		case Down: //le
 			if (map.map[loc.getY()+1][loc.getX()].setObj(object) == true)
 			{ 
+				if (object.redeem() == true)
+					ZPMget++;
 				object = null;
 				return true;
 			}
@@ -86,6 +84,8 @@ public class Jaffa extends Caracter {
 		case Left: //balra
 			if (map.map[loc.getY()][loc.getX()-1].setObj(object) == true)
 			{
+				if (object.redeem() == true)
+					ZPMget++;
 				object = null;
 				return true;
 			}
@@ -93,6 +93,8 @@ public class Jaffa extends Caracter {
 		case Right: //jobbra
 			if (map.map[loc.getY()][loc.getX()+1].setObj(object) == true)
 			{
+				if (object.redeem() == true)
+					ZPMget++;
 				object = null;
 				return true;
 			}

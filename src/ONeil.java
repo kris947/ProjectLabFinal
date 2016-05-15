@@ -1,39 +1,32 @@
-import java.awt.Image;
-
-import javax.swing.ImageIcon;
-
-
-
 
 //Osztály ONeil kezelésére
 public class ONeil extends Caracter{ 
 		
-	 int ZPMget = 0;
-	
-	/*public enum Directions{
-		  Up, 
-		  Down, 
-		  Left, 
-		  Right  
-		}*/
-	//static Directions dir = Directions.Right;
+	 int ZPMget = 0; //eddig begyüjtött ZPM szám
 	 
 	 //Konstruktor
-	public ONeil(Map map,int lives) {
+	public ONeil(Map map,int lives) 
+	{
 		super(map,lives);
-		loc = new Coord(2,1); //(oszlop,sor)
+		loc = new Coord(8,11); //(oszlop,sor)
         weight=100;
        
 	}	
-	public int getzpmw(){return ZPMget;}
+	
+	//vissza adja az eddig begyûjtött ZPM számot
+	public int getzpmw()
+	{
+		return ZPMget;
+	}
 	
 	//Felvesz egy tárgyat
-	public void pickUp() {
-		switch (direction) {
-			case Up:   //Fel
-				
+	public void pickUp() 
+	{
+		switch (direction) 
+		{
+			case Up:   //Fel				
 				object = map.map[loc.getY()-1][loc.getX()].takeObj(); //Koordináták beállítása
-				map.map[loc.getY()-1][loc.getX()].setObj(null);
+				map.map[loc.getY()-1][loc.getX()].setObj(null);		//a felvett tárgy helyére null-r rak
 			break;
 			case Down: //le
 				object = map.map[loc.getY()+1][loc.getX()].takeObj(); //Koordináták beállítása
@@ -44,7 +37,6 @@ public class ONeil extends Caracter{
 				map.map[loc.getY()][loc.getX()-1].setObj(null);
 			break;
 			case Right: //Jobb
-				System.out.println("doboz felvéve");
 				object = map.map[loc.getY()][loc.getX()+1].takeObj(); //Koordináták beállítása
 				map.map[loc.getY()][loc.getX()+1].setObj(null);
 			break;		
@@ -52,15 +44,17 @@ public class ONeil extends Caracter{
 	}
 	
 	//Lövés kezelése
-	public void shoot(char c,WormHole w) {
-		if(c=='b'){
-			BlueBullet blue = new BlueBullet(direction, loc , map,w);
-			Thread bb = new Thread(blue);
+	public void shoot(char c,WormHole w) 
+	{
+		if(c=='b')
+		{
+			BlueBullet blue = new BlueBullet(direction, loc , map,w);	//létre hozza a lövedéket
+			Thread bb = new Thread(blue);	//külön szálon fut a lövedék mozgása
 	        bb.start();
-	        map.shots.add(blue);
-			}
-		else {
-			//YellowBullet y = new YellowBullet(direction, loc , map,w);
+	        map.shots.add(blue);	//a megjelenítéshez használt shots listába is belekerül
+		}
+		else 
+		{
 			YellowBullet yellow = new YellowBullet(direction, loc , map,w);
 			Thread yb = new Thread(yellow);
 	        yb.start();
@@ -72,15 +66,19 @@ public class ONeil extends Caracter{
 	public boolean dropDown() {
 		switch (direction) {
 		case Up: //fel
-			if (map.map[loc.getY()-1][loc.getX()].setObj(object) == true)	//Koordináták beállítása
+			if (map.map[loc.getY()-1][loc.getX()].setObj(object) == true)	//ha lerakható
 			{ 
-				object = null;
-				return true;
+				if (object.redeem() == true)	//a redeem true-val tér vissza ha ZPM
+					ZPMget++;
+				object = null;		//ONeillnál lévõ object ezután null
+				return true;	
 			}
 		break;
 		case Down: //le
 			if (map.map[loc.getY()+1][loc.getX()].setObj(object) == true)
 			{ 
+				if (object.redeem() == true)
+					ZPMget++;
 				object = null;
 				return true;
 			}
@@ -88,6 +86,8 @@ public class ONeil extends Caracter{
 		case Left: //balra
 			if (map.map[loc.getY()][loc.getX()-1].setObj(object) == true)
 			{
+				if (object.redeem() == true)
+					ZPMget++;
 				object = null;
 				return true;
 			}
@@ -95,21 +95,20 @@ public class ONeil extends Caracter{
 		case Right: //jobbra
 			if (map.map[loc.getY()][loc.getX()+1].setObj(object) == true)
 			{
+				if (object.redeem() == true)
+					ZPMget++;
 				object = null;
 				return true;
 			}
 		break;		
 		}
-		return false;
+		return false;	//ha nem lehetett lerakni akkor false-al tér vissza
 	}
 	
 	@Override
-	public void die()
+	public void die()	//ha elfogy az élete akkor az Oneil trölõdik a map-bõl
 	{
 		map.game.o = null;
 	}
-	
-
-
 	
 }
