@@ -43,6 +43,11 @@ public class GamePanel extends JPanel
 	public Image DboxOneil;
 	public Image LboxOneil;
 	public Image RboxOneil;
+	//Oneil zpmel
+	public Image UzpmOneil;
+	public Image DzpmOneil;
+	public Image LzpmOneil;
+	public Image RzpmOneil;
 	//Oneil doboz nelkul
 	public Image UnoboxOneil;
 	public Image DnoboxOneil;
@@ -60,6 +65,11 @@ public class GamePanel extends JPanel
 	public Image RboxJaffa;
 	public Image DboxJaffa;
 	public Image LboxJaffa;
+	//Jaffa zpmel
+	public Image UzpmJaffa;
+	public Image DzpmJaffa;
+	public Image LzpmJaffa;
+	public Image RzpmJaffa;
 	//jaffa   no dobozzal
 	public Image UnoboxJaffa;
 	public Image RnoboxJaffa;
@@ -128,6 +138,11 @@ public class GamePanel extends JPanel
 		RboxOneil = new ImageIcon("RboxO.png").getImage();
 		DboxOneil = new ImageIcon("DboxO.png").getImage();
 		LboxOneil = new ImageIcon("LboxO.png").getImage();
+		//Oneil zpmel
+		UzpmOneil = new ImageIcon("UzpmO.png").getImage();
+		RzpmOneil = new ImageIcon("RzpmO.png").getImage();
+		DzpmOneil = new ImageIcon("DzpmO.png").getImage();
+		LzpmOneil = new ImageIcon("LzpmO.png").getImage();
 		//Jaffa
 		UjaffaImage = new ImageIcon("Jaffa1.png").getImage();
 		RjaffaImage = new ImageIcon("Jaffa2.png").getImage();
@@ -138,6 +153,11 @@ public class GamePanel extends JPanel
 		RboxJaffa = new ImageIcon("RboxJ.png").getImage();
 		DboxJaffa = new ImageIcon("DboxJ.png").getImage();
 		LboxJaffa = new ImageIcon("LboxJ.png").getImage();
+		//Jaffa dobozzal
+		UzpmJaffa = new ImageIcon("UzpmJ.png").getImage();
+		RzpmJaffa = new ImageIcon("RzpmJ.png").getImage();
+		DzpmJaffa = new ImageIcon("DzpmJ.png").getImage();
+		LzpmJaffa = new ImageIcon("LzpmJ.png").getImage();
 		//Jaffa  no dobozzal
 		UnoboxJaffa = new ImageIcon("Jaffa1.png").getImage();
 		RnoboxJaffa = new ImageIcon("Jaffa2.png").getImage();

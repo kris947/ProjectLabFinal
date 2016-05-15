@@ -111,12 +111,19 @@ public class Control implements KeyListener, MouseListener
 				if(game.o.object==null)
 				{
 					game.o.pickUp();
-					if(game.o.object != null/* && game.o.object.getType().equals("box")*/)
+					if(game.o.object != null && game.o.object.getType().equals("box"))
 					{
 						view.getGpanel().UoneilImage = view.getGpanel().UboxOneil;
 						view.getGpanel().DoneilImage = view.getGpanel().DboxOneil;
 						view.getGpanel().LoneilImage = view.getGpanel().LboxOneil;
 						view.getGpanel().oneilImage = view.getGpanel().RboxOneil;
+					}
+					if(game.o.object != null && game.o.object.getType().equals("zpm"))
+					{
+						view.getGpanel().UoneilImage = view.getGpanel().UzpmOneil;
+						view.getGpanel().DoneilImage = view.getGpanel().DzpmOneil;
+						view.getGpanel().LoneilImage = view.getGpanel().LzpmOneil;
+						view.getGpanel().oneilImage = view.getGpanel().RzpmOneil;
 					}
 				}
 				else if(game.o.dropDown() == true)
@@ -186,6 +193,13 @@ public class Control implements KeyListener, MouseListener
 					view.getGpanel().DjaffaImage = view.getGpanel().DboxJaffa;
 					view.getGpanel().LjaffaImage = view.getGpanel().LboxJaffa;
 					view.getGpanel().RjaffaImage = view.getGpanel().RboxJaffa;
+				}
+				if(game.j.object != null && game.j.object.getType().equals("zpm"))
+				{
+					view.getGpanel().UjaffaImage = view.getGpanel().UzpmJaffa;
+					view.getGpanel().DjaffaImage = view.getGpanel().DzpmJaffa;
+					view.getGpanel().LjaffaImage = view.getGpanel().LzpmJaffa;
+					view.getGpanel().RjaffaImage = view.getGpanel().RzpmJaffa;
 				}
 			}
 			else if(game.j.dropDown() == true)
