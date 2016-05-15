@@ -48,8 +48,8 @@ public class SpaceShip extends Tile {
    }
 
    @Override
-   public boolean setObj(Useable o){
-	   //System.out.println("SpaceShip: setObj metódus hívás");
+   public boolean setObj(Useable o)
+   {
 	   if(o == null)	//tárgy levételekor
 	   {		
 		   object = null;
@@ -61,6 +61,7 @@ public class SpaceShip extends Tile {
 			   return false;
 		   else if (o.redeem()== true)  //ha ZPM-et rak rá akkor az eltünik
 		   {
+			   o.redeemed = true;
 			   object = null;
 			   return true;
 		   }

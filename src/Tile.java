@@ -57,7 +57,6 @@ public abstract class Tile {
 
 	
 	public boolean setObj(Useable o) {
-		//System.out.println("Ground: setObj metódus hívás");
 		if(o==null)
 			object=o;	
 		if(object == null){	

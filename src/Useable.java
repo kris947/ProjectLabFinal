@@ -5,6 +5,7 @@ public abstract class Useable {
 	static protected int  ZPMCount=0;
 	protected int weight = 50;
 	protected String type= "Useable";
+	public boolean redeemed = false;
 	
 	public String getType(){return type;}
 	

@@ -68,7 +68,7 @@ public class ONeil extends Caracter{
 		case Up: //fel
 			if (map.map[loc.getY()-1][loc.getX()].setObj(object) == true)	//ha lerakható
 			{ 
-				if (object.redeem() == true)	//a redeem true-val tér vissza ha ZPM
+				if (object.redeem() == true && object.redeemed == true)	//ha beváltható és a spaceship elis fogadta
 					ZPMget++;
 				object = null;		//ONeillnál lévõ object ezután null
 				return true;	
@@ -77,7 +77,7 @@ public class ONeil extends Caracter{
 		case Down: //le
 			if (map.map[loc.getY()+1][loc.getX()].setObj(object) == true)
 			{ 
-				if (object.redeem() == true)
+				if (object.redeem() == true && object.redeemed == true)
 					ZPMget++;
 				object = null;
 				return true;
@@ -86,7 +86,7 @@ public class ONeil extends Caracter{
 		case Left: //balra
 			if (map.map[loc.getY()][loc.getX()-1].setObj(object) == true)
 			{
-				if (object.redeem() == true)
+				if (object.redeem() == true && object.redeemed == true)
 					ZPMget++;
 				object = null;
 				return true;
@@ -95,7 +95,7 @@ public class ONeil extends Caracter{
 		case Right: //jobbra
 			if (map.map[loc.getY()][loc.getX()+1].setObj(object) == true)
 			{
-				if (object.redeem() == true)
+				if (object.redeem() == true && object.redeemed == true)
 					ZPMget++;
 				object = null;
 				return true;

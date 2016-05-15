@@ -25,7 +25,8 @@ public class ZPM extends Useable {
 	 * az uj zpm modul helye , egy elõre meghatározott tömb elemei közül random kiválaszotott koordináta lesz.
 	 */
 	@Override
-	public boolean redeem() { 
+	public boolean redeem() 
+	{ 
 		ZPMCount++;
 		if(ZPMCount == 2)
 		{

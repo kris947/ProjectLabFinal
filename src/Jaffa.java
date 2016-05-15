@@ -66,7 +66,7 @@ public class Jaffa extends Caracter {
 		case Up: //fel
 			if (map.map[loc.getY()-1][loc.getX()].setObj(object) == true)	//Koordináták beállítása
 			{ 
-				if (object.redeem() == true)
+				if (object.redeem() == true && object.redeemed == true)
 					ZPMget++;
 				object = null;
 				return true;
@@ -75,7 +75,7 @@ public class Jaffa extends Caracter {
 		case Down: //le
 			if (map.map[loc.getY()+1][loc.getX()].setObj(object) == true)
 			{ 
-				if (object.redeem() == true)
+				if (object.redeem() == true && object.redeemed == true)
 					ZPMget++;
 				object = null;
 				return true;
@@ -84,7 +84,7 @@ public class Jaffa extends Caracter {
 		case Left: //balra
 			if (map.map[loc.getY()][loc.getX()-1].setObj(object) == true)
 			{
-				if (object.redeem() == true)
+				if (object.redeem() == true && object.redeemed == true)
 					ZPMget++;
 				object = null;
 				return true;
@@ -93,7 +93,7 @@ public class Jaffa extends Caracter {
 		case Right: //jobbra
 			if (map.map[loc.getY()][loc.getX()+1].setObj(object) == true)
 			{
-				if (object.redeem() == true)
+				if (object.redeem() == true && object.redeemed == true)
 					ZPMget++;
 				object = null;
 				return true;

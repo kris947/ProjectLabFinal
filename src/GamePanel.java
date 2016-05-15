@@ -355,9 +355,8 @@ public class GamePanel extends JPanel
 		g.drawRect(596, 6, 158, 33);
 		g.drawRect(596, 6, 157, 32);
 		
-	
-
-	
+		if (view.control.game.j == null && view.control.game.o == null)
+			view.setPanel(view.getMpanel());
 		
 	}
 	
