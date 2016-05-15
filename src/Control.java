@@ -212,14 +212,16 @@ public class Control implements KeyListener, MouseListener
 			}
 			view.Paint();
 			}
-		}
+		
 		
 		else if(e.getKeyCode() == KeyEvent.VK_ESCAPE)
 		{
 			view.setPanel(view.getMpanel());
+
+			System.out.println("adsfadg");
 		}
 	}
-
+	}
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 
