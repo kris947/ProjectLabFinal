@@ -5,7 +5,7 @@ public abstract class Bullet implements Runnable{
 	protected Coord loc;  //lövedék pozíciója
 	protected String type= "Bullet";
 	
-	//enum az irányokra
+	//Enum az irányokra
 	public enum Directions{
 		  Up, 
 		  Down, 
@@ -13,8 +13,7 @@ public abstract class Bullet implements Runnable{
 		  Right
 	}
 	
-	protected ONeil.Directions dir;
-	//Ez itt nem fix h jó 
+	protected ONeil.Directions dir; 
 	//Konstruktor
 	public Bullet(ONeil.Directions directions, Coord coord, Map m) {
 		//System.out.println("Bullet: konstruktor hívás");
@@ -25,11 +24,8 @@ public abstract class Bullet implements Runnable{
 	}
 	
 	
-	//a lövedék mozgását írja le
-	public void run() {
-		//System.out.println("Bullet: move metódus hívás");
-		//System.out.println(loc.getY()+" "+loc.getX());
-		
+	//A lövedék mozgását írja le
+	public void run() {		
 		boolean flying=true;  //elindul a lövedék
 		while(flying == true) //amíg nem csapódik be
 		{
@@ -40,8 +36,6 @@ public abstract class Bullet implements Runnable{
 				flying=map.map[loc.getY()][loc.getX()].fly(this);  //Koordináta beállítása
 				if(loc.equals(map.replicator.loc))
 					map.replicator.die();
-					
-				//System.out.println("Bullet: Lövedék fel pew-pew");
 				break;
 			case Down: //ha lefele megy
 				loc.setY(loc.getY()+1);
@@ -76,7 +70,6 @@ public abstract class Bullet implements Runnable{
 	
 	//Lekérdezõ függvény
 	public Coord getLoc() {
-		//System.out.println("Bullet: getloc metódus hívása");
 		return new Coord(loc.getX(),loc.getY());
 	}
 	

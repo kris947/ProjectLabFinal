@@ -1,15 +1,10 @@
-import java.awt.Image;
+
 import java.util.Random;
 
-import javax.swing.ImageIcon;
-
-//Eklell döntenünk , hogy a ZPMcount  modul hol tároljuk el;
 public class ZPM extends Useable {
-
-	public Image image;
 	public Map m;
 	public Coord[] randc = new Coord[8];
-
+//Konstruktor
 	ZPM(Map map)
 	{ 
 		type="zpm";
@@ -25,22 +20,20 @@ public class ZPM extends Useable {
 		randc[7]=new Coord(18,14);
 	}
 
+	/*
+	 * A ZPM modul beváltása során új ZPM modul helyezõdik el a pályán 
+	 * az uj zpm modul helye , egy elõre meghatározott tömb elemei közül random kiválaszotott koordináta lesz.
+	 */
 	@Override
-	public boolean redeem() {
-		//A ZPM modul beváltása 
+	public boolean redeem() { 
 		ZPMCount++;
-		System.out.println("A ZPM modul sikeresen elhelyezõdött"+" "+ZPMCount);
-		
-		//todo: Random zpm lerakása
-		
 		if(ZPMCount == 2){
 			Random rand = new Random(); 
 			int value = rand.nextInt(8); 
 			Coord added = randc[value];
 			m.map[added.getX()][added.getY()].setObj(new ZPM(m));
 			System.out.println(added.getX() + " " + added.getY());
-		//Ez nem fix h jó
-		//System.gc();
+		
 		}
 		return true;
 	}

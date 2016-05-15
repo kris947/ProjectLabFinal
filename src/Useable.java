@@ -1,6 +1,4 @@
-import java.awt.Image;
 
-import javax.swing.ImageIcon;
 
 //Abstract osztály használati tárgyak leírására
 public abstract class Useable {
@@ -10,7 +8,7 @@ public abstract class Useable {
 	
 	public String getType(){return type;}
 	
-	//igazzal tér vissza ha beváltható(ZPM) hamissal ha nem
+	//Igazzal tér vissza ha beváltható(ZPM) hamissal ha nem
 	public abstract  boolean redeem(); //A használható objektumokkal való interakciót írja le
 	
 	public int getZPMcount(){
@@ -19,7 +17,6 @@ public abstract class Useable {
     
 	public int getweight()
     {
-    	 
     	 return weight;
     }
    

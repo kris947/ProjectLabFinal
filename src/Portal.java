@@ -1,13 +1,11 @@
-import java.awt.Image;
 
-import javax.swing.ImageIcon;
 
 //Osztály a Portal kezelésére
 public class Portal extends Tile {
 private Coord location; //a portál koordinátája
 public WormHole wormhole;
 Useable object;
-//Image image;
+
 
 //Konstruktor
 	Portal(Coord c,char colour,WormHole wh){
@@ -17,17 +15,13 @@ Useable object;
        
 	};
 	
-	/*public void setWH(WormHole wh) {
-		wormhole = wh;
-	}*/
-	
 	//A portálra lépést kezeli
 	@Override 
 	public Coord stepOn(Coord c) {
 		
 		if (wormhole.isOpen()==true){  //Ha nyitva van
 			
-			if(isColour(c,wormhole.getBlue())&& isGoodDir(c,wormhole.getBlueDir(),wormhole.getBlue())){	 // ez kék portál
+			if(isColour(c,wormhole.getBlue())&& isGoodDir(c,wormhole.getBlueDir(),wormhole.getBlue())){	 // Ez kék portál
 			System.out.println("From Blue to Yellow");
 			if(wormhole.getYellowDir()==ONeil.Directions.Up){
 				Coord cord= new Coord(0,0);
@@ -57,7 +51,7 @@ Useable object;
 					else return c;
 				}
 			
-			if(isColour(c,wormhole.getYellow())&& isGoodDir(c,wormhole.getYellowDir(),wormhole.getYellow())){
+			if(isColour(c,wormhole.getYellow())&& isGoodDir(c,wormhole.getYellowDir(),wormhole.getYellow())){ //Sárga portál
 				System.out.println("From Yellow to Blue side");
 			
 			if(wormhole.getBlueDir()==ONeil.Directions.Up){
@@ -88,10 +82,9 @@ Useable object;
 				cord.setY(wormhole.getBlue().getY());
 				return cord;
 				}
-			//else return location;
 			else return c;
 			}
-			else if (isColour(c,wormhole.getRed())&& isGoodDir(c,wormhole.getRedDir(),wormhole.getRed())){
+			else if (isColour(c,wormhole.getRed())&& isGoodDir(c,wormhole.getRedDir(),wormhole.getRed())){ //Piros portál
 			System.out.println("From Red to Green side");
 		
 		if(wormhole.getGreenDir()==Jaffa.Directions.Up){
@@ -124,7 +117,7 @@ Useable object;
 			}
 		else return location;
 		}
-		else if (isColour(c,wormhole.getGreen())&& isGoodDir(c,wormhole.getGreenDir(),wormhole.getGreen())){
+		else if (isColour(c,wormhole.getGreen())&& isGoodDir(c,wormhole.getGreenDir(),wormhole.getGreen())){ //Zöld portál
 			System.out.println("From Green to Red side");
 		
 		if(wormhole.getRedDir()==Jaffa.Directions.Up){
@@ -157,38 +150,37 @@ Useable object;
 			}
 		else return location;
 		}
-			//else return location;
 			else return c;
 		}
 		
-		//else return location;	
 		else return c;	 //egyébként a helyzetét
 		}
 	
 	//koord lekérdezése
 	public Coord getLoc()
 	{
-		//System.out.println("Portal: getloc metódus hívás");
 		return location;
 	}
 	//koord beállítása
 	public void setLoc(Coord c)
 	{
-		//System.out.println("Portal: setloc metódus hívás");
 		location=c;
 	}
 	
 	public Useable getObj(){
-		//System.out.println("Portal: getObj metódus hívás");
 		return null;
 	}
 	
 	public boolean setObj(Useable o)
 	{
-		//System.out.println("Portal: setObj metódus hívás");
 		return false;
 	}
-	
+	/*
+	 * A metodus segítségével határozzuk meg ,hogy a Caracterek épp melyik portálon készülnek áthaladni 
+	 * A c-a Caracter koordinátája
+	 * A colour a megadott színû portál coordinátája 
+	 * Így megállapítható , hogy a Caracter melyik portálra léphetett rá épp
+	 */
 	public boolean isColour(Coord c,Coord colour)
 	{   if(colour==null || c==null){
 			return false;
@@ -198,6 +190,10 @@ Useable object;
 		else 
 		return false;
 	}
+	/*
+	 * A Portálba csak megfelelõ irányból lehet bemenni , ez a függvény true-val tér vissza ,
+	 * ha a Caracter helyes irányba áll ,illetve false-al ha helytelenbe.
+	 */
 	public boolean isGoodDir(Coord c,Caracter.Directions dir,Coord colour){
 		if(dir==Caracter.Directions.Down){
 			if(c.getY()==colour.getY()-1){
@@ -228,7 +224,7 @@ Useable object;
 	@Override
 	public boolean fly(Bullet b)
 	 {
-		 //System.out.println("Portal: fly metódus hívás");
+		 
 		 return false;
 	 }
 

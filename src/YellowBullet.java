@@ -1,6 +1,3 @@
-import java.awt.Image;
-
-import javax.swing.ImageIcon;
 
 //Osztály: Sárga lövedék
 public class YellowBullet extends Bullet {
@@ -8,7 +5,7 @@ public class YellowBullet extends Bullet {
 	
 
 	public YellowBullet(ONeil.Directions directions, Coord coord, Map m,WormHole w) {
-		super(directions,coord,m);
+		super(directions,coord,m); //Ososztály konstruktoranak hivasa
 		wormhole=w;	
 		type = "yellow";
 	}
@@ -17,13 +14,15 @@ public class YellowBullet extends Bullet {
 	{
 		if(wormhole.getYellow() != null)
 		{
+			/* /Abban az esetben ,ha új helyre lövünk ki kék portált a megelõzõ helyen bezárja az ott lévõt,
+			 * és helyére újra SpecialWall-t helyez
+			 */
 			map.map[wormhole.getYellow().getY()][wormhole.getYellow().getX()]=new SpecialWall(new Coord(wormhole.getYellow().getY(),wormhole.getYellow().getX()));
 		}
 
-		wormhole.setYellow(new Coord( loc.getY(),loc.getX()));
-		wormhole.setYellowDir(dir);
-
-		map.map[loc.getY()][loc.getX()]=new Portal(loc,'y',wormhole);
+		wormhole.setYellow(new Coord( loc.getY(),loc.getX()));      //Kivalasztjuk a sarga portalt
+		wormhole.setYellowDir(dir);                                 //A féreglyukba érkezõ lövedék irányának a beállítása
+		map.map[loc.getY()][loc.getX()]=new Portal(loc,'y',wormhole);//Portal letrehoza a megfelelo helyen
 	}
 	
 }
