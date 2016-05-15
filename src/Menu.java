@@ -16,9 +16,7 @@ public class Menu extends JPanel
 	public int Menu2P;
 	public int Menu3P;
 	public int Menu4P;
-	View view;
-	JButton startButton;
-
+	public View view;
 	
 	public Menu(View v) 
 	{
@@ -26,21 +24,6 @@ public class Menu extends JPanel
 		setBounds(0, 0, 1000, 1000);
 		view = v;
 		repaint();
-		
-
- 
-		
-	/*	startButton = new JButton("Start");
-		startButton.setBounds(230, 290, 538, 85);
-		this.add(startButton);*/
-
-		
-	}
-	
-	public void addlist(MouseListener c){
-		
-		//this.addMouseListener(c);
-		//startButton.addMouseListener(c);
 	}
 	
 	@Override
