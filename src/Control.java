@@ -124,25 +124,25 @@ public class Control implements KeyListener, MouseListener
 					game.o.pickUp();						//felvesz
 					if(game.o.object != null && game.o.object.getType().equals("box"))		//doboz, és melyik irányba néz
 					{
-						view.getGpanel().UoneilImage = view.getGpanel().UboxOneil;
-						view.getGpanel().DoneilImage = view.getGpanel().DboxOneil;
-						view.getGpanel().LoneilImage = view.getGpanel().LboxOneil;
-						view.getGpanel().oneilImage = view.getGpanel().RboxOneil;
+						view.getGpanel().UoneilImage = "UboxO.png";
+						view.getGpanel().DoneilImage = "DboxO.png";
+						view.getGpanel().LoneilImage = "LboxO.png";
+						view.getGpanel().oneilImage = "RboxO.png";
 					}
 					if(game.o.object != null && game.o.object.getType().equals("zpm"))		//zpm, és melyik irányba néz
 					{
-						view.getGpanel().UoneilImage = view.getGpanel().UzpmOneil;
-						view.getGpanel().DoneilImage = view.getGpanel().DzpmOneil;
-						view.getGpanel().LoneilImage = view.getGpanel().LzpmOneil;
-						view.getGpanel().oneilImage = view.getGpanel().RzpmOneil;
+						view.getGpanel().UoneilImage = "UzpmO.png";
+						view.getGpanel().DoneilImage = "DzpmO.png";
+						view.getGpanel().LoneilImage = "LzpmO.png";
+						view.getGpanel().oneilImage = "RzpmO.png";
 					}
 				}
 				else if(game.o.dropDown() == true)			//ha eldobja
 				{
-					view.getGpanel().UoneilImage = view.getGpanel().UnoboxOneil;
-					view.getGpanel().DoneilImage = view.getGpanel().DnoboxOneil;
-					view.getGpanel().LoneilImage = view.getGpanel().LnoboxOneil;
-					view.getGpanel().oneilImage = view.getGpanel().RnoboxOneil;
+					view.getGpanel().UoneilImage = "OneilUp.png";
+					view.getGpanel().DoneilImage = "ONeilD.png";
+					view.getGpanel().LoneilImage = "ONeilL.png";
+					view.getGpanel().oneilImage = "ONeilR.png";
 				}
 				view.Paint();
 			}
@@ -193,26 +193,26 @@ public class Control implements KeyListener, MouseListener
 				game.j.pickUp();
 				if(game.j.object != null && game.j.object.getType().equals("box"))	//ha doboz van nála
 				{
-					view.getGpanel().UjaffaImage = view.getGpanel().UboxJaffa;
-					view.getGpanel().DjaffaImage = view.getGpanel().DboxJaffa;
-					view.getGpanel().LjaffaImage = view.getGpanel().LboxJaffa;
-					view.getGpanel().RjaffaImage = view.getGpanel().RboxJaffa;
+					view.getGpanel().UjaffaImage = "UboxJ.png";
+					view.getGpanel().DjaffaImage = "DboxJ.png";
+					view.getGpanel().LjaffaImage = "LboxJ.png";
+					view.getGpanel().RjaffaImage = "RboxJ.png";
 				}
 				if(game.j.object != null && game.j.object.getType().equals("zpm")) //ha zpm van nála
 				{
-					view.getGpanel().UjaffaImage = view.getGpanel().UzpmJaffa;
-					view.getGpanel().DjaffaImage = view.getGpanel().DzpmJaffa;
-					view.getGpanel().LjaffaImage = view.getGpanel().LzpmJaffa;
-					view.getGpanel().RjaffaImage = view.getGpanel().RzpmJaffa;
+					view.getGpanel().UjaffaImage = "UzpmJ.png";
+					view.getGpanel().DjaffaImage = "DzpmJ.png";
+					view.getGpanel().LjaffaImage = "LzpmJ.png";
+					view.getGpanel().RjaffaImage = "RzpmJ.png";
 				}
 			}
 			else if(game.j.dropDown() == true)
 			{
 				
-				view.getGpanel().UjaffaImage = view.getGpanel().UnoboxJaffa;
-				view.getGpanel().DjaffaImage = view.getGpanel().DnoboxJaffa;
-				view.getGpanel().LjaffaImage = view.getGpanel().LnoboxJaffa;
-				view.getGpanel().RjaffaImage = view.getGpanel().RnoboxJaffa;
+				view.getGpanel().UjaffaImage = "Jaffa1.png";
+				view.getGpanel().DjaffaImage = "Jaffa3.png";
+				view.getGpanel().LjaffaImage = "Jaffa4.png";
+				view.getGpanel().RjaffaImage = "Jaffa2.png";
 			}
 			view.Paint();
 			}

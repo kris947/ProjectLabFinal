@@ -124,6 +124,13 @@ public class View{
 		panel.setVisible(true);
 		frame.add(panel);
 	}
+	
+	public Image readImage(String name)
+	{
+		Image i;
+		i = new ImageIcon(name).getImage();
+		return i;
+	}
 
 	
 	

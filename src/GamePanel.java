@@ -15,72 +15,20 @@ public class GamePanel extends JPanel
 	
 	//Pályaelemek
 	private View view;                
-	private Image groundImage;
-	private Image boxImage;
-	private Image doorImage;
-	private Image doorOImage;
-	private Image pitImage;
-	private Image scaleImage;
-	private Image ssImage;
-	private Image swImage;
-	private Image wallImage;
-	private Image zpmImage;
-	//portálok -> 4 szín 2 irány
-	private Image VYportalImage;
-	private Image HYportalImage;
-	private Image VBportalImage;
-	private Image HBportalImage;
-	private Image VRportalImage;
-	private Image HRportalImage;
-	private Image VGportalImage;
-	private Image HGportalImage;
+
 	// Oneil 4 irány vagy dobozzal épp az értéke vagy doboz nélküli
-	public Image UoneilImage;
-	public Image DoneilImage;
-	public Image oneilImage;
-	public Image LoneilImage;
-	//Oneil dobozzal
-	public Image UboxOneil;
-	public Image DboxOneil;
-	public Image LboxOneil;
-	public Image RboxOneil;
-	//Oneil zpmel
-	public Image UzpmOneil;
-	public Image DzpmOneil;
-	public Image LzpmOneil;
-	public Image RzpmOneil;
-	//Oneil doboz nelkul
-	public Image UnoboxOneil;
-	public Image DnoboxOneil;
-	public Image LnoboxOneil;
-	public Image RnoboxOneil;
-	//replicator
-	private Image replicatorImage;
+	public String UoneilImage;
+	public String DoneilImage;
+	public String oneilImage;
+	public String LoneilImage;
+	
 	// jaffa 4 irány
-	public Image RjaffaImage;
-	public Image UjaffaImage;
-	public Image DjaffaImage;
-	public Image LjaffaImage;
-	//jaffa  dobozzal
-	public Image UboxJaffa;
-	public Image RboxJaffa;
-	public Image DboxJaffa;
-	public Image LboxJaffa;
-	//Jaffa zpmel
-	public Image UzpmJaffa;
-	public Image DzpmJaffa;
-	public Image LzpmJaffa;
-	public Image RzpmJaffa;
-	//jaffa   no dobozzal
-	public Image UnoboxJaffa;
-	public Image RnoboxJaffa;
-	public Image DnoboxJaffa;
-	public Image LnoboxJaffa;
-	// 4 Bullet
-	public Image BlueBullet;
-	public Image YellowBullet;
-	public Image GreenBullet;
-	public Image RedBullet;
+	public String RjaffaImage;
+	public String UjaffaImage;
+	public String DjaffaImage;
+	public String LjaffaImage;
+	
+	
 	
 	public Image backg;
 	
@@ -100,75 +48,7 @@ public class GamePanel extends JPanel
 		
 		
 		backg = new ImageIcon("background.jpg").getImage();
-		
-		
-		//Pályaelemek
-		groundImage = new ImageIcon("ground.jpg").getImage();
-		boxImage = new ImageIcon("box_new.png").getImage();
-		doorImage = new ImageIcon("door_new.jpg").getImage();
-		doorOImage = new ImageIcon("dooropen_new.jpg").getImage();
-		pitImage = new ImageIcon("pit.jpg").getImage();
-		scaleImage = new ImageIcon("scale.jpg").getImage();
-		ssImage = new ImageIcon("spaceship_new.jpg").getImage();
-		swImage = new ImageIcon("specialwall_new.jpg").getImage();
-		wallImage = new ImageIcon("wall_new.jpg").getImage();
-		zpmImage = new ImageIcon("zpm.png").getImage();
-		//replicator
-		replicatorImage = new ImageIcon("replicator.png").getImage();
-		//Portálok
-		VYportalImage = new ImageIcon("yellowportal1_new.jpg").getImage();
-		HYportalImage = new ImageIcon("yellowportal2_new.jpg").getImage();
-		VBportalImage = new ImageIcon("blueportal1_new.jpg").getImage();
-		HBportalImage = new ImageIcon("blueportal2_new.jpg").getImage();
-		VRportalImage = new ImageIcon("redportal1_new.jpg").getImage();
-		HRportalImage = new ImageIcon("redportal2_new2.jpg").getImage();	
-		VGportalImage = new ImageIcon("greenportal1_new.jpg").getImage();
-		HGportalImage = new ImageIcon("greenportal2_new.jpg").getImage();	
-		//Oneil
-		oneilImage = new ImageIcon("ONeilR.png").getImage();
-		LoneilImage = new ImageIcon("ONeilL.png").getImage();
-		UoneilImage = new ImageIcon("ONeilUp.png").getImage();
-		DoneilImage = new ImageIcon("ONeilD.png").getImage();
-		//Oneil doboz nélkül
-		UnoboxOneil = new ImageIcon("OneilUp.png").getImage();
-		RnoboxOneil = new ImageIcon("ONeilR.png").getImage();
-		DnoboxOneil = new ImageIcon("ONeilD.png").getImage();
-		LnoboxOneil = new ImageIcon("ONeilL.png").getImage();
-		//Oneil dobozzal
-		UboxOneil = new ImageIcon("UboxO.png").getImage();
-		RboxOneil = new ImageIcon("RboxO.png").getImage();
-		DboxOneil = new ImageIcon("DboxO.png").getImage();
-		LboxOneil = new ImageIcon("LboxO.png").getImage();
-		//Oneil zpmel
-		UzpmOneil = new ImageIcon("UzpmO.png").getImage();
-		RzpmOneil = new ImageIcon("RzpmO.png").getImage();
-		DzpmOneil = new ImageIcon("DzpmO.png").getImage();
-		LzpmOneil = new ImageIcon("LzpmO.png").getImage();
-		//Jaffa
-		UjaffaImage = new ImageIcon("Jaffa1.png").getImage();
-		RjaffaImage = new ImageIcon("Jaffa2.png").getImage();
-		DjaffaImage = new ImageIcon("Jaffa3.png").getImage();
-		LjaffaImage = new ImageIcon("Jaffa4.png").getImage();
-		//Jaffa dobozzal
-		UboxJaffa = new ImageIcon("UboxJ.png").getImage();
-		RboxJaffa = new ImageIcon("RboxJ.png").getImage();
-		DboxJaffa = new ImageIcon("DboxJ.png").getImage();
-		LboxJaffa = new ImageIcon("LboxJ.png").getImage();
-		//Jaffa dobozzal
-		UzpmJaffa = new ImageIcon("UzpmJ.png").getImage();
-		RzpmJaffa = new ImageIcon("RzpmJ.png").getImage();
-		DzpmJaffa = new ImageIcon("DzpmJ.png").getImage();
-		LzpmJaffa = new ImageIcon("LzpmJ.png").getImage();
-		//Jaffa  no dobozzal
-		UnoboxJaffa = new ImageIcon("Jaffa1.png").getImage();
-		RnoboxJaffa = new ImageIcon("Jaffa2.png").getImage();
-		DnoboxJaffa = new ImageIcon("Jaffa3.png").getImage();
-		LnoboxJaffa = new ImageIcon("Jaffa4.png").getImage();
-		//Bullets
-		BlueBullet = new ImageIcon("bluebullet.png").getImage();
-		YellowBullet = new ImageIcon("yellowbullet.png").getImage();
-		GreenBullet = new ImageIcon("greenbullet.png").getImage();
-		RedBullet = new ImageIcon("redbullet.png").getImage();
+
 	}
 	
 	public void drawTile(int x, int y, Image images, Graphics g)
@@ -188,10 +68,10 @@ public class GamePanel extends JPanel
 
 			if(view.control.game.o.object == null)
 			{
-				view.getGpanel().UoneilImage = view.getGpanel().UnoboxOneil;
-				view.getGpanel().DoneilImage = view.getGpanel().DnoboxOneil;
-				view.getGpanel().LoneilImage = view.getGpanel().LnoboxOneil;
-				view.getGpanel().oneilImage = view.getGpanel().RnoboxOneil;
+				view.getGpanel().UoneilImage = "OneilUp.png";
+				view.getGpanel().DoneilImage = "ONeilD.png";
+				view.getGpanel().LoneilImage = "ONeilL.png";
+				view.getGpanel().oneilImage = "ONeilR.png";
 			}
 		}
 		
@@ -202,10 +82,10 @@ public class GamePanel extends JPanel
 			
 			if(view.control.game.j.object == null)
 			{
-				view.getGpanel().UjaffaImage = view.getGpanel().UnoboxJaffa;
-				view.getGpanel().DjaffaImage = view.getGpanel().DnoboxJaffa;
-				view.getGpanel().LjaffaImage = view.getGpanel().LnoboxJaffa;
-				view.getGpanel().RjaffaImage = view.getGpanel().RnoboxJaffa;
+				view.getGpanel().UjaffaImage = "Jaffa1.png";
+				view.getGpanel().DjaffaImage = "Jaffa3.png";
+				view.getGpanel().LjaffaImage = "Jaffa4.png";
+				view.getGpanel().RjaffaImage = "Jaffa2.png";
 			}
 		}
 		
@@ -217,34 +97,34 @@ public class GamePanel extends JPanel
 				String[] types = view.control.getDrawData(i,j);
 				if(types[0].equals("ground"))
 				{
-					drawTile(i , j, groundImage, g);
+					drawTile(i , j, view.readImage("ground.jpg"), g);
 				}
 				else if(types[0].equals("door"))
 				{
 					if(view.control.dooropenat(i, j))
-						drawTile(i , j, doorOImage, g);
+						drawTile(i , j, view.readImage("dooropen_new.jpg") , g);
 					else
-						drawTile(i , j, doorImage, g);
+						drawTile(i , j, view.readImage("door_new.jpg"), g);
 				}
 				else if(types[0].equals("pit"))
 				{
-					drawTile(i , j, pitImage, g);
+					drawTile(i , j, view.readImage("pit.jpg") , g);
 				}
 				else if(types[0].equals("scale"))
 				{
-					drawTile(i , j, scaleImage, g);
+					drawTile(i , j, view.readImage("scale.jpg"), g);
 				}
 				else if(types[0].equals("spaceship"))
 				{
-					drawTile(i , j, ssImage, g);
+					drawTile(i , j, view.readImage("spaceship_new.jpg"), g);
 				}
 				else if(types[0].equals("specialwall"))
 				{
-					drawTile(i , j, swImage, g);
+					drawTile(i , j, view.readImage("specialwall_new.jpg"), g);
 				}
 				else if(types[0].equals("wall"))
 				{
-					drawTile(i , j, wallImage, g);
+					drawTile(i , j, view.readImage("wall_new.jpg"), g);
 				}
 				else if(types[0].equals("portal"))
 				{
@@ -252,30 +132,30 @@ public class GamePanel extends JPanel
 					if(view.control.game.wh.getBlue() != null && new Coord(i,j).equals(view.control.game.wh.getBlue()))
 					{
 						if((view.control.game.wh.getBlueDir()==Caracter.Directions.Up)||(view.control.game.wh.getBlueDir()==Caracter.Directions.Down))
-							drawTile(i , j, VBportalImage, g);
+							drawTile(i , j, view.readImage("blueportal1_new.jpg"), g);
 						else
-							drawTile(i , j, HBportalImage, g);
+							drawTile(i , j, view.readImage("blueportal2_new.jpg"), g);
 					}
 					else if(view.control.game.wh.getYellow() != null && new Coord(i,j).equals(view.control.game.wh.getYellow()))
 					{
 						if((view.control.game.wh.getYellowDir()==Caracter.Directions.Up)||(view.control.game.wh.getYellowDir()==Caracter.Directions.Down))
-							drawTile(i , j, VYportalImage, g);
+							drawTile(i , j, view.readImage("yellowportal1_new.jpg"), g);
 						else
-							drawTile(i , j, HYportalImage, g);
+							drawTile(i , j, view.readImage("yellowportal2_new.jpg"), g);
 					}
 					else if(view.control.game.wh.getGreen() != null && new Coord(i,j).equals(view.control.game.wh.getGreen()))
 					{
 						if((view.control.game.wh.getGreenDir()==Caracter.Directions.Up)||(view.control.game.wh.getGreenDir()==Caracter.Directions.Down))
-							drawTile(i , j, VGportalImage, g);
+							drawTile(i , j, view.readImage("greenportal1_new.jpg"), g);
 						else
-							drawTile(i , j, HGportalImage, g);
+							drawTile(i , j, view.readImage("greenportal2_new.jpg"), g);
 					}
 					else if(view.control.game.wh.getRed() != null && new Coord(i,j).equals(view.control.game.wh.getRed()))
 					{
 						if((view.control.game.wh.getRedDir()==Caracter.Directions.Up)||(view.control.game.wh.getRedDir()==Caracter.Directions.Down))
-							drawTile(i , j, VRportalImage, g);
+							drawTile(i , j, view.readImage("redportal1_new.jpg"), g);
 						else
-							drawTile(i , j, HRportalImage, g);
+							drawTile(i , j, view.readImage("redportal2_new.jpg"), g);
 					}
 					
 				}
@@ -284,11 +164,11 @@ public class GamePanel extends JPanel
 				{
 					if(types[1].equals("box"))
 					{
-						drawTile(i,j,boxImage,g);
+						drawTile(i,j,view.readImage("box_new.png"),g);
 					}
 					else if(types[1].equals("zpm"))
 					{
-						drawTile(i , j, zpmImage, g);
+						drawTile(i , j, view.readImage("zpm.png"), g);
 					}
 					
 				}
@@ -300,55 +180,59 @@ public class GamePanel extends JPanel
 		CharGraphics RGrafInfo = view.control.RDraw();
 		
 		if(OGrafInfo != null)
+		{
 			switch(OGrafInfo.getDir())
 			{
 				case Up:
-					drawTile(OGrafInfo.getX(),OGrafInfo.getY(),UoneilImage,g); 
+					drawTile(OGrafInfo.getX(),OGrafInfo.getY(),view.readImage(UoneilImage),g); 
 				break;
 				case Down:
-					drawTile(OGrafInfo.getX(),OGrafInfo.getY(),DoneilImage,g); 
+					drawTile(OGrafInfo.getX(),OGrafInfo.getY(),view.readImage(DoneilImage),g); 
 				break;
 				case Left:
-					drawTile(OGrafInfo.getX(),OGrafInfo.getY(),LoneilImage,g); 
+					drawTile(OGrafInfo.getX(),OGrafInfo.getY(),view.readImage(LoneilImage),g); 
 				break;
 				case Right:
-					drawTile(OGrafInfo.getX(),OGrafInfo.getY(),oneilImage,g); 
-				break;
-				
+					drawTile(OGrafInfo.getX(),OGrafInfo.getY(),view.readImage(oneilImage),g); 
+				break;			
 			}
+			
+		}
 		
 		if(JGrafInfo != null)
+		{
 			switch(JGrafInfo.getDir())
 			{
 				case Up:
-					drawTile(JGrafInfo.getX(),JGrafInfo.getY(),UjaffaImage,g); 
+					drawTile(JGrafInfo.getX(),JGrafInfo.getY(),view.readImage(UjaffaImage),g); 
 				break;
 				case Down:
-					drawTile(JGrafInfo.getX(),JGrafInfo.getY(),DjaffaImage,g); 
+					drawTile(JGrafInfo.getX(),JGrafInfo.getY(),view.readImage(DjaffaImage),g); 
 				break;
 				case Left:
-					drawTile(JGrafInfo.getX(),JGrafInfo.getY(),LjaffaImage,g); 
+					drawTile(JGrafInfo.getX(),JGrafInfo.getY(),view.readImage(LjaffaImage),g); 
 				break;   
 				case Right:
-					drawTile(JGrafInfo.getX(),JGrafInfo.getY(),RjaffaImage,g); 
+					drawTile(JGrafInfo.getX(),JGrafInfo.getY(),view.readImage(RjaffaImage),g); 
 				break;
-				
 			}
+			
+		}
 		
 		if(RGrafInfo != null)
-			drawTile(RGrafInfo.getX(),RGrafInfo.getY(),replicatorImage,g);
+			drawTile(RGrafInfo.getX(),RGrafInfo.getY(),view.readImage("replicator.png"),g);
 		
 		for(int i=0;i<view.control.game.map.shots.size();i++)
 		{
 			Bullet current = view.control.game.map.shots.get(i);
 			if (current.Color().equals("blue"))
-				drawTile(current.loc.getX(),current.loc.getY(),BlueBullet,g);
+				drawTile(current.loc.getX(),current.loc.getY(),view.readImage("bluebullet.png"),g);
 			if (current.Color().equals("yellow"))
-				drawTile(current.loc.getX(),current.loc.getY(),YellowBullet,g);
+				drawTile(current.loc.getX(),current.loc.getY(),view.readImage("yellowbullet.png"),g);
 			if (current.Color().equals("red"))
-				drawTile(current.loc.getX(),current.loc.getY(),RedBullet,g);
+				drawTile(current.loc.getX(),current.loc.getY(),view.readImage("redbullet.png"),g);
 			if (current.Color().equals("green"))
-				drawTile(current.loc.getX(),current.loc.getY(),GreenBullet,g);
+				drawTile(current.loc.getX(),current.loc.getY(),view.readImage("greenbullet.png"),g);
 		}
 				
 
