@@ -1,2 +1,0 @@
-OMove:1:Left
-OShootB
