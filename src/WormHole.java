@@ -13,10 +13,9 @@ public class WormHole {
 	//BluePortal es YellowPortal beállitasa kivulrol - Bullet osztalybol
 	//vigyazni kell a null beíllitasara ha megszunik a portal
 	public WormHole(){
-		System.out.println("Wormhole is open");
 	}
 	public Boolean isOpen() {
-		//System.out.println("WormHole: isOpen metódus hívás");
+		
 		if ((BluePortal!= null && YellowPortal != null)|| (GreenPortal!= null && RedPortal != null) ){ //ha nyitva van egy kek meg egy sarga portal is..
 			
 			return true; //..akkor nyitva van a feregjarat
@@ -27,7 +26,6 @@ public class WormHole {
 	
 	//BluePortal koordiatait adja vissza
 	public Coord getBlue() {
-		//System.out.println("WormHole: getBlue metódus hívás");
 		if(BluePortal!=null)
 			return (new Coord(BluePortal.getY(),BluePortal.getX()));
 		else 
@@ -36,7 +34,6 @@ public class WormHole {
 	
 	//YellowPortal koordinatait adja vissza
 	public Coord getYellow() {
-		//System.out.println("WormHole: getYellow metódus hívás");
 		if (YellowPortal != null)
 			return (new Coord(YellowPortal.getY(),YellowPortal.getX()));
 		else 
@@ -45,7 +42,7 @@ public class WormHole {
 	
 	//GreenPortal koordinatait adja vissza
 		public Coord getGreen() {
-			//System.out.println("WormHole: getGreen metódus hívás");
+			
 			if(GreenPortal!=null)
 				return (new Coord(GreenPortal.getY(),GreenPortal.getX()));
 			else 
@@ -54,7 +51,7 @@ public class WormHole {
 		
 		//RedPortal koordinatait adja vissza
 		public Coord getRed() {
-			//System.out.println("WormHole: getRed metódus hívás");
+		
 			
 			if(RedPortal!=null)
 				return (new Coord(RedPortal.getY(),RedPortal.getX()));
@@ -66,29 +63,25 @@ public class WormHole {
 	
 	//BluePortal koordinatait allitja be 
 	public void setBlue(Coord c) {
-		//System.out.println("WormHole: setBlue metódus hívás");
-		//System.out.println(c.getX()+"  "+c.getY());
+		
 		BluePortal = c;
 	}
 	
 	//YellowPortal koordinatait allitja be
 	public void setYellow(Coord c) {
-		//System.out.println("WormHole: setYellow metódus hívás");
-		//System.out.println(c.getX()+"  "+c.getY());
+	
 		YellowPortal = c;
 	}
 	
 	//GreenPortal koordinatait allitja be
 	public void setGreen(Coord c) {
-		//System.out.println("WormHole: setGreen metódus hívás");
-		//System.out.println(c.getX()+"  "+c.getY());
+		
 		GreenPortal = c;
 	}
 	
 	//RedPortal koordinatait allitja be
 	public void setRed(Coord c) {
-		//System.out.println("WormHole: setRed metódus hívás");
-		//System.out.println(c.getX()+"  "+c.getY());
+		
 		RedPortal = c;
 	}
 	public void setBlueDir(Caracter.Directions dir) {

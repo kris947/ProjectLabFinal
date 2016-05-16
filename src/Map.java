@@ -31,7 +31,12 @@ public class Map {
 		game = g;
 		
 	}
-
+/*
+ * A pálya betöltõ metódus, mely egy *.csv fájlból olvas be karaktereket illetve bizonyos karaktereknél számjegyeket is.
+ * Minden karakterhez egy megfelelõ pályaelem tartozik.
+ * A Scale beolvasásánál határozzuk meg , és hozzuk létre a hozzá tartozó Door-t , mivel a Scale-nek már tudnia kill ,hogy melyik ajtóhoz 
+ * van kötve.
+ */
 	public void initmap(ONeil o,Jaffa j,Replicator r) throws IOException{
 		oneil=o;
 		replicator = r;
@@ -104,13 +109,10 @@ public class Map {
 		} 
 		finally {
 			map[14][18].setObj(new ZPM(this));
-		    br.close();
-		    
+		    br.close();  
 		    
 		}
 	}
-
-
 	public int getZPMcount()
 	{
 		return ZPMcount;

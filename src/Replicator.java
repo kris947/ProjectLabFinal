@@ -13,6 +13,9 @@ public class Replicator extends Caracter{
 		loc = new Coord(10,10); //(oszlop,sor)
 	}	
 	
+	/*
+	 * A Replicator véletlenszerû mozgásához minden mozulatsorhoz véletlenszerûen randomol egy irányt is , ennek a metódusnak a segítségével.
+	 */
 	public Caracter.Directions RandDirection(){
 		Random rand=new Random();
 		int n=rand.nextInt(4);
@@ -31,7 +34,9 @@ public class Replicator extends Caracter{
 		else 
 			return Caracter.Directions.Up;
 	}
-	
+	/*
+	 * A Replicator mozgatásához az épp aktuális lépésszámhoz generál egy véletlen számot 0-4 között
+	 */
 	public int  RandValue()
 	{
 		Random rand=new Random();
@@ -46,6 +51,9 @@ public class Replicator extends Caracter{
 		die();
 	}
 	
+	/*
+	 * A Replicator halála esetén meghívodó metódus.
+	 */
 	@Override
 	public void die()
 	{

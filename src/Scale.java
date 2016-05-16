@@ -42,14 +42,14 @@ public class Scale extends Tile {
 		
 	}
 	
-	//vissza adja a rajta található useable-ök tömbjét, ezt a kirajzoláshoz használjuk
+	//Vissza adja a rajta található useable-ök tömbjét, ezt a kirajzoláshoz használjuk
 	@Override
 	public Useable getObj() 
 	{		
 		return object;
 	}
 	
-	//ez kezeli ha egy karakter leakar venni valamit a mérlegrõl
+	//Ez kezeli ha egy karakter leakar venni valamit a mérlegrõl
 	@Override
 	public Useable takeObj(){
 		int act=objcount-1;				//legfelsõ elem indexe

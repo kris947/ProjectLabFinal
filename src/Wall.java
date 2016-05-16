@@ -9,8 +9,6 @@ public class Wall extends Tile {
 	public Wall (Coord c) {
 		
 		super(c);
-		//System.out.println("W");
-      //  type= "wall";
 	}
 	
 	@Override
@@ -20,7 +18,7 @@ public class Wall extends Tile {
 	@Override
 	 public boolean fly(Bullet b)
 	 {
-		//System.out.println("KutyaCica");
+		
 		 return false;
 		 
 	 }
@@ -28,7 +26,7 @@ public class Wall extends Tile {
 	//ONeill nem tud a falra lépni, ezért marad az eredeti helyén
 	@Override
 	public Coord stepOn(Coord k) {
-		//System.out.println("Falba utkozott");
+		
 		return k;
 	}
 	

@@ -5,7 +5,7 @@ import javax.swing.ImageIcon;
 public class SpaceShip extends Tile {
 	
 	private Coord location;
-	//Useable object;
+	
 	
 	SpaceShip(Coord c){
 		super(c);
@@ -16,13 +16,15 @@ public class SpaceShip extends Tile {
 	public String getType(){ return "spaceship";}
 	
 	public void endGame() {
-		//System.out.println("A jatéknak vége");
+		
 	}
-	
-	//Ez vszínüleg nem is kell , mert Oneil nem is tud rálépni az ûrhajóra , mivel letenni csak maga köré tud
+	/*
+	 * A pályaelemre lépés metódusa
+	 * 
+	 */
 	public Coord stepOn(Coord c){
 		if(object!=null){
-		// Ha a lenyomott billentyû a letevés , akkor hívódik az object.redeem 
+		
 		object.redeem();
 		
 		if(object.getZPMcount()==7){ 
@@ -39,7 +41,6 @@ public class SpaceShip extends Tile {
 	}
 
    public Coord getLoc(){
-   //System.out.println("SpaceShip: getObj metódus hívás");
    return location;
    }
    public void setLoc(Coord c){location=c;}
@@ -50,6 +51,9 @@ public class SpaceShip extends Tile {
 	   return object;
    }
 
+   /*
+    * Egy Useable object elhelyezése az Ûrhajón.
+    */
    @Override
    public boolean setObj(Useable o)
    {

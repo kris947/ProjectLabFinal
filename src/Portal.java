@@ -25,7 +25,7 @@ Useable object;
 		if (wormhole.isOpen()==true){  //Ha nyitva van
 			
 			if(isColour(c,wormhole.getBlue())&& isGoodDir(c,wormhole.getBlueDir(),wormhole.getBlue())){	 // Ez kék portál
-			System.out.println("From Blue to Yellow");
+			
 			if(wormhole.getYellowDir()==ONeil.Directions.Up){
 				Coord cord= new Coord(0,0);
 				cord.setX(wormhole.getYellow().getX());
@@ -39,7 +39,7 @@ Useable object;
 				return cord;
 				}
 			else if(wormhole.getYellowDir()==ONeil.Directions.Right){
-				System.out.println("From Right");
+				
 				Coord cord= new Coord(0,0);
 				cord.setX(wormhole.getYellow().getX()-1);
 				cord.setY(wormhole.getYellow().getY());
@@ -55,7 +55,7 @@ Useable object;
 				}
 			
 			if(isColour(c,wormhole.getYellow())&& isGoodDir(c,wormhole.getYellowDir(),wormhole.getYellow())){ //Sárga portál
-				System.out.println("From Yellow to Blue side");
+				
 			
 			if(wormhole.getBlueDir()==ONeil.Directions.Up){
 				Coord cord= new Coord(0,0);
@@ -72,7 +72,7 @@ Useable object;
 				
 				}
 			else if(wormhole.getBlueDir()==ONeil.Directions.Right){
-				System.out.println("From Right");
+				
 				Coord cord= new Coord(0,0);
 				cord.setX(wormhole.getBlue().getX()-1);
 				cord.setY(wormhole.getBlue().getY());
@@ -88,7 +88,7 @@ Useable object;
 			else return c;
 			}
 			else if (isColour(c,wormhole.getRed())&& isGoodDir(c,wormhole.getRedDir(),wormhole.getRed())){ //Piros portál
-			System.out.println("From Red to Green side");
+			
 		
 		if(wormhole.getGreenDir()==Jaffa.Directions.Up){
 			Coord cord= new Coord(0,0);
@@ -105,7 +105,7 @@ Useable object;
 			
 			}
 		else if(wormhole.getGreenDir()==Jaffa.Directions.Right){
-			System.out.println("From Right");
+		
 			Coord cord= new Coord(0,0);
 			cord.setX(wormhole.getGreen().getX()-1);
 			cord.setY(wormhole.getGreen().getY());
@@ -121,7 +121,7 @@ Useable object;
 		else return location;
 		}
 		else if (isColour(c,wormhole.getGreen())&& isGoodDir(c,wormhole.getGreenDir(),wormhole.getGreen())){ //Zöld portál
-			System.out.println("From Green to Red side");
+			
 		
 		if(wormhole.getRedDir()==Jaffa.Directions.Up){
 			Coord cord= new Coord(0,0);
@@ -138,7 +138,6 @@ Useable object;
 			
 			}
 		else if(wormhole.getRedDir()==Jaffa.Directions.Right){
-			System.out.println("From Right");
 			Coord cord= new Coord(0,0);
 			cord.setX(wormhole.getRed().getX()-1);
 			cord.setY(wormhole.getRed().getY());

@@ -6,7 +6,7 @@ public class SpecialWall extends Wall {
 	
 	public SpecialWall (Coord c) {
 		super(c);
-       // type="specialwall";
+       
 	}
 	
 	@Override
@@ -15,7 +15,7 @@ public class SpecialWall extends Wall {
 	//Megmondja, hogy ONeil mit csináljon, ha falra akar lépni 
 		@Override
 		public Coord stepOn(Coord k) {
-			//System.out.println("swall");
+			
 			return k;
 		}
 		
