@@ -182,11 +182,22 @@ public class GamePanel extends JPanel
     public void paint(Graphics g) 
 	{
 
-
+		if(view.control.game.o.object == null)
+		{
+			view.getGpanel().UoneilImage = view.getGpanel().UnoboxOneil;
+			view.getGpanel().DoneilImage = view.getGpanel().DnoboxOneil;
+			view.getGpanel().LoneilImage = view.getGpanel().LnoboxOneil;
+			view.getGpanel().oneilImage = view.getGpanel().RnoboxOneil;
+		}
+		if(view.control.game.j.object == null)
+		{
+			view.getGpanel().UjaffaImage = view.getGpanel().UnoboxJaffa;
+			view.getGpanel().DjaffaImage = view.getGpanel().DnoboxJaffa;
+			view.getGpanel().LjaffaImage = view.getGpanel().LnoboxJaffa;
+			view.getGpanel().RjaffaImage = view.getGpanel().RnoboxJaffa;
+		}
 		
-	
 		
-        //super.paint(g);
 		for(int i=0;i<20;i++)
 		{
 			for(int j=0;j<20;j++)
