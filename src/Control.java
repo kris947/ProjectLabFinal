@@ -93,6 +93,12 @@ public class Control implements KeyListener, MouseListener
 	@Override
 	public void keyPressed(KeyEvent e)
 	{
+		if(e.getKeyCode() == KeyEvent.VK_ESCAPE) //vissza a fõmenübe
+		{
+			view.setPanel(view.getMpanel());
+			inMPanel = false;
+		}
+		
 		if(game.o != null)
 		{
 			if(e.getKeyCode() == KeyEvent.VK_W)				//ONeil felfelé néz
@@ -218,11 +224,7 @@ public class Control implements KeyListener, MouseListener
 			}
 		
 		
-		else if(e.getKeyCode() == KeyEvent.VK_ESCAPE) //vissza a fõmenübe
-		{
-			view.setPanel(view.getMpanel());
-			inMPanel = false;
-		}
+		
 		
 		else if(e.getKeyCode() == KeyEvent.VK_P)	//szünet
 		{
@@ -236,6 +238,7 @@ public class Control implements KeyListener, MouseListener
 		}	
 			
 	}
+		
 	}
 	
 	//Egérkattintás lekezelése
