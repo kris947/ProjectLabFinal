@@ -27,7 +27,7 @@ public class ZPM extends Useable {
 	@Override
 	public boolean redeem() 
 	{ 
-		if(ZPMCount == 2)
+		if(ZPMCount % 2 == 0)
 		{
 			Random rand = new Random(); 
 			int value = rand.nextInt(8); 

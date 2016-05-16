@@ -11,7 +11,7 @@ public class Application {
 				
 		view.setPanel(view.getMpanel());			//Menüpanel beállítása
 		view.Paint();								//Kirajzolás
-		(new ReplicatorThread(game.r)).start();		//Replikátor elindítása
+				//Replikátor elindítása
 		
 
 	}

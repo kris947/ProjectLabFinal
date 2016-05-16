@@ -27,6 +27,8 @@ public class Game
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		Thread rthread = new Thread(r);
+        rthread.start();
 		
 		
 	}
