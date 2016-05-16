@@ -45,17 +45,23 @@ public class Jaffa extends Caracter {
 		System.out.println("ONeil: shoot metódus hívás");
 		if(c=='r')
 		{
-	        RedBullet red = new RedBullet(direction, loc , map,w);
-			Thread rb = new Thread(red);
-	        rb.start();
-	        map.shots.add(red);
+			if (map.shots.size() != 10)	//a megjelenítéshez használt shots listába is belekerül(max 10 szálat engedünk)
+			{
+		        RedBullet red = new RedBullet(direction, loc , map,w);
+				Thread rb = new Thread(red);
+		        rb.start();
+		        map.shots.add(red);
+			}
 		}
 		else 
 		{
-	        GreenBullet green = new GreenBullet(direction, loc , map,w);
-			Thread gb = new Thread(green);
-	        gb.start();
-	        map.shots.add(green);
+			if (map.shots.size() != 10)	//a megjelenítéshez használt shots listába is belekerül(max 10 szálat engedünk)
+			{
+		        GreenBullet green = new GreenBullet(direction, loc , map,w);
+				Thread gb = new Thread(green);
+		        gb.start();
+		        map.shots.add(green);
+			}
 		}
 		
 	}
