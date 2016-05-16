@@ -228,6 +228,7 @@ public class Control implements KeyListener, MouseListener
 		{
 			game.o.pause();
 			game.j.pause();
+			game.r.pause();
 			clock.pause();
 		}	
 			

@@ -17,6 +17,7 @@ public class Replicator extends Caracter{
 	 * A Replicator véletlenszerû mozgásához minden mozulatsorhoz véletlenszerûen randomol egy irányt is , ennek a metódusnak a segítségével.
 	 */
 	public Caracter.Directions RandDirection(){
+
 		Random rand=new Random();
 		int n=rand.nextInt(4);
 		if (n==1){
