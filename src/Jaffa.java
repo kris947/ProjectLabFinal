@@ -46,7 +46,7 @@ public class Jaffa extends Caracter {
 	//Lövés kezelése - lsd ONeill
 	public void shoot(char c,WormHole w) 
 	{
-		System.out.println("ONeil: shoot metódus hívás");
+		
 		if(c=='r' && !paused)
 		{
 			if (map.shots.size() != 10)	//a megjelenítéshez használt shots listába is belekerül(max 10 szálat engedünk)
