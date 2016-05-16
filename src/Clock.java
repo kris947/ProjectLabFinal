@@ -36,7 +36,7 @@ class Clock {
         t = new Timer(1000,al);
   
     }
-    
+    public void settime(int t) {time=t;}
     public String gettime(){return ido;}
     public int gettimeint(){return time;}
     public void pause()

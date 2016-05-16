@@ -247,6 +247,7 @@ public class Control implements KeyListener, MouseListener
 			{
 				view.control.game.init();		//Karakterek és pálya betöltése
 				view.setPanel(view.getGpanel());		//Game panel beállítása
+				clock.settime(600);
 				clock.start();
 				inMPanel = true;
 			}	
