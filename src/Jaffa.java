@@ -46,10 +46,9 @@ public class Jaffa extends Caracter {
 	//Lövés kezelése - lsd ONeill
 	public void shoot(char c,WormHole w) 
 	{
-		System.out.println("ONeil: shoot metódus hívás");
 		if(c=='r' && !paused)
 		{
-			if (map.shots.size() != 10)	//a megjelenítéshez használt shots listába is belekerül(max 10 szálat engedünk)
+			if (map.shots.size() < 10)	//a megjelenítéshez használt shots listába is belekerül(max 10 szálat engedünk)
 			{
 		        RedBullet red = new RedBullet(direction, loc , map,w);
 				Thread rb = new Thread(red);
@@ -59,7 +58,7 @@ public class Jaffa extends Caracter {
 		}
 		else if(!paused)
 		{
-			if (map.shots.size() != 10)	//a megjelenítéshez használt shots listába is belekerül(max 10 szálat engedünk)
+			if (map.shots.size() < 10)	//a megjelenítéshez használt shots listába is belekerül(max 10 szálat engedünk)
 			{
 		        GreenBullet green = new GreenBullet(direction, loc , map,w);
 				Thread gb = new Thread(green);

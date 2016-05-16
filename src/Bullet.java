@@ -36,8 +36,8 @@ public abstract class Bullet implements Runnable{
 			case Up:  //ha felfele megy
 				loc.setY(loc.getY()-1); 
 				flying=map.map[loc.getY()][loc.getX()].fly(this);  //Koordináta beállítása
-				if(loc.equals(map.replicator.loc))
-					map.replicator.die();
+				if(loc.equals(map.replicator.loc))		//replikátor lelövésének ellenõrzése
+					map.replicator.die();			//ha eltalálta meghal
 				break;
 			case Down: //ha lefele megy
 				loc.setY(loc.getY()+1);

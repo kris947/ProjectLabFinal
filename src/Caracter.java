@@ -38,12 +38,12 @@ public class Caracter {
 			switch (dir) {
 				case Up:  //Felfele mozgas
 					
-					if(direction == dir){
-					loc = map.map[loc.getY()-1][loc.getX()].stepOn(loc); 
-					map.map[loc.getY()+1][loc.getX()].stepoff();
+					if(direction == dir){		//ha arra akar mozogni amerre néz
+					loc = map.map[loc.getY()-1][loc.getX()].stepOn(loc); //akkor arra módosítjuk a helyzetét
+					map.map[loc.getY()+1][loc.getX()].stepoff();	//ez a scale-nél használatos
 					}
 					else
-					direction = Directions.Up;
+					direction = Directions.Up;		//ha nem arra nézet akkor ezutá arra fog
 				break;
 				
 				case Down: //Lefele mozg�s
@@ -56,7 +56,7 @@ public class Caracter {
 				break;
 				
 				case Left: //Balra mozg�s
-					if(direction == dir){
+					if(direction == dir){	
 					loc = map.map[loc.getY()][loc.getX()-1].stepOn(loc); 
 					map.map[loc.getY()][loc.getX()+1].stepoff();
 					}
@@ -92,7 +92,7 @@ public class Caracter {
 	 public void DecrementLife(){
 		 object=null;
 		 lives--;
-		 if (lives == 0)
+		 if (lives == 0)	//ha elfogy az élete akkor meghívjuk a die() fgv-t
 			 this.die();
 	 }
 	 

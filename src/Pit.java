@@ -9,11 +9,10 @@ public class Pit extends Tile {
 	Coord startpoz=new Coord(9,12); // Oneil , vagy Jaffa kiinduló piziciója
 	
 	//Konstruktor
-	Pit( Game g,Coord c ){
+	Pit( Game g,Coord c )
+	{
 		super(c);
-		game = g;
-      
-		
+		game = g;		
 	}
 
 	@Override
@@ -21,10 +20,8 @@ public class Pit extends Tile {
 	
 	//Kezeli az esetet amikor Oneill a szakadékba lép
 	@Override
-	public Coord stepOn(Coord c) {
-		
-		//Caracter.Directions od=game.o.direction;
-		//Caracter.Directions jd=game.j.direction;
+	public Coord stepOn(Coord c) 
+	{
 		
 		Caracter.Directions rd=null;
 		if (game.r != null)

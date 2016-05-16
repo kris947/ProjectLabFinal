@@ -191,14 +191,14 @@ public class Control implements KeyListener, MouseListener
 				if(game.j.object==null)
 			{
 				game.j.pickUp();
-				if(game.j.object != null && game.j.object.getType().equals("box"))
+				if(game.j.object != null && game.j.object.getType().equals("box"))	//ha doboz van nála
 				{
 					view.getGpanel().UjaffaImage = view.getGpanel().UboxJaffa;
 					view.getGpanel().DjaffaImage = view.getGpanel().DboxJaffa;
 					view.getGpanel().LjaffaImage = view.getGpanel().LboxJaffa;
 					view.getGpanel().RjaffaImage = view.getGpanel().RboxJaffa;
 				}
-				if(game.j.object != null && game.j.object.getType().equals("zpm"))
+				if(game.j.object != null && game.j.object.getType().equals("zpm")) //ha zpm van nála
 				{
 					view.getGpanel().UjaffaImage = view.getGpanel().UzpmJaffa;
 					view.getGpanel().DjaffaImage = view.getGpanel().DzpmJaffa;
@@ -218,19 +218,17 @@ public class Control implements KeyListener, MouseListener
 			}
 		
 		
-		else if(e.getKeyCode() == KeyEvent.VK_ESCAPE)
+		else if(e.getKeyCode() == KeyEvent.VK_ESCAPE) //vissza a fõmenübe
 		{
 			view.setPanel(view.getMpanel());
 			inMPanel = false;
 		}
 		
-		else if(e.getKeyCode() == KeyEvent.VK_P)
+		else if(e.getKeyCode() == KeyEvent.VK_P)	//szünet
 		{
 			game.o.pause();
 			game.j.pause();
 			clock.pause();
-			
-			System.out.println("PPPPPPPP");
 		}	
 			
 	}

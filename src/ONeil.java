@@ -50,17 +50,23 @@ public class ONeil extends Caracter{
 	{
 		if(c=='b' && !paused)
 		{
-			BlueBullet blue = new BlueBullet(direction, loc , map,w);	//létre hozza a lövedéket
-			Thread bb = new Thread(blue);	//külön szálon fut a lövedék mozgása
-	        bb.start();
-	        map.shots.add(blue);	//a megjelenítéshez használt shots listába is belekerül
+			if (map.shots.size() < 10)	//a megjelenítéshez használt shots listába is belekerül(max 10 szálat engedünk)
+			{
+				BlueBullet blue = new BlueBullet(direction, loc , map,w);	//létre hozza a lövedéket
+				Thread bb = new Thread(blue);	//külön szálon fut a lövedék mozgása
+		        bb.start();
+		        map.shots.add(blue);	//a megjelenítéshez használt shots listába is belekerül
+			}
 		}
 		else if(!paused)
 		{
-			YellowBullet yellow = new YellowBullet(direction, loc , map,w);
-			Thread yb = new Thread(yellow);
-	        yb.start();
-	        map.shots.add(yellow);
+			if (map.shots.size() < 10)	//a megjelenítéshez használt shots listába is belekerül(max 10 szálat engedünk)
+			{
+				YellowBullet yellow = new YellowBullet(direction, loc , map,w);
+				Thread yb = new Thread(yellow);
+		        yb.start();
+		        map.shots.add(yellow);
+			}
 		}
 	}
 	
