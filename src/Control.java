@@ -11,7 +11,7 @@ public class Control implements KeyListener, MouseListener
 	public Game game;
 	public View view;
 	private boolean paused;
-	private boolean inMPanel;		//Benne vagyunk-e vmilyen menüpanelban
+	public boolean inMPanel;		//Benne vagyunk-e vmilyen menüpanelban
 	
 	Clock clock = new Clock();
 	

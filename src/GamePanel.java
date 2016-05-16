@@ -416,10 +416,12 @@ public class GamePanel extends JPanel
 		
 		if (view.control.game.j == null && view.control.game.o == null)	//ha mindkét játékos meghal
 			view.setPanel(view.getMpanel());		//vissza  a fõmeübe
+			view.control.inMPanel = false;
 		
 		
 		if (view.control.clock.gettimeint()== 0)	//ha mindkét játékos meghal
 			view.setPanel(view.getMpanel());
+			view.control.inMPanel = false;
 
 	}
 	
