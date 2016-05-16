@@ -181,21 +181,23 @@ public class GamePanel extends JPanel
 	@Override
     public void paint(Graphics g) 
 	{
-
-		if(view.control.game.o.object == null)
-		{
-			view.getGpanel().UoneilImage = view.getGpanel().UnoboxOneil;
-			view.getGpanel().DoneilImage = view.getGpanel().DnoboxOneil;
-			view.getGpanel().LoneilImage = view.getGpanel().LnoboxOneil;
-			view.getGpanel().oneilImage = view.getGpanel().RnoboxOneil;
-		}
-		if(view.control.game.j.object == null)
-		{
-			view.getGpanel().UjaffaImage = view.getGpanel().UnoboxJaffa;
-			view.getGpanel().DjaffaImage = view.getGpanel().DnoboxJaffa;
-			view.getGpanel().LjaffaImage = view.getGpanel().LnoboxJaffa;
-			view.getGpanel().RjaffaImage = view.getGpanel().RnoboxJaffa;
-		}
+		if (view.control.game.o != null)
+			if(view.control.game.o.object == null)
+			{
+				view.getGpanel().UoneilImage = view.getGpanel().UnoboxOneil;
+				view.getGpanel().DoneilImage = view.getGpanel().DnoboxOneil;
+				view.getGpanel().LoneilImage = view.getGpanel().LnoboxOneil;
+				view.getGpanel().oneilImage = view.getGpanel().RnoboxOneil;
+			}
+		
+		if (view.control.game.j != null)
+			if(view.control.game.j.object == null)
+			{
+				view.getGpanel().UjaffaImage = view.getGpanel().UnoboxJaffa;
+				view.getGpanel().DjaffaImage = view.getGpanel().DnoboxJaffa;
+				view.getGpanel().LjaffaImage = view.getGpanel().LnoboxJaffa;
+				view.getGpanel().RjaffaImage = view.getGpanel().RnoboxJaffa;
+			}
 		
 		
 		for(int i=0;i<20;i++)
