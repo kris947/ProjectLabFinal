@@ -17,7 +17,7 @@ public class Map {
 	private int ZPMcount;
 	Game game;
 	public Tile[][] map = new Tile[20][20]; // Sorokszáma/Oszlopok száma
-	public ArrayList<Bullet> shots = new ArrayList();
+	public ArrayList<Bullet> shots = new ArrayList<Bullet>(10);
 	
 	
 	

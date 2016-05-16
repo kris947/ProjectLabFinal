@@ -1,4 +1,4 @@
-import java.awt.Image;
+
 public class Caracter {
 	
 	 protected int lives; //életeinek a száma
@@ -11,11 +11,13 @@ public class Caracter {
 		  Left, 
 		  Right  
 		}
+	 
 	 Directions direction = Directions.Right;		//Alap irány átadása
 	 protected int weight;
 	 protected boolean paused = false;
 	 
-	 public Caracter(Map map,int lives){
+	 public Caracter(Map map,int lives)
+	 {
 			this.map=map;
 			this.lives=lives;
 	 }

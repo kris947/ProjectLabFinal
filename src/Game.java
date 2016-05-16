@@ -1,15 +1,12 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.EnumSet;
-import java.lang.Object;
+
 
 //Az MVC kialakitasahoz szukseges osztaly
-public class Game {
-public	ONeil o = null;  //ONeil referencia
-public 	Jaffa j = null;  //Jaffa referencia
-public 	Replicator r=null; //Replicator referencia
+public class Game 
+{
+	public	ONeil o = null;  //ONeil referencia
+	public 	Jaffa j = null;  //Jaffa referencia
+	public 	Replicator r=null; //Replicator referencia
 	Map map = new Map(this); 
 	WormHole wh=new WormHole();
 
@@ -39,13 +36,7 @@ public 	Replicator r=null; //Replicator referencia
 	{
 		return map;
 	}
-	
-	
-	
-	
-	
-	
-	
+		
 }
 
 
