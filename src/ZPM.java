@@ -29,7 +29,7 @@ public class ZPM extends Useable {
 	{ 
 		if (this.redeemed)
 			ZPMCount++;
-		if(ZPMCount == 2 && this.redeemed)
+		if(ZPMCount % 2 == 0 && this.redeemed)
 		{
 			Random rand = new Random(); 
 			int value = rand.nextInt(8); 
