@@ -7,6 +7,7 @@ public class ZPM extends Useable {
 	//Konstruktor
 	ZPM(Map map)
 	{ 
+		System.out.println(ZPMCount);
 		type="zpm";
 		m=map;
 		this.weight=50;
@@ -27,15 +28,16 @@ public class ZPM extends Useable {
 	@Override
 	public boolean redeem() 
 	{ 
-		ZPMCount++;
-		if(ZPMCount % 2 == 0)
+		if (this.redeemed)
+			ZPMCount++;
+		if(ZPMCount % 2 == 0 && this.redeemed)
 		{
 			Random rand = new Random(); 
 			int value = rand.nextInt(8); 
 			Coord added = randc[value];
 			m.map[added.getX()][added.getY()].setObj(new ZPM(m));
 		}
-
+		
 		return true;
 	}
 }
