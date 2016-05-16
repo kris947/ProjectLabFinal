@@ -34,38 +34,34 @@ public class View{
 		menu = new Menu(this);
 		
 		
-		BufferedImage myPicture;  //credits menü
-		try 
-		{
-			myPicture = ImageIO.read(new File("credits.jpg"));
+		Image myPicture;  //credits menü
+		
+			
+			myPicture = readImage("credits.jpg");
 			picCredits = new JLabel(new ImageIcon(myPicture));
-		} 
-		catch (IOException e) {}
+		
 		
 		credits = new JPanel();
 		credits.setBounds(0, 0, 1000, 1000);
 		credits.add(picCredits);
 	
 		
-		BufferedImage myPicture3;  //win kép Oneill
-		try 
-		{
-			myPicture3 = ImageIO.read(new File("Owin.jpg"));
+
+		Image myPicture3;  //win kép Oneill
+		
+			myPicture3 = readImage("Owin.jpg");
 			picWinO = new JLabel(new ImageIcon(myPicture3));
-		} 
-		catch (IOException e) {}
+		
 		
 		Owin = new JPanel();
 		Owin.setBounds(0, 0, 1000, 1000);
 		Owin.add(picWinO);
 		
-		BufferedImage myPicture4;  //win kép Jaffa
-		try 
-		{
-			myPicture4 = ImageIO.read(new File("Jwin.jpg"));
+		Image myPicture4;  //win kép Jaffa
+		
+			myPicture4 = readImage("Jwin.jpg");
 			picWinJ = new JLabel(new ImageIcon(myPicture4));
-		} 
-		catch (IOException e) {}
+		
 		
 		Jwin = new JPanel();
 		Jwin.setBounds(0, 0, 1000, 1000);
@@ -74,13 +70,12 @@ public class View{
 		
 		
 		
-		BufferedImage myPicture2;  //szabályok menü
-		try 
-		{
-			myPicture2 = ImageIO.read(new File("rules.jpg"));
+		Image myPicture2;  //szabályok menü
+		
+			
+			myPicture2 = readImage("rules.jpg");
 			picRules = new JLabel(new ImageIcon(myPicture2));
-		} 
-		catch (IOException e) {}
+		
 		
 		rules = new JPanel();
 		rules.setBounds(0, 0, 1000, 1000);
