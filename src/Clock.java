@@ -8,7 +8,7 @@ import javax.swing.Timer;
 
 class Clock {
     
-    private int time=0;
+    private int time=600;
     String ido = "";
     boolean paused = false;
     Timer t;
@@ -26,7 +26,7 @@ class Clock {
                 	  int sec=time-min*60;//másodperc kiszámítása
                 	  
                 	  if(time>=0){
-                		  if(!paused)time++; //növeljük az idõt
+                		  if(!paused)time--; //növeljük az idõt
                 		  if(sec>=10) ido = (min+":"     +sec);
                 		  else 		  ido = (min+":" +"0"+sec); //ha a sec kevesebb mint 10 0sec formátumban írjuk ki
                 		  
@@ -38,6 +38,7 @@ class Clock {
     }
     
     public String gettime(){return ido;}
+    public int gettimeint(){return time;}
     public void pause()
     {
 		boolean tmp = paused ;
