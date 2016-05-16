@@ -18,7 +18,9 @@ public class Jaffa extends Caracter {
 
 	//Felvesz egy tárgyat
 	public void pickUp() {
-		System.out.println("ONeil: pickUp metódus hívás");
+		
+		if(!paused){
+		
 		switch (direction) {
 			case Up:   //Fel
 				object = map.map[loc.getY()-1][loc.getX()].takeObj(); //Koordináták beállítása
@@ -36,6 +38,8 @@ public class Jaffa extends Caracter {
 				object = map.map[loc.getY()][loc.getX()+1].takeObj(); //Koordináták beállítása
 				map.map[loc.getY()][loc.getX()+1].setObj(null);
 			break;		
+	
+		}
 		}
 	}
 	
@@ -43,14 +47,14 @@ public class Jaffa extends Caracter {
 	public void shoot(char c,WormHole w) 
 	{
 		System.out.println("ONeil: shoot metódus hívás");
-		if(c=='r')
+		if(c=='r' && !paused)
 		{
 	        RedBullet red = new RedBullet(direction, loc , map,w);
 			Thread rb = new Thread(red);
 	        rb.start();
 	        map.shots.add(red);
 		}
-		else 
+		else if(!paused)
 		{
 	        GreenBullet green = new GreenBullet(direction, loc , map,w);
 			Thread gb = new Thread(green);

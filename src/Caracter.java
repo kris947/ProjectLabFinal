@@ -13,15 +13,25 @@ public class Caracter {
 		}
 	 Directions direction = Directions.Right;		//Alap irány átadása
 	 protected int weight;
+	 protected boolean paused = false;
 	 
 	 public Caracter(Map map,int lives){
 			this.map=map;
 			this.lives=lives;
 	 }
 	 
+	 public void pause()
+	 {
+		boolean tmp = paused ;
+		if(!tmp) paused = true;
+		if(tmp) paused = false;		
+	 }
+	  
+	 public boolean getpause(){return paused;}
+	 
 	 public void move( Caracter.Directions dir) {
 		
-		 if(lives>0) {
+		 if(lives>0 && !paused) {
 			 		 
 			switch (dir) {
 				case Up:  //Felfele mozgas

@@ -22,6 +22,7 @@ public class ONeil extends Caracter{
 	//Felvesz egy tárgyat
 	public void pickUp() 
 	{
+		if(!paused){
 		switch (direction) 
 		{
 			case Up:   //Fel				
@@ -41,19 +42,20 @@ public class ONeil extends Caracter{
 				map.map[loc.getY()][loc.getX()+1].setObj(null);
 			break;		
 		}
+		}
 	}
 	
 	//Lövés kezelése
 	public void shoot(char c,WormHole w) 
 	{
-		if(c=='b')
+		if(c=='b' && !paused)
 		{
 			BlueBullet blue = new BlueBullet(direction, loc , map,w);	//létre hozza a lövedéket
 			Thread bb = new Thread(blue);	//külön szálon fut a lövedék mozgása
 	        bb.start();
 	        map.shots.add(blue);	//a megjelenítéshez használt shots listába is belekerül
 		}
-		else 
+		else if(!paused)
 		{
 			YellowBullet yellow = new YellowBullet(direction, loc , map,w);
 			Thread yb = new Thread(yellow);

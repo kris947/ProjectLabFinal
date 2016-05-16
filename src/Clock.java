@@ -4,29 +4,48 @@ import java.awt.event.ActionListener;
 import javax.swing.JTextField;
 import javax.swing.Timer;
 
+
+
 class Clock {
     
-    private int time=300;
+    private int time=0;
+    String ido = "";
+    boolean paused = false;
+    Timer t;
     
-
-    public Clock(final JTextField timeField) {
+    public Clock() 
+    {
         //timer létrehozása
-        Timer t = new Timer(1000, new ActionListener() {
-        		public void actionPerformed(ActionEvent e) {
+    	
+    	ActionListener al = new ActionListener() 
+        {
+        public void actionPerformed(ActionEvent e)
+        {
                 	  
                 	  int min=time/60;    //perc kiszámítása
                 	  int sec=time-min*60;//másodperc kiszámítása
                 	  
                 	  if(time>=0){
-                		  if(sec>=10) timeField.setText(min+":"     +sec);
-                		  else 		 timeField.setText(min+":" +"0"+sec); //ha a sec kevesebb mint 10 0sec formátumban írjuk ki
-                		  time--; //csökkentjük az idõt
-                	  }
-                      
-                  }
-              }
-        );
-        
-        t.start(); 
+                		  if(!paused)time++; //növeljük az idõt
+                		  if(sec>=10) ido = (min+":"     +sec);
+                		  else 		  ido = (min+":" +"0"+sec); //ha a sec kevesebb mint 10 0sec formátumban írjuk ki
+                		  
+                	  }          
+        }};
+    	
+        t = new Timer(1000,al);
+  
     }
+    
+    public String gettime(){return ido;}
+    public void pause()
+    {
+		boolean tmp = paused ;
+		if(!tmp) paused = true;
+		if(tmp) paused = false;	
+    }
+    
+    public boolean getpause(){return paused;}
+    public void start(){t.start();}
+    
 }

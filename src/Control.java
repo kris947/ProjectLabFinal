@@ -10,7 +10,10 @@ public class Control implements KeyListener, MouseListener
 {
 	public Game game;
 	public View view;
+	private boolean paused;
 	private boolean inMPanel;		//Benne vagyunk-e vmilyen menüpanelban
+	
+	Clock clock = new Clock();
 	
 	//Konstruktor
 	public Control(Game game)
@@ -220,6 +223,16 @@ public class Control implements KeyListener, MouseListener
 			view.setPanel(view.getMpanel());
 			inMPanel = false;
 		}
+		
+		else if(e.getKeyCode() == KeyEvent.VK_P)
+		{
+			game.o.pause();
+			game.j.pause();
+			clock.pause();
+			
+			System.out.println("PPPPPPPP");
+		}	
+			
 	}
 	}
 	
@@ -231,6 +244,7 @@ public class Control implements KeyListener, MouseListener
 			if(arg0.getX()>240 && arg0.getX()<770 && arg0.getY()>320 && arg0.getY()<395)		//Game
 			{
 				view.setPanel(view.getGpanel());		//Game panel beállítása
+				clock.start();
 				inMPanel = true;
 			}	
 			if(arg0.getX()>240 && arg0.getX()<770 && arg0.getY()>438 && arg0.getY()<523)		//Rules

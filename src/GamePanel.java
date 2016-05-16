@@ -12,6 +12,9 @@ import javax.swing.JPanel;
 //játék pálya megjelenítésére szolgáló JPanel
 public class GamePanel extends JPanel
 {
+	
+
+	
 	//Pályaelemek
 	private View view;                
 	private Image groundImage;
@@ -328,6 +331,21 @@ public class GamePanel extends JPanel
 		}
 				
 
+		
+		g.drawImage(backg, 395, 5, 160, 35, this);
+		String s9;
+		s9 = "Time:   " + view.control.clock.gettime();
+
+		if(view.control.clock.getpause())s9= s9+"   PAUSED";
+		
+		g.drawString(s9 , 400, 27);		
+		g.drawRect(395, 5, 159, 34);
+		g.drawRect(394, 4, 160, 35);
+		g.drawRect(394, 4, 161, 36);
+		g.drawRect(396, 6, 158, 33);
+		g.drawRect(396, 6, 157, 32);
+		
+		
 		
 		g.drawImage(backg, 795, 5, 160, 35, this);
 		String s;
