@@ -226,9 +226,12 @@ public class Control implements KeyListener, MouseListener
 		
 		else if(e.getKeyCode() == KeyEvent.VK_P)	//szünet
 		{
-			game.o.pause();
-			game.j.pause();
-			game.r.pause();
+			if(game.o != null)
+				game.o.pause();
+			if(game.j != null)
+				game.j.pause();
+			if(game.r != null)
+				game.r.pause();
 			clock.pause();
 		}	
 			
@@ -242,6 +245,7 @@ public class Control implements KeyListener, MouseListener
 		{
 			if(arg0.getX()>240 && arg0.getX()<770 && arg0.getY()>320 && arg0.getY()<395)		//Game
 			{
+				view.control.game.init();		//Karakterek és pálya betöltése
 				view.setPanel(view.getGpanel());		//Game panel beállítása
 				clock.start();
 				inMPanel = true;
