@@ -182,6 +182,10 @@ public class GamePanel extends JPanel
     public void paint(Graphics g) 
 	{
 		if (view.control.game.o != null)
+		{
+			if (view.control.game.o.getzpmw() == 7)		//ha Oneil nyer
+				view.setPanel(view.getMpanel());	
+
 			if(view.control.game.o.object == null)
 			{
 				view.getGpanel().UoneilImage = view.getGpanel().UnoboxOneil;
@@ -189,8 +193,13 @@ public class GamePanel extends JPanel
 				view.getGpanel().LoneilImage = view.getGpanel().LnoboxOneil;
 				view.getGpanel().oneilImage = view.getGpanel().RnoboxOneil;
 			}
+		}
 		
 		if (view.control.game.j != null)
+		{
+			if (view.control.game.j.getzpmw() == 7)			//ha Jaffa nyer
+				view.setPanel(view.getMpanel());
+			
 			if(view.control.game.j.object == null)
 			{
 				view.getGpanel().UjaffaImage = view.getGpanel().UnoboxJaffa;
@@ -198,6 +207,7 @@ public class GamePanel extends JPanel
 				view.getGpanel().LjaffaImage = view.getGpanel().LnoboxJaffa;
 				view.getGpanel().RjaffaImage = view.getGpanel().RnoboxJaffa;
 			}
+		}
 		
 		
 		for(int i=0;i<20;i++)
@@ -404,9 +414,10 @@ public class GamePanel extends JPanel
 		g.drawRect(596, 6, 158, 33);
 		g.drawRect(596, 6, 157, 32);
 		
-		if (view.control.game.j == null && view.control.game.o == null)
-			view.setPanel(view.getMpanel());
+		if (view.control.game.j == null && view.control.game.o == null)	//ha mindkét játékos meghal
+			view.setPanel(view.getMpanel());		//vissza  a fõmeübe
 		
+
 	}
 	
 	class drawTimerListener implements ActionListener
