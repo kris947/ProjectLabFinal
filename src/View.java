@@ -22,7 +22,7 @@ public class View{
 	JLabel picCredits;
 	JLabel picRules;
 	
-	
+	//View konstrukor kap egy refernciát a controlra
 	public View(Control c)
 	{		
 		control = c;
@@ -31,7 +31,7 @@ public class View{
 		menu = new Menu(this);
 		
 		
-		BufferedImage myPicture;
+		BufferedImage myPicture;  //credits menü
 		try 
 		{
 			myPicture = ImageIO.read(new File("credits.jpg"));
@@ -44,7 +44,7 @@ public class View{
 		credits.add(picCredits);
 	
 		
-		BufferedImage myPicture2;
+		BufferedImage myPicture2;  //szabályok menü
 		try 
 		{
 			myPicture2 = ImageIO.read(new File("rules.jpg"));
@@ -60,7 +60,7 @@ public class View{
 		panel = menu ;
 		
 		frame.setSize(1006, 1035);
-		frame.setTitle("Get_rekt");
+		frame.setTitle("Get_rekt");	//frame név
 		frame.setVisible(true);
 		frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -75,6 +75,7 @@ public class View{
 	public JPanel getCpanel(){return credits;}
 	public JPanel getRpanel(){return rules;}
 	
+	//újra kirajzolja az aktív panelt
 	public void Paint()
 	{		
 		panel.repaint();

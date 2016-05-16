@@ -79,7 +79,7 @@ public class Scale extends Tile {
 		}
 	}
 
-
+	
 	@Override
 	public Coord stepOn(Coord c) 
 	{		
@@ -87,9 +87,11 @@ public class Scale extends Tile {
 		return location;		
 	}
 	
+	//ha a karakter lelép a mérlegrõl ez hívódik meg
 	@Override
-	public void stepoff(){
-		if( pressedweight<100)	
+	public void stepoff()
+	{
+		if( pressedweight<100)	//ha nincs elég súly akkor becsukódik az ajtó
 			map.map[door.getY()][door.getX()].closeDoor();
 	}
 }

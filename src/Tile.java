@@ -23,17 +23,19 @@ public abstract class Tile {
 	
 	public abstract Coord stepOn(Coord c);
 	
-	public Useable getObj() {
-		
+	//a tileon lévõ useable-t adja vissza
+	public Useable getObj() 
+	{		
 		return object;
 	}
 	
+	//ha a bullet tovább repülhet akkor true-val tér vissza
 	 public boolean fly(Bullet b)
 	 {
-
 		 return true;
 	 }
-	
+	 
+	//ezek mind a leszármazottakba valósulnak meg
 	public void stepoff(){};
 	public void openDoor(){};
 	public void closeDoor(){};
@@ -43,7 +45,7 @@ public abstract class Tile {
 				return object;
 	}
 
-	
+	//beállítja a tileon lévõ objektumot
 	public boolean setObj(Useable o) {
 		if(o==null)
 			object=o;	

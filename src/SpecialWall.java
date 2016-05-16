@@ -14,11 +14,12 @@ public class SpecialWall extends Wall {
 	
 	//Megmondja, hogy ONeil mit csináljon, ha falra akar lépni 
 		@Override
-		public Coord stepOn(Coord k) {
-			
+		public Coord stepOn(Coord k) 
+		{			
 			return k;
 		}
 		
+		//a bullet hívja a fly metódust, ha special wallt ér akkor portal nyílik
 		@Override
 		public boolean fly(Bullet b)
 		{
