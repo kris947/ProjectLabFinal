@@ -27,6 +27,7 @@ public class ZPM extends Useable {
 	@Override
 	public boolean redeem() 
 	{ 
+		ZPMCount++;
 		if(ZPMCount % 2 == 0)
 		{
 			Random rand = new Random(); 
@@ -34,7 +35,7 @@ public class ZPM extends Useable {
 			Coord added = randc[value];
 			m.map[added.getX()][added.getY()].setObj(new ZPM(m));
 		}
-		ZPMCount++;
+
 		return true;
 	}
 }
