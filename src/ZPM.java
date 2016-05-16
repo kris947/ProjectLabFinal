@@ -7,7 +7,6 @@ public class ZPM extends Useable {
 	//Konstruktor
 	ZPM(Map map)
 	{ 
-		System.out.println(ZPMCount);
 		type="zpm";
 		m=map;
 		this.weight=50;
