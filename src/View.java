@@ -18,9 +18,12 @@ public class View{
 	private Menu menu;
 	private JPanel credits;
 	private JPanel rules;
-	
+	private JPanel Owin;
+	private JPanel Jwin;
 	JLabel picCredits;
 	JLabel picRules;
+	JLabel picWinO;
+	JLabel picWinJ;
 	
 	//View konstrukor kap egy refernciát a controlra
 	public View(Control c)
@@ -43,6 +46,33 @@ public class View{
 		credits.setBounds(0, 0, 1000, 1000);
 		credits.add(picCredits);
 	
+		
+		BufferedImage myPicture3;  //win kép Oneill
+		try 
+		{
+			myPicture3 = ImageIO.read(new File("ONeil.png"));
+			picWinO = new JLabel(new ImageIcon(myPicture3));
+		} 
+		catch (IOException e) {}
+		
+		Owin = new JPanel();
+		Owin.setBounds(0, 0, 1000, 1000);
+		Owin.add(picWinO);
+		
+		BufferedImage myPicture4;  //win kép Jaffa
+		try 
+		{
+			myPicture4 = ImageIO.read(new File("Jaffa1.png"));
+			picWinJ = new JLabel(new ImageIcon(myPicture4));
+		} 
+		catch (IOException e) {}
+		
+		Jwin = new JPanel();
+		Jwin.setBounds(0, 0, 1000, 1000);
+		Jwin.add(picWinJ);
+		
+		
+		
 		
 		BufferedImage myPicture2;  //szabályok menü
 		try 
@@ -71,6 +101,10 @@ public class View{
 	}
 	
 	public GamePanel getGpanel(){return gpanel;}
+	
+	public JPanel getWOpanel(){return Owin;}
+	public JPanel getWJpanel(){return Jwin;}
+	
 	public Menu getMpanel(){return menu;}
 	public JPanel getCpanel(){return credits;}
 	public JPanel getRpanel(){return rules;}

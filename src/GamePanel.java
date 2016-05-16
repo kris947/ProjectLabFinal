@@ -184,7 +184,7 @@ public class GamePanel extends JPanel
 		if (view.control.game.o != null)
 		{
 			if (view.control.game.o.getzpmw() == 7)		//ha Oneil nyer
-				view.setPanel(view.getMpanel());	
+				view.setPanel(view.getWOpanel());	
 
 			if(view.control.game.o.object == null)
 			{
@@ -198,7 +198,7 @@ public class GamePanel extends JPanel
 		if (view.control.game.j != null)
 		{
 			if (view.control.game.j.getzpmw() == 7)			//ha Jaffa nyer
-				view.setPanel(view.getMpanel());
+				view.setPanel(view.getWJpanel());
 			
 			if(view.control.game.j.object == null)
 			{
