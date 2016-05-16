@@ -29,11 +29,12 @@ public class ZPM extends Useable {
 	{ 
 		if (this.redeemed)
 			ZPMCount++;
-		if(ZPMCount % 2 == 0 && this.redeemed)
+		if(ZPMCount == 2 && this.redeemed)
 		{
 			Random rand = new Random(); 
 			int value = rand.nextInt(8); 
 			Coord added = randc[value];
+			System.out.println(added.getX() + " " + added.getY());
 			m.map[added.getX()][added.getY()].setObj(new ZPM(m));
 		}
 		
