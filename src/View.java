@@ -50,7 +50,7 @@ public class View{
 		BufferedImage myPicture3;  //win kép Oneill
 		try 
 		{
-			myPicture3 = ImageIO.read(new File("ONeil.png"));
+			myPicture3 = ImageIO.read(new File("Owin.jpg"));
 			picWinO = new JLabel(new ImageIcon(myPicture3));
 		} 
 		catch (IOException e) {}
@@ -62,7 +62,7 @@ public class View{
 		BufferedImage myPicture4;  //win kép Jaffa
 		try 
 		{
-			myPicture4 = ImageIO.read(new File("Jaffa1.png"));
+			myPicture4 = ImageIO.read(new File("Jwin.jpg"));
 			picWinJ = new JLabel(new ImageIcon(myPicture4));
 		} 
 		catch (IOException e) {}
