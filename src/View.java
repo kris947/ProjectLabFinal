@@ -1,9 +1,4 @@
 import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -31,56 +26,7 @@ public class View{
 		control = c;
 		frame = new JFrame();
 		gpanel = new GamePanel(this);
-		menu = new Menu(this);
-		
-		
-		Image myPicture;  //credits menü
-		
-			
-			myPicture = readImage("credits.jpg");
-			picCredits = new JLabel(new ImageIcon(myPicture));
-		
-		
-		credits = new JPanel();
-		credits.setBounds(0, 0, 1000, 1000);
-		credits.add(picCredits);
-	
-		
-
-		Image myPicture3;  //win kép Oneill
-		
-			myPicture3 = readImage("Owin.jpg");
-			picWinO = new JLabel(new ImageIcon(myPicture3));
-		
-		
-		Owin = new JPanel();
-		Owin.setBounds(0, 0, 1000, 1000);
-		Owin.add(picWinO);
-		
-		Image myPicture4;  //win kép Jaffa
-		
-			myPicture4 = readImage("Jwin.jpg");
-			picWinJ = new JLabel(new ImageIcon(myPicture4));
-		
-		
-		Jwin = new JPanel();
-		Jwin.setBounds(0, 0, 1000, 1000);
-		Jwin.add(picWinJ);
-		
-		
-		
-		
-		Image myPicture2;  //szabályok menü
-		
-			
-			myPicture2 = readImage("rules.jpg");
-			picRules = new JLabel(new ImageIcon(myPicture2));
-		
-		
-		rules = new JPanel();
-		rules.setBounds(0, 0, 1000, 1000);
-		rules.add(picRules);
-		
+		menu = new Menu(this);		
 		
 		panel = menu ;
 		
@@ -91,18 +37,56 @@ public class View{
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.addKeyListener(c);
 		frame.addMouseListener(c);
-		
-		
+				
 	}
 	
 	public GamePanel getGpanel(){return gpanel;}
 	
-	public JPanel getWOpanel(){return Owin;}
-	public JPanel getWJpanel(){return Jwin;}
+	public JPanel getWOpanel()
+	{
+		Image myPicture3;  //win kép Oneill		
+		myPicture3 = readImage("Owin.jpg");
+		picWinO = new JLabel(new ImageIcon(myPicture3));
+		Owin = new JPanel();
+		Owin.setBounds(0, 0, 1000, 1000);
+		Owin.add(picWinO);
+		return Owin;	
+	}
+	
+	public JPanel getWJpanel()
+	{
+		Image myPicture4;  //win kép Jaffa		
+		myPicture4 = readImage("Jwin.jpg");
+		picWinJ = new JLabel(new ImageIcon(myPicture4));
+		Jwin = new JPanel();
+		Jwin.setBounds(0, 0, 1000, 1000);
+		Jwin.add(picWinJ);
+		return Jwin;
+	}
 	
 	public Menu getMpanel(){return menu;}
-	public JPanel getCpanel(){return credits;}
-	public JPanel getRpanel(){return rules;}
+	
+	public JPanel getCpanel()
+	{
+		Image myPicture;  //credits menü	
+		myPicture = readImage("credits.jpg");
+		picCredits = new JLabel(new ImageIcon(myPicture));	
+		credits = new JPanel();
+		credits.setBounds(0, 0, 1000, 1000);
+		credits.add(picCredits);
+		return credits;
+	}
+	
+	public JPanel getRpanel()
+	{	
+		Image myPicture2;  //szabályok menü	
+		myPicture2 = readImage("rules.jpg");
+		picRules = new JLabel(new ImageIcon(myPicture2));
+		rules = new JPanel();
+		rules.setBounds(0, 0, 1000, 1000);
+		rules.add(picRules);
+		return rules;
+	}
 	
 	//újra kirajzolja az aktív panelt
 	public void Paint()
@@ -126,7 +110,5 @@ public class View{
 		i = new ImageIcon(name).getImage();
 		return i;
 	}
-
-	
 	
 }

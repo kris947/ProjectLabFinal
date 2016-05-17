@@ -34,7 +34,6 @@ public class ZPM extends Useable {
 			Random rand = new Random(); 
 			int value = rand.nextInt(8); 
 			Coord added = randc[value];
-			System.out.println(added.getX() + " " + added.getY());
 			m.map[added.getX()][added.getY()].setObj(new ZPM(m));
 		}
 		

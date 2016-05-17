@@ -10,9 +10,7 @@ import javax.swing.JPanel;
 //játék pálya megjelenítésére szolgáló JPanel
 public class GamePanel extends JPanel
 {
-	
-
-	
+		
 	//Pályaelemek
 	private View view;                
 
@@ -28,12 +26,6 @@ public class GamePanel extends JPanel
 	public String DjaffaImage;
 	public String LjaffaImage;
 	
-	
-	
-	public Image backg;
-	
-	
-	
 	// Rajzolás 0,1 secenként
 	Timer drawTimer;
 
@@ -45,9 +37,6 @@ public class GamePanel extends JPanel
 		view = v;
 		drawTimer =new Timer(100, new drawTimerListener());
 		drawTimer.start();
-		
-		
-		backg = new ImageIcon("background.jpg").getImage();
 
 	}
 	
@@ -237,7 +226,7 @@ public class GamePanel extends JPanel
 				
 
 		
-		g.drawImage(backg, 395, 5, 160, 35, this);
+		g.drawImage(view.readImage("background.jpg"), 395, 5, 160, 35, this);
 		String s9;
 		s9 = "Time:   " + view.control.clock.gettime();
 
@@ -252,7 +241,7 @@ public class GamePanel extends JPanel
 		
 		
 		
-		g.drawImage(backg, 795, 5, 160, 35, this);
+		g.drawImage(view.readImage("background.jpg"), 795, 5, 160, 35, this);
 		String s;
 		String s2;
 		if (view.control.game.o != null)
@@ -276,7 +265,7 @@ public class GamePanel extends JPanel
 		
 		
 		
-		g.drawImage(backg, 595, 5, 160, 35, this);
+		g.drawImage(view.readImage("background.jpg"), 595, 5, 160, 35, this);
 		String s3;
 		String s4;		
 		if (view.control.game.j != null)
